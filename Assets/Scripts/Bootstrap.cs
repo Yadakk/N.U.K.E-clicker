@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using AssetBundleLib;
+
+public class Bootstrap : MonoBehaviour
+{
+    public static AssetBundle Bundle;
+
+    private void Start()
+    {
+        Bundle = AssetBundle.LoadFromFile("Assets/AssetBundles/game");
+
+        StartEnabler.Instance.EnableAll(true);
+        AlphaHit.OnInitAll?.Invoke();
+        Display.OnInitAll?.Invoke();
+        ItemPlacer.OnInitAll?.Invoke();
+        StartEnabler.Instance.EnableAll(false);
+    }
+}

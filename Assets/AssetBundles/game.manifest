@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 4071249158
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 953c640487bab604af6fac8a42bbf601
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9729fd944abb0cbff00c220c3cad2c70
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 953c640487bab604af6fac8a42bbf601
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SO/ShopItems/RetrievalDeviceUpgrade.asset
+- Assets/SO/Resources/People.asset
+- Assets/SO/Resources/Breads.asset
+- Assets/SO/Resources/Caps.asset
+Dependencies: []
