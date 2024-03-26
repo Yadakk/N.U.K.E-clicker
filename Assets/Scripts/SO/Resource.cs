@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Resource", menuName = "SO/Resource", order = 52)]
 public class Resource : ScriptableObject
 {
+    public string Name;
+
     [field: SerializeField]
     private int _amount;
 

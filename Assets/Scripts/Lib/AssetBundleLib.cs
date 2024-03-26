@@ -9,14 +9,12 @@ namespace AssetBundleLib
         public static T[] GetAssets(AssetBundle bundle)
         {
             T[] assets = bundle.LoadAllAssets<T>();
-            bundle.Unload(false);
             return assets;
         }
 
         public static T GetAsset(AssetBundle bundle, string name)
         {
             T assets = bundle.LoadAsset<T>(name);
-            bundle.Unload(false);
             return assets;
         }
     }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: Breads
   m_EditorClassIdentifier: 
+  Name: Breads
   _amount: 0
   Icon: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}

@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Retrieval Device Upgrade
   Desc: is a
-  StartingCost: 1
-  CostMultiplier: 2
   Icon: {fileID: 21300000, guid: a807fed1de2e57a41b18b29661e9c7bf, type: 3}
   Shop: 0
+  AffectedResources:
+  - Resource: {fileID: 11400000, guid: 6983ee0de24a0a7498ee9b9f7df3e3af, type: 2}
+    Change: -10
+    Multiplier: 2
+  - Resource: {fileID: 11400000, guid: 55981ca98fbbd0f429f30eb234bd66ce, type: 2}
+    Change: 1
+    Multiplier: 2

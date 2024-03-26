@@ -9,6 +9,7 @@ public class ItemPlacer : MonoBehaviour
 {
     [SerializeField] private Object _itemPrefab;
     [SerializeField] private ItemShops _shop;
+    [SerializeField] private InfoDisplayer _infoDisplayer;
 
     public delegate void OnInitAllDelegate();
     public static OnInitAllDelegate OnInitAll;
@@ -26,6 +27,9 @@ public class ItemPlacer : MonoBehaviour
             {
                 Object instItem = Instantiate(_itemPrefab, transform);
                 instItem.GetComponent<Image>().sprite = shopItem.Icon;
+                Item itemComp = instItem.GetComponent<Item>();
+                itemComp.ShopItem = shopItem;
+                itemComp.InfoDisplayer = _infoDisplayer;
             }
         }
     }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
-  m_Name: Caps
+  m_Name: ClickPower
   m_EditorClassIdentifier: 
-  Name: Caps
-  _amount: 0
-  Icon: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
+  Name: Click power
+  _amount: 1
+  Icon: {fileID: 21300000, guid: 9b7fd6e03ef9ee144b98876a3941ee32, type: 3}

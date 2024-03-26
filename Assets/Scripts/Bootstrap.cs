@@ -12,9 +12,11 @@ public class Bootstrap : MonoBehaviour
         Bundle = AssetBundle.LoadFromFile("Assets/AssetBundles/game");
 
         StartEnabler.Instance.EnableAll(true);
+        Clicker.OnInitAll?.Invoke();
         AlphaHit.OnInitAll?.Invoke();
         Display.OnInitAll?.Invoke();
         ItemPlacer.OnInitAll?.Invoke();
+        InfoDisplayer.OnInitAll?.Invoke();
         StartEnabler.Instance.EnableAll(false);
     }
 }
