@@ -21,6 +21,3 @@ MonoBehaviour:
   - Resource: {fileID: 11400000, guid: 6983ee0de24a0a7498ee9b9f7df3e3af, type: 2}
     Change: -50
     Multiplier: 2
-  - Resource: {fileID: 0}
-    Change: 10
-    Multiplier: 2
