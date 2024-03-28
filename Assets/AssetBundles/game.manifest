@@ -1,23 +1,23 @@
 ManifestFileVersion: 0
-CRC: 2776179470
+CRC: 2406356597
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7e23b2a647b069dec65fa055a6e5e2f0
+    Hash: 0af1f0f5a3c3b795b763b0261b5c333e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5abb784f855591f8a9df2f20c6d23dfe
+    Hash: 9c2bf9f6a4fc7668923630412c8a225e
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 7e23b2a647b069dec65fa055a6e5e2f0
+    Hash: 0af1f0f5a3c3b795b763b0261b5c333e
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -26,9 +26,18 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Assembly-CSharp
   ClassName: AffectedResource
 Assets:
+- Assets/SO/ShopItems/LuckyCharm.asset
+- Assets/SO/ShopItems/AutomatedBotsForRetrieval.asset
 - Assets/SO/Resources/ClickPower.asset
+- Assets/SO/Resources/BreadsMaxCapacity.asset
 - Assets/SO/ShopItems/RetrievalDeviceUpgrade.asset
+- Assets/SO/Resources/PositiveChoiceIncome.asset
 - Assets/SO/Resources/People.asset
+- Assets/SO/ShopItems/BreadsStorageUpgrade.asset
+- Assets/SO/ShopItems/CriticalBreads.asset
+- Assets/SO/Resources/CriticalChance.asset
 - Assets/SO/Resources/Breads.asset
 - Assets/SO/Resources/Caps.asset
+- Assets/SO/ShopItems/HappinessPays.asset
+- Assets/SO/Resources/PassiveIncome.asset
 Dependencies: []

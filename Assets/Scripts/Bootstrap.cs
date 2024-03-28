@@ -17,6 +17,7 @@ public class Bootstrap : MonoBehaviour
         Display.OnInitAll?.Invoke();
         ItemPlacer.OnInitAll?.Invoke();
         InfoDisplayer.OnInitAll?.Invoke();
+        CooldownRes.OnInitAll?.Invoke();
         StartEnabler.Instance.EnableAll(false);
     }
 }

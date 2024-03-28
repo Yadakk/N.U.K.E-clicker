@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: PositiveChoiceIncome
   m_EditorClassIdentifier: 
-  Name: Positive Choice Income
+  Name: Positive choice income
   _amount: 0
   Icon: {fileID: 0}

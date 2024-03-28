@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 47714415}
   - component: {fileID: 47714414}
   - component: {fileID: 47714416}
+  - component: {fileID: 47714417}
   m_Layer: 0
   m_Name: GlobalScripts
   m_TagString: Untagged
@@ -184,6 +185,20 @@ MonoBehaviour:
   - {fileID: 1069737319}
   - {fileID: 446496328}
   - {fileID: 1251027638}
+--- !u!114 &47714417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47714413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203626439bdb76544b113932ef4dff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _resourceToIncrease: {fileID: 11400000, guid: 6983ee0de24a0a7498ee9b9f7df3e3af, type: 2}
+  _increaseBy: {fileID: 11400000, guid: e04b58bb5543aad489f4894bb661f8d4, type: 2}
 --- !u!224 &99024582 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 114917641662190511, guid: 860ed190028bedd4686bc2cf28e9c70f, type: 3}
@@ -1739,6 +1754,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4235137851381945309, guid: fe88faeae0d995b4aaabcbaa84431623, type: 3}
+      propertyPath: m_Name
+      value: PassiveIncome
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655145121769565182, guid: fe88faeae0d995b4aaabcbaa84431623, type: 3}
+      propertyPath: _resourceToDisplay
+      value: 
+      objectReference: {fileID: 11400000, guid: e04b58bb5543aad489f4894bb661f8d4, type: 2}
     - target: {fileID: 5709665089804591287, guid: fe88faeae0d995b4aaabcbaa84431623, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1842,6 +1865,10 @@ PrefabInstance:
     - target: {fileID: 6811826173987445411, guid: fe88faeae0d995b4aaabcbaa84431623, type: 3}
       propertyPath: m_Name
       value: AdderGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779228118939324924, guid: fe88faeae0d995b4aaabcbaa84431623, type: 3}
+      propertyPath: m_Name
+      value: ClickPowerDisplay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
