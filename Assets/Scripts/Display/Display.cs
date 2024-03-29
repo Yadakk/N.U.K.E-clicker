@@ -25,7 +25,7 @@ public class Display : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        _resourceToDisplay = AssetGetter<Resource>.GetAsset(Bundle, _resourceToDisplay.name);
+        AssetUtility.GetFromBundle(Bundle, ref _resourceToDisplay);
 
         _icon = transform.GetChild(0);
         _value = transform.GetChild(1);

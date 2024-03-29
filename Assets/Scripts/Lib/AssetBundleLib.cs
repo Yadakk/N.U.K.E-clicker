@@ -18,4 +18,12 @@ namespace AssetBundleLib
             return assets;
         }
     }
+
+    public static class AssetUtility
+    {
+        public static void GetFromBundle<T>(AssetBundle bundle, ref T obj) where T : Object
+        {
+            obj = AssetGetter<T>.GetAsset(bundle, obj.name);
+        }
+    }
 }

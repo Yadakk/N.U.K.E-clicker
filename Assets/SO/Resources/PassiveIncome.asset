@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Passive income
   _amount: 0
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}

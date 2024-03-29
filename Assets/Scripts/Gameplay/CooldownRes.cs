@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AssetBundleLib;
+using static Bootstrap;
 
 public class CooldownRes : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class CooldownRes : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        _resourceToIncrease = AssetGetter<Resource>.GetAsset(Bootstrap.Bundle, _resourceToIncrease.name);
-        _increaseBy = AssetGetter<Resource>.GetAsset(Bootstrap.Bundle, _increaseBy.name);
+        AssetUtility.GetFromBundle(Bundle, ref _resourceToIncrease);
+        AssetUtility.GetFromBundle(Bundle, ref _increaseBy);
 
         StartCoroutine(AddResCoroutine());
     }

@@ -24,7 +24,7 @@ public class ShopItem : ScriptableObject
     {
         foreach (var affectedResource in AffectedResources)
         {
-            affectedResource.Resource = AssetGetter<Resource>.GetAsset(Bundle, affectedResource.Resource.name);
+            AssetUtility.GetFromBundle(Bundle, ref affectedResource.Resource);
         }
     }
 

@@ -8,6 +8,7 @@ public class Clicker : MonoBehaviour
 {
     [SerializeField] private Resource _increaseResource;
     [SerializeField] private Resource _increaseBy;
+    [SerializeField] private Resource _criticalChance;
 
     public delegate void OnInitAllDelegate();
     public static OnInitAllDelegate OnInitAll;
@@ -17,12 +18,17 @@ public class Clicker : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        _increaseResource = AssetGetter<Resource>.GetAsset(Bundle, _increaseResource.name);
-        _increaseBy = AssetGetter<Resource>.GetAsset(Bundle, _increaseBy.name);
+        AssetUtility.GetFromBundle(Bundle, ref _increaseResource);
+        AssetUtility.GetFromBundle(Bundle, ref _increaseBy);
+        AssetUtility.GetFromBundle(Bundle, ref _criticalChance);
     }
 
     public void OnClick()
     {
         _increaseResource.Amount += _increaseBy.Amount;
+
+        int roll = Random.Range(0, 100);
+        if (roll < _criticalChance.Amount)
+            _increaseResource.Amount += _increaseBy.Amount;
     }
 }
