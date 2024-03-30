@@ -119,16 +119,12 @@ PrefabInstance:
       value: NavText
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -260,6 +256,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2744704841887326883}
     m_Modifications:
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7862986833277956208, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_Name
       value: NavButton
@@ -373,6 +377,10 @@ PrefabInstance:
     - target: {fileID: 3521403405739980861, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_Name
       value: NavText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tab
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -511,6 +519,10 @@ PrefabInstance:
     - target: {fileID: 3521403405739980861, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_Name
       value: NavText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tab
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
