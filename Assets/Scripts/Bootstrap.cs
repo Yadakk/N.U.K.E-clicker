@@ -19,6 +19,8 @@ public class Bootstrap : MonoBehaviour
         InfoDisplayer.OnInitAll?.Invoke();
         CooldownRes.OnInitAll?.Invoke();
         TabSwitch.OnInitAll?.Invoke();
+        Timer.Init();
+        TimerDisplay.OnInitAll?.Invoke();
         StartEnabler.Instance.EnableAll(false);
     }
 }

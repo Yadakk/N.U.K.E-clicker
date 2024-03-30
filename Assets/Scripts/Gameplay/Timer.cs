@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float Seconds;
 
-    // Update is called once per frame
-    void Update()
+    [NonSerialized] public static Timer Instance;
+    [NonSerialized] public float Remaining;
+
+    private void Awake()
     {
-        
+        Instance = this;
+    }
+    public static void Init()
+    {
+        Instance.Remaining = Instance.Seconds;
+        Instance.StartCoroutine(Instance.TimerCoroutine());
+    }
+    
+    private IEnumerator TimerCoroutine()
+    {
+        while (Remaining > 0)
+        {
+            Remaining -= Time.deltaTime;
+            yield return null;
+        }
     }
 }
