@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3684777800
+CRC: 230737816
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 73936f0f692421997b365c9c81a81375
+    Hash: 78b1d81fd7511a2782528b8cd4248d66
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5abb784f855591f8a9df2f20c6d23dfe
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 73936f0f692421997b365c9c81a81375
+    Hash: 78b1d81fd7511a2782528b8cd4248d66
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -26,6 +26,7 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Assembly-CSharp
   ClassName: AffectedResource
 Assets:
+- Assets/SO/Resources/CritBreads.asset
 - Assets/SO/ShopItems/LuckyCharm.asset
 - Assets/SO/ShopItems/AutomatedBotsForRetrieval.asset
 - Assets/SO/Resources/ClickPower.asset
