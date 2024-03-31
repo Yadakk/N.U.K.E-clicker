@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Timer : MonoBehaviour
@@ -27,5 +28,7 @@ public class Timer : MonoBehaviour
             Remaining -= Time.deltaTime;
             yield return null;
         }
+
+        SceneManager.LoadScene("GameOver");
     }
 }
