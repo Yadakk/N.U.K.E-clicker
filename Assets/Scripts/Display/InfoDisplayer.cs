@@ -13,6 +13,10 @@ public class InfoDisplayer : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+    }
     private void InitAllHandler()
     {
         _texts = new TextMeshProUGUI[transform.childCount];

@@ -14,6 +14,10 @@ public class AlphaHit : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+    }
     private void InitAllHandler()
     {
         GetComponent<Image>().alphaHitTestMinimumThreshold = _threshold;

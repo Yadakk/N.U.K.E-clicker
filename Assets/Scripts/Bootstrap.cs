@@ -9,7 +9,7 @@ public class Bootstrap : MonoBehaviour
 
     private void Start()
     {
-        Bundle = AssetBundle.LoadFromFile("Assets/AssetBundles/game");
+        Bundle ??= AssetBundle.LoadFromFile("Assets/AssetBundles/game");
 
         StartEnabler.Instance.EnableAll(true);
         Clicker.OnInitAll?.Invoke();

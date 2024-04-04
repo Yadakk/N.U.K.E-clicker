@@ -17,6 +17,10 @@ public class ItemPlacer : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+    }
     private void InitAllHandler()
     {
         var shopItems = AssetGetter<ShopItem>.GetAssets(Bootstrap.Bundle);
