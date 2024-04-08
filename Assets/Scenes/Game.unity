@@ -2769,7 +2769,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 99024582}
+    m_TransformParent: {fileID: 323783030}
     m_Modifications:
     - target: {fileID: 1327439894106242841, guid: 3b7f327a22f57d34681e9e5103d6e574, type: 3}
       propertyPath: m_Pivot.x
@@ -2805,15 +2805,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1327439894106242841, guid: 3b7f327a22f57d34681e9e5103d6e574, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.482244
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1327439894106242841, guid: 3b7f327a22f57d34681e9e5103d6e574, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.482244
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1327439894106242841, guid: 3b7f327a22f57d34681e9e5103d6e574, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.482244
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1327439894106242841, guid: 3b7f327a22f57d34681e9e5103d6e574, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3180,9 +3180,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 114917641662190511, guid: 860ed190028bedd4686bc2cf28e9c70f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5039670278862419267}
-    - targetCorrespondingSourceObject: {fileID: 114917641662190511, guid: 860ed190028bedd4686bc2cf28e9c70f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1832931870}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 860ed190028bedd4686bc2cf28e9c70f, type: 3}
 --- !u!1001 &1444981065777435019
@@ -4073,6 +4070,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2034914541175573742, guid: be47f98ad6fb63b4f89ef06be8db2eb0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1251027637}
+    - targetCorrespondingSourceObject: {fileID: 2034914541175573742, guid: be47f98ad6fb63b4f89ef06be8db2eb0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832931870}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8570840935063231296, guid: be47f98ad6fb63b4f89ef06be8db2eb0, type: 3}
       insertIndex: -1
