@@ -21,8 +21,6 @@ public class Bootstrap : MonoBehaviour
         TabSwitch.OnInitAll?.Invoke();
         Timer.Init();
         TimerDisplay.OnInitAll?.Invoke();
-        ActiveCanvas.InitAll();
-        Tooltip.InitAll();
         StartEnabler.Instance.EnableAll(false);
     }
 }

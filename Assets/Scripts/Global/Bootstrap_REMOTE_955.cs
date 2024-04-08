@@ -9,7 +9,7 @@ public class Bootstrap : MonoBehaviour
 
     private void Start()
     {
-        Bundle = AssetBundle.LoadFromFile("Assets/AssetBundles/game");
+        Bundle ??= AssetBundle.LoadFromFile("Assets/AssetBundles/game");
 
         StartEnabler.Instance.EnableAll(true);
         Clicker.OnInitAll?.Invoke();
@@ -21,8 +21,7 @@ public class Bootstrap : MonoBehaviour
         TabSwitch.OnInitAll?.Invoke();
         Timer.Init();
         TimerDisplay.OnInitAll?.Invoke();
-        ActiveCanvas.InitAll();
-        Tooltip.InitAll();
+        //Tooltip.OnInitAll?.Invoke();
         StartEnabler.Instance.EnableAll(false);
     }
 }

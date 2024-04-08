@@ -24,6 +24,10 @@ public class Display : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+    }
     private void InitAllHandler()
     {
         AssetUtility.GetFromBundle(Bundle, ref _resourceToDisplay);

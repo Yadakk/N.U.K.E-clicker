@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using TMPro;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
@@ -59,7 +62,7 @@ public class Tooltip : MonoBehaviour
         if (anchoredPosition.y + _backgroundRectTransform.rect.height > _canvasRect.rect.height)
         {
             anchoredPosition.y = _canvasRect.rect.height - _backgroundRectTransform.rect.height;
-        }
+    }
 
         _backgroundRectTransform.anchoredPosition = anchoredPosition;
     }
@@ -80,7 +83,7 @@ public class Tooltip : MonoBehaviour
     }
 
     private void HideTooltip()
-    {
+        {
         gameObject.SetActive(false);
 
         _isActive = false;
@@ -93,20 +96,20 @@ public class Tooltip : MonoBehaviour
             HideTooltip();
         }
         else
-        {
+            {
             ShowTooltip(tooltipString);
         }
-    }
+            }
 
     public static void ShowTooltipStatic(string tooltipString)
-    {
+            {
         _instance.ShowTooltip(tooltipString);
-    }
+            }
 
     public static void HideTooltipStatic()
     {
         _instance.HideTooltip();
-    }
+        }
 
     public static void ToggleTooltipStatic(string tooltipString)
     {

@@ -15,6 +15,10 @@ public class CooldownRes : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+    }
     private void InitAllHandler()
     {
         AssetUtility.GetFromBundle(Bundle, ref _resourceToIncrease);

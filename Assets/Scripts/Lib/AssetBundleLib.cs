@@ -14,8 +14,8 @@ namespace AssetBundleLib
 
         public static T GetAsset(AssetBundle bundle, string name)
         {
-            T assets = bundle.LoadAsset<T>(name);
-            return assets;
+            T asset = bundle.LoadAsset<T>(name);
+            return asset;
         }
     }
 

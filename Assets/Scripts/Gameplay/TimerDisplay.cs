@@ -16,6 +16,16 @@ public class TimerDisplay : MonoBehaviour
     {
         OnInitAll += InitAllHandler;
     }
+    private void OnDisable()
+    {
+        OnInitAll -= InitAllHandler;
+
+        if (_coroutine != null)
+        {
+            StopCoroutine(UpdateTimer());
+            _coroutine = null;
+        }
+    }
     private void InitAllHandler()
     {
         _image = GetComponent<Image>();
@@ -31,15 +41,6 @@ public class TimerDisplay : MonoBehaviour
         }
 
         _coroutine ??= StartCoroutine(UpdateTimer());
-    }
-
-    private void OnDisable()
-    {
-        if (_coroutine != null)
-        {
-            StopCoroutine(UpdateTimer());
-            _coroutine = null;
-        }
     }
 
     private IEnumerator UpdateTimer()
