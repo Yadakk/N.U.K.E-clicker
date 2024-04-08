@@ -16,6 +16,7 @@ public class Display : MonoBehaviour
 
     private Image _image;
     private TextMeshProUGUI _text;
+    private TooltipOnHover _tooltipOnHover;
 
     public delegate void OnInitAllDelegate();
     public static OnInitAllDelegate OnInitAll;
@@ -32,9 +33,11 @@ public class Display : MonoBehaviour
 
         _image = _icon.GetComponent<Image>();
         _text = _value.GetComponent<TextMeshProUGUI>();
+        _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
 
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange += AmountChangeHandler;
+        _tooltipOnHover.SetText(_resourceToDisplay.Name);
 
         UpdateCounter(_resourceToDisplay.Amount);
     }
