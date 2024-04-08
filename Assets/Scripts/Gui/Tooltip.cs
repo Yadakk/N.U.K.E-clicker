@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
 using UnityEngine;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class Tooltip : MonoBehaviour
