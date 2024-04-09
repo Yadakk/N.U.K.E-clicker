@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 230737816
+CRC: 1860370510
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 78b1d81fd7511a2782528b8cd4248d66
+    Hash: ccd9f63df91acc1e8ee4c6c596e9412c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5abb784f855591f8a9df2f20c6d23dfe
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 78b1d81fd7511a2782528b8cd4248d66
+    Hash: ccd9f63df91acc1e8ee4c6c596e9412c
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -29,16 +29,20 @@ Assets:
 - Assets/SO/Resources/CritBreads.asset
 - Assets/SO/ShopItems/LuckyCharm.asset
 - Assets/SO/ShopItems/AutomatedBotsForRetrieval.asset
+- Assets/SO/ShopItems/WelcomingPlace.asset
 - Assets/SO/Resources/ClickPower.asset
 - Assets/SO/Resources/BreadsMaxCapacity.asset
 - Assets/SO/ShopItems/RetrievalDeviceUpgrade.asset
+- Assets/SO/ShopItems/MysteriousStranger.asset
 - Assets/SO/Resources/PositiveChoiceIncome.asset
 - Assets/SO/Resources/People.asset
 - Assets/SO/ShopItems/BreadsStorageUpgrade.asset
 - Assets/SO/ShopItems/CriticalBreads.asset
 - Assets/SO/Resources/CriticalChance.asset
+- Assets/SO/Resources/MysteriousStrangerChance.asset
 - Assets/SO/Resources/Breads.asset
 - Assets/SO/Resources/Caps.asset
 - Assets/SO/ShopItems/HappinessPays.asset
+- Assets/SO/Resources/PeopleJoiningCooldown.asset
 - Assets/SO/Resources/PassiveIncome.asset
 Dependencies: []
