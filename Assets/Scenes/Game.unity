@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 47714416}
   - component: {fileID: 47714417}
   - component: {fileID: 47714418}
+  - component: {fileID: 47714419}
   m_Layer: 0
   m_Name: GlobalScripts
   m_TagString: Untagged
@@ -213,6 +214,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Seconds: 1200
+--- !u!114 &47714419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47714413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941d0f2f950b5ec4791c2e2435b6aaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stars: {fileID: 11400000, guid: 76dba11d5e67d4a4a8f3794b880f950f, type: 2}
+  _path: /Stars.json
 --- !u!224 &99024582 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 114917641662190511, guid: 860ed190028bedd4686bc2cf28e9c70f, type: 3}
