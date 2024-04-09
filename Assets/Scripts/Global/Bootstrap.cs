@@ -23,6 +23,7 @@ public class Bootstrap : MonoBehaviour
         TimerDisplay.OnInitAll?.Invoke();
         ActiveCanvas.InitAll();
         Tooltip.InitAll();
+        Stars.InitAll();
         StartEnabler.Instance.EnableAll(false);
     }
 }

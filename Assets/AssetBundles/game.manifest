@@ -1,23 +1,23 @@
 ManifestFileVersion: 0
-CRC: 230737816
+CRC: 1757891527
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 78b1d81fd7511a2782528b8cd4248d66
+    Hash: ac04b37c0e6bac33cb16c559f5201e28
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5abb784f855591f8a9df2f20c6d23dfe
+    Hash: 9c2bf9f6a4fc7668923630412c8a225e
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 78b1d81fd7511a2782528b8cd4248d66
+    Hash: ac04b37c0e6bac33cb16c559f5201e28
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -38,6 +38,7 @@ Assets:
 - Assets/SO/ShopItems/CriticalBreads.asset
 - Assets/SO/Resources/CriticalChance.asset
 - Assets/SO/Resources/Breads.asset
+- Assets/SO/Resources/Stars.asset
 - Assets/SO/Resources/Caps.asset
 - Assets/SO/ShopItems/HappinessPays.asset
 - Assets/SO/Resources/PassiveIncome.asset
