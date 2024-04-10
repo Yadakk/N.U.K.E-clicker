@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TabSwitch : MonoBehaviour
 {
     [SerializeField] private TabSelector _selector;
-    [SerializeField] private TabSelector.Tabs _tab;
+    [SerializeField] private int _tabIndex;
     private Button _button;
 
     public delegate void OnInitAllDelegate();
@@ -27,6 +27,6 @@ public class TabSwitch : MonoBehaviour
 
     public void ChangeTab()
     {
-        _selector.ChangeTab((int)_tab);
+        _selector.ChangeTab(_tabIndex);
     }
 }

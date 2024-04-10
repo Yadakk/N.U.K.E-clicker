@@ -15,12 +15,4 @@ public class TabSelector : MonoBehaviour
             _currentTab = tab;
         }
     }
-
-    public enum Tabs
-    {
-        Main,
-        Greed,
-        Ego,
-        Apathy,
-    }
 }

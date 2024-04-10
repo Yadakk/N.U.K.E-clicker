@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: _tab
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tabIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
@@ -380,6 +384,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: _tab
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tabIndex
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
@@ -522,6 +530,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
       propertyPath: _tab
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449692163986114026, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
+      propertyPath: _tabIndex
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5558678116289427752, guid: ba8399a5bfd8ee74e8fb59f271b88c36, type: 3}
