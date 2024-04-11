@@ -3,34 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using JsonSaverLib;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.Events;
+using UnityEditorInternal;
 
 public class SettingsSaver : MonoBehaviour
 {
-    [SerializeField] private string _path;
     [SerializeField] private Slider[] _sliders;
 
-    private Settings _settings;
+    private bool _wasLoaded;
 
-    [System.Serializable]
-    private class Settings
+    private void Awake()
     {
-        public FloatSetting FloatSettings;
+        if (_wasLoaded) return;
+        Load();
+        _wasLoaded = true;
     }
 
-    [System.Serializable]
-    private class FloatSetting
+    private void OnApplicationQuit()
     {
-        public string Name;
-        public float Value;
+        Save();
     }
 
-    private void Save()
+    public void Save()
     {
-        Saver.Save(_path, _settings);
+        foreach (var slider in _sliders)
+        {
+            PlayerPrefs.SetFloat(slider.name, slider.value);
+        }
+
+        PlayerPrefs.Save();
     }
 
-    private void Load()
+    public void Load()
     {
-        _settings = Saver.Load<Settings>(_path);
+        foreach (var slider in _sliders)
+        {
+            slider.value = PlayerPrefs.GetFloat(slider.name);
+        }
     }
 }
