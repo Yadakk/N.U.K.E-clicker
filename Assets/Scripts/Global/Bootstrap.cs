@@ -5,12 +5,8 @@ using AssetBundleLib;
 
 public class Bootstrap : MonoBehaviour
 {
-    public static AssetBundle Bundle;
-
     private void Start()
     {
-        Bundle = AssetBundle.LoadFromFile("Assets/AssetBundles/game");
-
         StartEnabler.Instance.EnableAll(true);
         Clicker.OnInitAll?.Invoke();
         AlphaHit.OnInitAll?.Invoke();

@@ -23,7 +23,7 @@ public class ItemPlacer : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        var shopItems = AssetGetter<ShopItem>.GetAssets(Bootstrap.Bundle);
+        var shopItems = SOMBFolders.Instance.ShopItems;
 
         foreach (var shopItem in shopItems)
         {

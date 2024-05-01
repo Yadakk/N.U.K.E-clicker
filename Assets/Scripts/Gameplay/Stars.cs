@@ -23,8 +23,6 @@ public class Stars : MonoBehaviour
     }
     private void OnInitAll()
     {
-        AssetUtility.GetFromBundle(Bootstrap.Bundle, ref _stars);
-
         _instance = this;
         Load();
     }

@@ -30,8 +30,6 @@ public class Display : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        AssetUtility.GetFromBundle(Bundle, ref _resourceToDisplay);
-
         _icon = transform.GetChild(0);
         _value = transform.GetChild(1);
 

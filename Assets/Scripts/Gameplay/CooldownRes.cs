@@ -21,9 +21,6 @@ public class CooldownRes : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        AssetUtility.GetFromBundle(Bundle, ref _resourceToIncrease);
-        AssetUtility.GetFromBundle(Bundle, ref _increaseBy);
-
         StartCoroutine(AddResCoroutine());
     }
 

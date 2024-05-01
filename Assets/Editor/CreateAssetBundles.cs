@@ -14,7 +14,7 @@ public class CreateAssetBundles
         if (!Exists(folderName))
             CreateDirectory(folderName);
 
-        BuildPipeline.BuildAssetBundles(folderName, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
+        BuildPipeline.BuildAssetBundles(folderName, BuildAssetBundleOptions.None, BuildTarget.WebGL);
         AssetDatabase.Refresh();
     }
 }

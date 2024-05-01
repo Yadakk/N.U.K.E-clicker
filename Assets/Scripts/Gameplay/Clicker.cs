@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AssetBundleLib;
-using static Bootstrap;
 
 public class Clicker : MonoBehaviour
 {
@@ -20,11 +18,6 @@ public class Clicker : MonoBehaviour
     }
     private void InitAllHandler()
     {
-        AssetUtility.GetFromBundle(Bundle, ref _increaseResource);
-        AssetUtility.GetFromBundle(Bundle, ref _increaseBy);
-        AssetUtility.GetFromBundle(Bundle, ref _criticalChance);
-        AssetUtility.GetFromBundle(Bundle, ref _criticalBreads);
-        AssetUtility.GetFromBundle(Bundle, ref _breads);
     }
 
     public void OnClick()
