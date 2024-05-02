@@ -55,11 +55,11 @@ namespace JsonSaverLib
     }
 
     [Serializable]
-    public struct SerializableInt
+    public struct SerializableFloat
     {
         public int Value;
 
-        public SerializableInt(int value)
+        public SerializableFloat(int value)
         {
             Value = value;
         }
