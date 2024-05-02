@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1688917836867595640, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: m_Name
-      value: PassiveIncome
+      value: PassiveIncomeDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 1913926459819081993, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -35,7 +35,11 @@ PrefabInstance:
     - target: {fileID: 3331622992455669626, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: _resourceToDisplay
       value: 
-      objectReference: {fileID: 11400000, guid: 55981ca98fbbd0f429f30eb234bd66ce, type: 2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644974667885646735, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
+      propertyPath: m_Name
+      value: CriticalChanceDisplay
+      objectReference: {fileID: 0}
     - target: {fileID: 4569483517380247550, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -59,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 5244955903186578348, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: _resourceToDisplay
       value: 
-      objectReference: {fileID: 11400000, guid: e2a0a05499dffd5478816e49346fcdeb, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6079881252440190809, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: m_Name
       value: ClickPowerDisplay
@@ -151,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 7866771981524882779, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: _resourceToDisplay
       value: 
-      objectReference: {fileID: 11400000, guid: e04b58bb5543aad489f4894bb661f8d4, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8304199473249395718, guid: c1140d084cd182a468bed86df2388fb4, type: 3}
       propertyPath: m_Name
       value: AdderGroup Variant
