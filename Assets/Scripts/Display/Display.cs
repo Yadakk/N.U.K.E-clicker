@@ -44,7 +44,7 @@ public class Display : MonoBehaviour
         UpdateCounter(_resourceToDisplay.Amount);
     }
 
-    private void AmountChangeHandler(int newVal)
+    private void AmountChangeHandler(float newVal)
     {
         UpdateCounter(newVal);
     }

@@ -6,11 +6,11 @@ public class Resource : MonoBehaviour
 {
     public string Name;
 
-    [SerializeField] private int _amount;
+    [SerializeField] private float _amount;
 
-    public delegate void OnAmountChangeDelegate(int newVal);
+    public delegate void OnAmountChangeDelegate(float newVal);
     public event OnAmountChangeDelegate OnAmountChange;
-    public int Amount
+    public float Amount
     {
         get { return _amount; }
         set
