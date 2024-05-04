@@ -9,17 +9,7 @@ public class TabSwitch : MonoBehaviour
     [SerializeField] private int _tabIndex;
     private Button _button;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void OnDisable()
-    {
-        OnInitAll -= InitAllHandler;
-    }
-    private void InitAllHandler()
+    private void Start()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(ChangeTab);

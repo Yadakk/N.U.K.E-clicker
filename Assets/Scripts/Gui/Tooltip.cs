@@ -13,21 +13,10 @@ public class Tooltip : MonoBehaviour
     private TextMeshProUGUI _tmpu;
     private RectTransform _canvasRect;
     private RectTransform _backgroundRectTransform;
-    private RectTransform _parentTransform;
     private static Tooltip _instance;
     private static bool _isActive;
 
-    #region Initter
-    private static UnityEvent _initAll = new();
-    private void Awake()
-    {
-        _initAll.AddListener(OnInitAll);
-    }
-    public static void InitAll()
-    {
-        _initAll.Invoke();
-    }
-    private void OnInitAll()
+    private void Start()
     {
         _instance = this;
         _camera = Camera.current;
@@ -35,10 +24,8 @@ public class Tooltip : MonoBehaviour
         _canvasRect = _canvas.GetComponent<RectTransform>();
         _tmpu = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         _backgroundRectTransform = GetComponent<RectTransform>();
-        _parentTransform = transform.parent.GetComponent<RectTransform>();
         HideTooltipStatic();
     }
-    #endregion
 
     private void Update()
     {
@@ -47,7 +34,7 @@ public class Tooltip : MonoBehaviour
 
     private void MoveToMouse()
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(_parentTransform, Input.mousePosition, _camera, out Vector2 localPoint);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvasRect, Input.mousePosition, _camera, out Vector2 localPoint);
         transform.localPosition = localPoint;
 
         Vector2 anchoredPosition = _backgroundRectTransform.anchoredPosition;

@@ -10,16 +10,6 @@ public class Clicker : MonoBehaviour
     [SerializeField] private Resource _criticalBreads;
     [SerializeField] private Resource _breads;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void InitAllHandler()
-    {
-    }
-
     public void OnClick()
     {
         _increaseResource.Amount += _increaseBy.Amount;

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Reflection;
-using AssetBundleLib;
-using static Bootstrap;
 
 public class Display : MonoBehaviour
 {
@@ -18,17 +15,7 @@ public class Display : MonoBehaviour
     private TextMeshProUGUI _text;
     private TooltipOnHover _tooltipOnHover;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void OnDisable()
-    {
-        OnInitAll -= InitAllHandler;
-    }
-    private void InitAllHandler()
+    private void Start()
     {
         _icon = transform.GetChild(0);
         _value = transform.GetChild(1);

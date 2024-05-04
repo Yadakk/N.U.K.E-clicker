@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using AssetBundleLib;
 using Unity.VisualScripting;
 
 public class ItemPlacer : MonoBehaviour
@@ -11,17 +10,7 @@ public class ItemPlacer : MonoBehaviour
     [SerializeField] private ItemShops _shop;
     [SerializeField] private InfoDisplayer _infoDisplayer;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void OnDisable()
-    {
-        OnInitAll -= InitAllHandler;
-    }
-    private void InitAllHandler()
+    private void Start()
     {
         var shopItems = SOMBFolders.Instance.ShopItems;
 

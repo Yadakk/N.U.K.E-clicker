@@ -2,31 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text;
 
 public class InfoDisplayer : MonoBehaviour
 {
-    private TextMeshProUGUI[] _texts;
+    private TextMeshProUGUI _tmpu;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
+    private void Start()
     {
-        OnInitAll += InitAllHandler;
-    }
-    private void OnDisable()
-    {
-        OnInitAll -= InitAllHandler;
-    }
-    private void InitAllHandler()
-    {
-        _texts = new TextMeshProUGUI[transform.childCount];
-
-        for (int i = 0; i < _texts.Length; i++)
-        {
-            _texts[i] = transform.GetChild(i).
-                        GetComponent<TextMeshProUGUI>();
-        }
-
+        _tmpu = GetComponentInChildren<TextMeshProUGUI>();
         Hide();
     }
 
@@ -37,24 +21,30 @@ public class InfoDisplayer : MonoBehaviour
 
     public void Show(ShopItem shopItem)
     {
-        _texts[0].text = shopItem.Name;
-        _texts[1].text = shopItem.Desc;
-
+        StringBuilder stringBuilder = new();
+        stringBuilder.AppendLine(shopItem.Name);
+        stringBuilder.AppendLine(shopItem.Desc);
         for (int i = 0; i < shopItem.AffectedResources.Length; i++)
         {
             var affRes = shopItem.AffectedResources[i];
-
-            _texts[i + 2].text = PlusNotation(affRes.Change) +
-                                 " " +
-                                 affRes.Resource.Name +
-                                 " | Next: " + PlusNotation(affRes.Change *
-                                 affRes.Multiplier);
+            stringBuilder.AppendLine(GetAffectedResourceInfo(affRes));
         }
+        _tmpu.text = stringBuilder.ToString();
+    }
+
+    private string GetAffectedResourceInfo(AffectedResource affRes)
+    {
+        StringBuilder stringBuilder = new();
+        stringBuilder.Append(PlusNotation(affRes.Change));
+        stringBuilder.Append(" ");
+        stringBuilder.Append(affRes.Resource.Name);
+        stringBuilder.Append(" | Next: ");
+        stringBuilder.Append(PlusNotation(affRes.Change * affRes.Multiplier));
+        return stringBuilder.ToString();
     }
 
     public void Hide()
     {
-        foreach (var t in _texts)
-            t.text = null;
+        _tmpu.text = string.Empty;
     }
 }

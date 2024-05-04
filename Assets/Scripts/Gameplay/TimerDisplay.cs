@@ -7,44 +7,20 @@ using UnityEngine.UI;
 public class TimerDisplay : MonoBehaviour
 {
     private Image _image;
-    private Coroutine _coroutine;
-    private bool _enableFlag;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void OnDisable()
-    {
-        OnInitAll -= InitAllHandler;
-
-        if (_coroutine != null)
-        {
-            StopCoroutine(UpdateTimer());
-            _coroutine = null;
-        }
-    }
-    private void InitAllHandler()
+    private void Start()
     {
         _image = GetComponent<Image>();
-        _coroutine ??= StartCoroutine(UpdateTimer());
     }
 
     private void OnEnable()
     {
-        if (!_enableFlag)
-        {
-            _enableFlag = true;
-            return;
-        }
-
-        _coroutine ??= StartCoroutine(UpdateTimer());
+        StartCoroutine(UpdateTimer());
     }
 
     private IEnumerator UpdateTimer()
     {
+        yield return new WaitWhile(() => Timer.Instance == null);
         while (true)
         {
             _image.fillAmount = Timer.Instance.Remaining / Timer.Instance.Seconds;

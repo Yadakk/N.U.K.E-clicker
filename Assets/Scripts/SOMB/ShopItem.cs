@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static ItemPlacer;
-using static Bootstrap;
-using AssetBundleLib;
 
 public class ShopItem : MonoBehaviour
 {
