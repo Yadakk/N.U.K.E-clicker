@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Display : MonoBehaviour
+public class ResourceDisplayer : MonoBehaviour
 {
-    [SerializeField] private Resource _resourceToDisplay;
-
+    private Resource _resourceToDisplay;
     private Transform _icon;
     private Transform _value;
-
     private Image _image;
     private TextMeshProUGUI _text;
     private TooltipOnHover _tooltipOnHover;
 
-    private void Start()
+    public void Init(Resource resourceToDisplay)
     {
+        _resourceToDisplay = resourceToDisplay;
+
         _icon = transform.GetChild(0);
         _value = transform.GetChild(1);
 
