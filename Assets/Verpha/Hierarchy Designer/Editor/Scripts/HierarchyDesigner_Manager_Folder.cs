@@ -5,7 +5,9 @@ namespace Verpha.HierarchyDesigner
 {
     public static class HierarchyDesigner_Manager_Folder
     {
+        #region Properties
         private static readonly string inspectorFolderIconPath = "Hierarchy Designer Folder Icon Inspector";
+        #endregion
 
         public static Texture2D GetFolderIcon(HierarchyDesigner_Info_Folder.FolderImageType folderImageType)
         {
@@ -26,6 +28,7 @@ namespace Verpha.HierarchyDesigner
         {
             get { return HierarchyDesigner_Shared_TextureLoader.LoadTexture(inspectorFolderIconPath); }
         }
+
     }
 }
 #endif

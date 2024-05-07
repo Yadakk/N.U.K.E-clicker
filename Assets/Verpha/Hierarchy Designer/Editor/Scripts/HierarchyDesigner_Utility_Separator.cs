@@ -27,7 +27,6 @@ namespace Verpha.HierarchyDesigner
         private readonly int[] fontSizeOptions = new int[15];
         private TextAnchor newTextAlignment = TextAnchor.MiddleCenter;
         private HierarchyDesigner_Info_Separator.BackgroundImageType newBackgroundImageType = HierarchyDesigner_Info_Separator.BackgroundImageType.Classic;
-        private const string SeparatorPrefKey = "HierarchySeparators";
         public static Dictionary<string, HierarchyDesigner_Info_Separator> separators = new Dictionary<string, HierarchyDesigner_Info_Separator>();
         #endregion
         #region Global Fields
@@ -50,6 +49,7 @@ namespace Verpha.HierarchyDesigner
         private void OnEnable()
         {
             InitFontSizeOptions();
+            EditorApplication.delayCall += CheckAndReloadData;
         }
 
         private void InitFontSizeOptions()
@@ -58,6 +58,17 @@ namespace Verpha.HierarchyDesigner
             {
                 fontSizeOptions[i] = 7 + i;
             }
+        }
+
+        private static void LoadSeparators()
+        {
+            HierarchyDesigner_Data_Separator.LoadSeparators();
+            separators = new Dictionary<string, HierarchyDesigner_Info_Separator>(HierarchyDesigner_Data_Separator.separators);
+        }
+
+        private static void CheckAndReloadData()
+        {
+            if (separators == null || separators.Count == 0) { LoadSeparators(); }
         }
 
         private void InitializeStyles()
@@ -216,10 +227,11 @@ namespace Verpha.HierarchyDesigner
                     HierarchyDesigner_Info_Separator separator = separatorEntry.Value;
 
                     EditorGUILayout.BeginHorizontal();
-                    GUILayout.Space(10);
+                    GUILayout.Space(4);
 
                     EditorGUI.BeginChangeCheck();
                     EditorGUILayout.LabelField(separator.Name, GUILayout.Width(maxWidth));
+                    GUILayout.Space(2);
                     separator.TextColor = EditorGUILayout.ColorField(separator.TextColor, GUILayout.MinWidth(100), GUILayout.ExpandWidth(true));
                     separator.BackgroundColor = EditorGUILayout.ColorField(separator.BackgroundColor, GUILayout.MinWidth(100), GUILayout.ExpandWidth(true));
                     separator.FontStyle = (FontStyle)EditorGUILayout.EnumPopup(separator.FontStyle, GUILayout.Width(100));
@@ -276,38 +288,8 @@ namespace Verpha.HierarchyDesigner
 
         public static void SaveSeparators()
         {
-            List<string> serializedParts = new List<string>();
-            foreach (var kvp in separators)
-            {
-                HierarchyDesigner_Info_Separator s = kvp.Value;
-                string serializedSeparator = $"{s.Name},{HierarchyDesigner_Shared_ColorUtility.ColorToString(s.TextColor)},{HierarchyDesigner_Shared_ColorUtility.ColorToString(s.BackgroundColor)},{s.FontStyle},{s.FontSize},{s.TextAlignment},{s.ImageType}";
-                serializedParts.Add(serializedSeparator);
-            }
-            string serialized = string.Join(";", serializedParts);
-            EditorPrefs.SetString(SeparatorPrefKey, serialized);
-            hasModifiedChanges = false;
-        }
-
-        public static void LoadSeparators()
-        {
-            string serialized = EditorPrefs.GetString(SeparatorPrefKey, "");
-            separators.Clear();
-
-            foreach (string serializedSeparator in serialized.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                string[] parts = serializedSeparator.Split(',');
-                if (parts.Length == 7)
-                {
-                    string name = parts[0];
-                    Color textColor = HierarchyDesigner_Shared_ColorUtility.ParseColor(parts[1]);
-                    Color backgroundColor = HierarchyDesigner_Shared_ColorUtility.ParseColor(parts[2]);
-                    FontStyle fontStyle = HierarchyDesigner_Shared_EnumFilter.ParseEnum(parts[3], FontStyle.Normal);
-                    int fontSize = int.Parse(parts[4]);
-                    TextAnchor textAlignment = HierarchyDesigner_Shared_EnumFilter.ParseEnum(parts[5], TextAnchor.MiddleCenter);
-                    HierarchyDesigner_Info_Separator.BackgroundImageType backgroundImageType = HierarchyDesigner_Shared_EnumFilter.ParseEnum(parts[6], HierarchyDesigner_Info_Separator.BackgroundImageType.Classic);
-                    separators[name] = new HierarchyDesigner_Info_Separator(name, textColor, backgroundColor, fontStyle, fontSize, textAlignment, backgroundImageType);
-                }
-            }
+            HierarchyDesigner_Data_Separator.separators = new Dictionary<string, HierarchyDesigner_Info_Separator>(separators);
+            HierarchyDesigner_Data_Separator.SaveSeparators();
             hasModifiedChanges = false;
         }
 
@@ -325,6 +307,7 @@ namespace Verpha.HierarchyDesigner
                 }
             }
             hasModifiedChanges = false;
+            EditorApplication.delayCall -= CheckAndReloadData;
         }
     }
 
@@ -340,8 +323,6 @@ namespace Verpha.HierarchyDesigner
             Undo.RegisterCreatedObjectUndo(separator, $"Create Default Separator");
 
             separator.tag = "EditorOnly";
-            EditorGUIUtility.PingObject(separator);
-
             SetSeparatorState(separator, false);
             separator.SetActive(false);
 
@@ -351,7 +332,7 @@ namespace Verpha.HierarchyDesigner
         [MenuItem("Hierarchy Designer/Hierarchy Separator/Create All Separators", false, 1)]
         public static void CreateAllSeparatorsFromList()
         {
-            foreach (HierarchyDesigner_Info_Separator separatorInfo in HierarchySeparatorWindow.separators.Values)
+            foreach (HierarchyDesigner_Info_Separator separatorInfo in HierarchyDesigner_Data_Separator.separators.Values)
             {
                 CreateSeparator(separatorInfo);
             }
@@ -360,7 +341,7 @@ namespace Verpha.HierarchyDesigner
         [MenuItem("Hierarchy Designer/Hierarchy Separator/Create Missing Separators", false, 2)]
         public static void CreateMissingSeparators()
         {
-            foreach (HierarchyDesigner_Info_Separator separatorInfo in HierarchySeparatorWindow.separators.Values)
+            foreach (HierarchyDesigner_Info_Separator separatorInfo in HierarchyDesigner_Data_Separator.separators.Values)
             {
                 if (!SeparatorExists(separatorInfo.Name))
                 {
@@ -375,8 +356,6 @@ namespace Verpha.HierarchyDesigner
             Undo.RegisterCreatedObjectUndo(separator, $"Create {separatorInfo.Name}");
 
             separator.tag = "EditorOnly";
-            EditorGUIUtility.PingObject(separator);
-
             SetSeparatorState(separator, false);
             separator.SetActive(false);
 

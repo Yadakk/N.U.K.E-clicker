@@ -44,19 +44,20 @@ namespace Verpha.HierarchyDesigner
 
         public static void ApplyPresetToFolders(HierarchyDesigner_Info_Presets preset)
         {
-            foreach (HierarchyDesigner_Info_Folder folder in HierarchyFolderWindow.folders.Values)
+            HierarchyDesigner_Data_Folder.LoadFolders();
+            foreach (HierarchyDesigner_Info_Folder folder in HierarchyDesigner_Data_Folder.folders.Values)
             {
                 folder.FolderColor = preset.folderColor;
                 folder.ImageType = preset.folderImageType;
             }
-
+            HierarchyDesigner_Data_Folder.SaveFolders();
             HierarchyDesigner_Visual_Folder.UpdateFolderVisuals();
-            HierarchyFolderWindow.SaveFolders();
         }
 
         public static void ApplyPresetToSeparators(HierarchyDesigner_Info_Presets preset)
         {
-            foreach (HierarchyDesigner_Info_Separator separator in HierarchySeparatorWindow.separators.Values)
+            HierarchyDesigner_Data_Separator.LoadSeparators();
+            foreach (HierarchyDesigner_Info_Separator separator in HierarchyDesigner_Data_Separator.separators.Values)
             {
                 separator.TextColor = preset.separatorTextColor;
                 separator.BackgroundColor = preset.separatorBackgroundColor;
@@ -65,9 +66,8 @@ namespace Verpha.HierarchyDesigner
                 separator.TextAlignment = preset.separatorTextAlignment;
                 separator.ImageType = preset.separatorBackgroundImageType;
             }
-
+            HierarchyDesigner_Data_Separator.SaveSeparators();
             HierarchyDesigner_Visual_Separator.UpdateSeparatorVisuals();
-            HierarchySeparatorWindow.SaveSeparators();
         }
 
         public static void ApplyPresetToTag(HierarchyDesigner_Info_Presets preset)

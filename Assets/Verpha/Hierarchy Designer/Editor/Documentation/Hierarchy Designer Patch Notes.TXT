@@ -1,3 +1,16 @@
+| Version 1.1.0.1f
+- Hotfix: Fixed a bug where the folders and separators data would occasionally be deleted when applying a preset to them.
+
+| Version 1.1.0
+- Reworked the Saving System. Hierarchy Designer's data is now project-based and sharable.
+- Created a new feature 'Hierarchy Buttons', which can be edited in the Hierarchy General Settings.
+- Created a new feature 'Display Component Name On Mouse Hover.' Simply hover your mouse over a component icon of a gameObject in the hierarchy to display its name. (This only works if you have 'Show Component Icons' toggled on in the general settings).
+- Created the following new classes: HierarchyDesigner_Data_Folder, HierarchyDesigner_Data_Separator, HierarchyDesigner_Shared_SerializableList, HierarchyDesigner_Shared_Data, 'HierarchyDesigner_Info_Buttons', HierarchyDesigner_Manager_Buttons.
+- Modified the Default Folder to automatically call the rename command event when it is created.
+- Updated the Demo Scene Text to better reflect the new changes.
+- Removed the 'Hierarchy Designer Survey Form.txt' from the Documentation Folder.
+- Implemented minor changes, improvements, and refactoring across various classes.
+
 | Version 1.0.9
 - Created a new class HierarchyDesigner_Shared_EditorState.
 - Created a new feature 'Exclude Tags and Layers', located in the General Settings window.

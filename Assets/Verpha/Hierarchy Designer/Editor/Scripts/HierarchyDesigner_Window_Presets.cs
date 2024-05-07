@@ -72,7 +72,7 @@ namespace Verpha.HierarchyDesigner
             #endregion
 
             #region Toggle All Buttons
-            GUILayout.Space(10);
+            GUILayout.Space(5);
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Enable All", GUILayout.Height(25)))
             {
@@ -86,7 +86,6 @@ namespace Verpha.HierarchyDesigner
             GUILayout.Space(5);
             #endregion
 
-            GUILayout.Space(2);
             if (GUILayout.Button("Apply Preset", GUILayout.Height(30)))
             {
                 ApplySelectedPreset();
@@ -143,7 +142,6 @@ namespace Verpha.HierarchyDesigner
                 {
                     HierarchyDesigner_Utility_Presets.ApplyPresetToTree(selectedPreset);
                 }
-
                 EditorApplication.RepaintHierarchyWindow();
             }
             else

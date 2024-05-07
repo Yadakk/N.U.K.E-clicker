@@ -954,6 +954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321213734}
   - component: {fileID: 321213735}
+  - component: {fileID: 321213736}
   m_Layer: 0
   m_Name: People
   m_TagString: Untagged
@@ -991,6 +992,20 @@ MonoBehaviour:
   Name: People
   _amount: 0
   Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
+--- !u!114 &321213736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321213733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c645a57aafafb46a2db71a44a56e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 50
+  _min: 100
 --- !u!224 &323783030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3506,6 +3521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855759165}
   - component: {fileID: 1855759166}
+  - component: {fileID: 1855759167}
   m_Layer: 0
   m_Name: Breads
   m_TagString: Untagged
@@ -3541,8 +3557,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Breads
-  _amount: 0
+  _amount: 50
   Icon: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}
+--- !u!114 &1855759167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855759164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c645a57aafafb46a2db71a44a56e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _max: 10
+  _min: 50
 --- !u!1 &1861912141
 GameObject:
   m_ObjectHideFlags: 0

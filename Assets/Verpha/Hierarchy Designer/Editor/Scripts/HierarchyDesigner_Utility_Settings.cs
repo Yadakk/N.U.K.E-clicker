@@ -24,6 +24,7 @@ namespace Verpha.HierarchyDesigner
         private bool showTagTemp;
         private bool showLayerTemp;
         private bool showHierarchyTreeTemp;
+        private bool showHierarchyButtonsTemp;
         private bool disableHierarchyDesignerDuringPlayModeTemp;
         private List<string> excludedTagsTemp;
         private List<string> excludedLayersTemp;
@@ -34,13 +35,14 @@ namespace Verpha.HierarchyDesigner
         #endregion
         #region Styling Properties
         private Color newTagTextColor = Color.gray;
-        private FontStyle newTagFontStyle = FontStyle.BoldAndItalic;
-        private int newTagFontSize = 9;
+        private FontStyle newTagFontStyle = FontStyle.Normal;
+        private int newTagFontSize = 10;
         private Color newLayerTextColor = Color.gray;
-        private FontStyle newLayerFontStyle = FontStyle.BoldAndItalic;
-        private int newLayerFontSize = 9;
+        private FontStyle newLayerFontStyle = FontStyle.Normal;
+        private int newLayerFontSize = 10;
         private readonly int[] fontSizeOptions = new int[15];
         private Color newTreeColor = Color.white;
+        private HierarchyDesigner_Info_Buttons.ButtonsPositionType newButtonsPosition = HierarchyDesigner_Info_Buttons.ButtonsPositionType.Docked;
         #endregion
         #region Shortcuts Properties
         private KeyCode enableDisableShortcutTemp;
@@ -72,6 +74,7 @@ namespace Verpha.HierarchyDesigner
             showTagTemp = HierarchyDesigner_Manager_Settings.ShowTag;
             showLayerTemp = HierarchyDesigner_Manager_Settings.ShowLayer;
             showHierarchyTreeTemp = HierarchyDesigner_Manager_Settings.ShowHierarchyTree;
+            showHierarchyButtonsTemp = HierarchyDesigner_Manager_Settings.ShowHierarchyButtons;
             disableHierarchyDesignerDuringPlayModeTemp = HierarchyDesigner_Manager_Settings.DisableHierarchyDesignerDuringPlayMode;
             excludedTagsTemp = new List<string>(HierarchyDesigner_Manager_Settings.ExcludedTags);
             excludedLayersTemp = new List<string>(HierarchyDesigner_Manager_Settings.ExcludedLayers);
@@ -82,6 +85,7 @@ namespace Verpha.HierarchyDesigner
             newLayerFontStyle = HierarchyDesigner_Manager_Settings.LayerFontStyle;
             newLayerFontSize = HierarchyDesigner_Manager_Settings.LayerFontSize;
             newTreeColor = HierarchyDesigner_Manager_Settings.TreeColor;
+            newButtonsPosition = HierarchyDesigner_Manager_Settings.ButtonsPosition;
             enableDisableShortcutTemp = HierarchyDesigner_Manager_Settings.EnableDisableShortcut;
             lockUnlockShortcutTemp = HierarchyDesigner_Manager_Settings.LockUnlockShortcut;
             changeTagAndLayerShortcutTemp = HierarchyDesigner_Manager_Settings.ChangeTagAndLayerShortcut;
@@ -152,6 +156,7 @@ namespace Verpha.HierarchyDesigner
                 showTagTemp = DrawSettingToggle("Show GameObjects' Tag", showTagTemp);
                 showLayerTemp = DrawSettingToggle("Show GameObjects' Layer", showLayerTemp);
                 showHierarchyTreeTemp = DrawSettingToggle("Show Hierarchy Tree", showHierarchyTreeTemp);
+                showHierarchyButtonsTemp = DrawSettingToggle("Show Hierarchy Buttons", showHierarchyButtonsTemp);
                 disableHierarchyDesignerDuringPlayModeTemp = DrawSettingToggle("Disable Hierarchy Designer During Play Mode", disableHierarchyDesignerDuringPlayModeTemp);
             }
             #endregion
@@ -208,7 +213,7 @@ namespace Verpha.HierarchyDesigner
 
             #region Tag Fields
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Hierarchy Tag", GUILayout.MaxWidth(100));
+            EditorGUILayout.LabelField("Hierarchy Tag", GUILayout.MaxWidth(110));
             newTagTextColor = EditorGUILayout.ColorField(newTagTextColor, GUILayout.Height(20));
             newTagFontStyle = (FontStyle)EditorGUILayout.EnumPopup(newTagFontStyle, GUILayout.Height(20));
             string[] fontSizeOptionsStrings = Array.ConvertAll(fontSizeOptions, x => x.ToString());
@@ -220,7 +225,7 @@ namespace Verpha.HierarchyDesigner
             #region Layer Fields
             GUILayout.Space(4);
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Hierarchy Layer", GUILayout.MaxWidth(100));
+            EditorGUILayout.LabelField("Hierarchy Layer", GUILayout.MaxWidth(110));
             newLayerTextColor = EditorGUILayout.ColorField(newLayerTextColor, GUILayout.Height(20));
             newLayerFontStyle = (FontStyle)EditorGUILayout.EnumPopup(newLayerFontStyle, GUILayout.Height(20));
             int newLayerFontSizeIndex = Array.IndexOf(fontSizeOptions, newLayerFontSize);
@@ -228,11 +233,21 @@ namespace Verpha.HierarchyDesigner
             EditorGUILayout.EndHorizontal();
             #endregion
 
+            #region Tree Fields
             GUILayout.Space(4);
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Hierarchy Tree", GUILayout.MaxWidth(100));
+            EditorGUILayout.LabelField("Hierarchy Tree", GUILayout.MaxWidth(110));
             newTreeColor = EditorGUILayout.ColorField(newTreeColor, GUILayout.ExpandWidth(true), GUILayout.Height(20));
             EditorGUILayout.EndHorizontal();
+            #endregion
+
+            #region Buttons Fields
+            GUILayout.Space(4);
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Hierarchy Buttons", GUILayout.MaxWidth(110));
+            newButtonsPosition = (HierarchyDesigner_Info_Buttons.ButtonsPositionType)EditorGUILayout.EnumPopup(newButtonsPosition, GUILayout.ExpandWidth(true), GUILayout.Height(20));
+            EditorGUILayout.EndHorizontal();
+            #endregion
             #endregion
 
             #region Shortcuts Fields
@@ -293,30 +308,16 @@ namespace Verpha.HierarchyDesigner
             showTagTemp = enable;
             showLayerTemp = enable;
             showHierarchyTreeTemp = enable;
+            showHierarchyButtonsTemp = enable;
             disableHierarchyDesignerDuringPlayModeTemp = enable;
         }
 
         private void SaveSettings()
         {
-            bool settingsChanged =
-                HierarchyDesigner_Manager_Settings.ShowMainIconOfGameObject != showMainIconOfGameObjectTemp ||
-                HierarchyDesigner_Manager_Settings.ShowComponentIcons != showComponentIconsTemp ||
-                HierarchyDesigner_Manager_Settings.ShowTransformComponent != showTransformComponentTemp ||
-                HierarchyDesigner_Manager_Settings.ShowComponentIconsForFolders != showComponentIconsForFoldersTemp ||
-                HierarchyDesigner_Manager_Settings.ShowHierarchyTree != showHierarchyTreeTemp ||
-                HierarchyDesigner_Manager_Settings.ShowTag != showTagTemp ||
-                HierarchyDesigner_Manager_Settings.ShowLayer != showLayerTemp ||
-                HierarchyDesigner_Manager_Settings.TagTextColor != newTagTextColor ||
-                HierarchyDesigner_Manager_Settings.TagFontStyle != newTagFontStyle ||
-                HierarchyDesigner_Manager_Settings.TagFontSize != newTagFontSize ||
-                HierarchyDesigner_Manager_Settings.LayerTextColor != newLayerTextColor ||
-                HierarchyDesigner_Manager_Settings.LayerFontStyle != newLayerFontStyle ||
-                HierarchyDesigner_Manager_Settings.LayerFontSize != newLayerFontSize ||
-                HierarchyDesigner_Manager_Settings.TreeColor != newTreeColor;
-
-            bool tagLayerSettingsChanged = 
-                !Equals(HierarchyDesigner_Manager_Settings.ExcludedTags, excludedTagsTemp) ||
-                !Equals(HierarchyDesigner_Manager_Settings.ExcludedLayers, excludedLayersTemp);
+            bool tagLayerTagsChanged = !Equals(HierarchyDesigner_Manager_Settings.ExcludedTags, excludedTagsTemp);
+            bool tagLayerLayersChanged = !Equals(HierarchyDesigner_Manager_Settings.ExcludedLayers, excludedLayersTemp);
+            bool fontSizeChanged = (HierarchyDesigner_Manager_Settings.TagFontSize != newTagFontSize || HierarchyDesigner_Manager_Settings.LayerFontSize != newLayerFontSize);
+            bool treeColorChanged = HierarchyDesigner_Manager_Settings.TreeColor != newTreeColor;
 
             HierarchyDesigner_Manager_Settings.ShowMainIconOfGameObject = showMainIconOfGameObjectTemp;
             HierarchyDesigner_Manager_Settings.ShowComponentIcons = showComponentIconsTemp;
@@ -325,39 +326,37 @@ namespace Verpha.HierarchyDesigner
             HierarchyDesigner_Manager_Settings.ShowTag = showTagTemp;
             HierarchyDesigner_Manager_Settings.ShowLayer = showLayerTemp;
             HierarchyDesigner_Manager_Settings.ShowHierarchyTree = showHierarchyTreeTemp;
+            HierarchyDesigner_Manager_Settings.ShowHierarchyButtons = showHierarchyButtonsTemp;
             HierarchyDesigner_Manager_Settings.DisableHierarchyDesignerDuringPlayMode = disableHierarchyDesignerDuringPlayModeTemp;
+            HierarchyDesigner_Manager_Settings.ExcludedTags = new List<string>(excludedTagsTemp);
+            HierarchyDesigner_Manager_Settings.ExcludedLayers = new List<string>(excludedLayersTemp);
             HierarchyDesigner_Manager_Settings.TagTextColor = newTagTextColor;
             HierarchyDesigner_Manager_Settings.TagFontStyle = newTagFontStyle;
             HierarchyDesigner_Manager_Settings.TagFontSize = newTagFontSize;
             HierarchyDesigner_Manager_Settings.LayerTextColor = newLayerTextColor;
             HierarchyDesigner_Manager_Settings.LayerFontStyle = newLayerFontStyle;
             HierarchyDesigner_Manager_Settings.LayerFontSize = newLayerFontSize;
+            HierarchyDesigner_Manager_Settings.TreeColor = newTreeColor;
+            HierarchyDesigner_Manager_Settings.ButtonsPosition = newButtonsPosition;
             HierarchyDesigner_Manager_Settings.EnableDisableShortcut = enableDisableShortcutTemp;
             HierarchyDesigner_Manager_Settings.LockUnlockShortcut = lockUnlockShortcutTemp;
             HierarchyDesigner_Manager_Settings.ChangeTagAndLayerShortcut = changeTagAndLayerShortcutTemp;
             HierarchyDesigner_Manager_Settings.RenameGameObjectsShortcut = renameGameObjectsShortcutTemp;
 
-            if (tagLayerSettingsChanged)
+            if (tagLayerTagsChanged || tagLayerLayersChanged)
             {
-                HierarchyDesigner_Manager_Settings.ExcludedTags = new List<string>(excludedTagsTemp);
-                HierarchyDesigner_Manager_Settings.ExcludedLayers = new List<string>(excludedLayersTemp);
                 HierarchyDesigner_Visual_GameObject.ClearExcludeTagLayerCache();
             }
-
-            if (settingsChanged || tagLayerSettingsChanged)
+            if (fontSizeChanged)
             {
-                if (HierarchyDesigner_Manager_Settings.TagFontSize != newTagFontSize || HierarchyDesigner_Manager_Settings.LayerFontSize != newLayerFontSize)
-                {
-                    HierarchyDesigner_Visual_GameObject.RecalculateTagAndLayerSizes();
-                }
-                if(HierarchyDesigner_Manager_Settings.TreeColor != newTreeColor)
-                {
-                    HierarchyDesigner_Visual_GameObject.UpdateTreeColorCache();
-                    HierarchyDesigner_Manager_Settings.TreeColor = newTreeColor;
-                }
-
-                EditorApplication.RepaintHierarchyWindow();
+                HierarchyDesigner_Visual_GameObject.RecalculateTagAndLayerSizes();
             }
+            if (treeColorChanged)
+            {
+                HierarchyDesigner_Visual_GameObject.UpdateTreeColorCache();
+            }
+
+            EditorApplication.RepaintHierarchyWindow();
         }
     }
 }

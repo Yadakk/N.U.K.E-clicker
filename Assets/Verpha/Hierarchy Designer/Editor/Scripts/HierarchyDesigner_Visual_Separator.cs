@@ -18,7 +18,7 @@ namespace Verpha.HierarchyDesigner
         static HierarchyDesigner_Visual_Separator()
         {
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyItemCB;
-            HierarchySeparatorWindow.LoadSeparators();
+            UpdateSeparatorVisuals();
         }
 
         private static void HierarchyItemCB(int instanceID, Rect selectionRect)
@@ -122,15 +122,15 @@ namespace Verpha.HierarchyDesigner
 
         public static void UpdateSeparatorVisuals()
         {
-            separatorInfoCache.Clear();
-            foreach (var kvp in HierarchySeparatorWindow.separators)
+            if (HierarchyDesigner_Data_Separator.separators.Count > 0)
             {
-                string separatorName = kvp.Key;
-                HierarchyDesigner_Info_Separator separator = kvp.Value;
-                separatorInfoCache[separatorName] = (separator.TextColor, separator.BackgroundColor, separator.FontStyle, separator.FontSize, separator.TextAlignment, separator.ImageType);
+                separatorInfoCache.Clear();
+                foreach (var separator in HierarchyDesigner_Data_Separator.separators)
+                {
+                    separatorInfoCache[separator.Key] = (separator.Value.TextColor, separator.Value.BackgroundColor, separator.Value.FontStyle, separator.Value.FontSize, separator.Value.TextAlignment, separator.Value.ImageType);
+                }
+                EditorApplication.RepaintHierarchyWindow();
             }
-            separatorCache.Clear();
-            EditorApplication.RepaintHierarchyWindow();
         }
     }
 }
