@@ -9,6 +9,12 @@ public class Clicker : MonoBehaviour
     [SerializeField] private Resource _criticalChance;
     [SerializeField] private Resource _criticalBreads;
     [SerializeField] private Resource _breads;
+    private PrefabThrower _thrower;
+
+    private void Start()
+    {
+        _thrower = GetComponent<PrefabThrower>();
+    }
 
     public void OnClick()
     {
@@ -20,5 +26,7 @@ public class Clicker : MonoBehaviour
             _increaseResource.Amount += _increaseBy.Amount;
             _breads.Amount += _criticalBreads.Amount;
         }
+
+        if (_thrower != null) _thrower.Throw();
     }
 }

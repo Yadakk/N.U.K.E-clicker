@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 5921859668603261164}
   - component: {fileID: 4372729240618337268}
   - component: {fileID: 4166738474820781431}
+  - component: {fileID: 6310445810425148895}
   - component: {fileID: 4845323473126604086}
   - component: {fileID: 6139838575528013707}
+  - component: {fileID: 7097014805240007345}
   m_Layer: 5
   m_Name: ClickerButton
   m_TagString: Untagged
@@ -134,6 +136,41 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!58 &6310445810425148895
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154462190764138177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 81.53
 --- !u!114 &4845323473126604086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +201,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _threshold: 0.5
+--- !u!114 &7097014805240007345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154462190764138177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09202348282358d459701ab90e171197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3215532677896996206, guid: db2354b7e0272ac489f8b229770bf737, type: 3}
+  _putObjectsInto: {fileID: 0}
+  _minForce: {x: -150, y: 150}
+  _maxForce: {x: 150, y: 300}
+  _minTorque: 5
+  _maxTorque: 10
+  _fadeAfterSeconds: 1
 --- !u!1 &4896865960680916687
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2152081536377671826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -189,7 +245,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4896865960680916687}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
