@@ -28,18 +28,30 @@ public class DisplayerCreator : MonoBehaviour
     private void OnClickHandler()
     {
         if (_instantiatedDisplayer == null)
-        {
-            _instantiatedDisplayer = Instantiate(_displayerPrefab, _displayerContainer) as GameObject;
-            _instantiatedDisplayer.GetComponent<ResourceDisplayer>().Init(_holder.Resource);
-            _image.color = Color.green;
-            RefreshAll();
-        }
+            CreateDisplayer();
         else
+            RemoveDisplayer();
+    }
+
+    public void RemoveDisplayer()
+    {
+        IEnumerator Routine()
         {
-            Destroy(_instantiatedDisplayer);
-            _image.color = Color.white;
+            yield return null;
             RefreshAll();
         }
+
+        Destroy(_instantiatedDisplayer);
+        _image.color = Color.white;
+        StartCoroutine(Routine());
+    }
+
+    public void CreateDisplayer()
+    {
+        _instantiatedDisplayer = Instantiate(_displayerPrefab, _displayerContainer) as GameObject;
+        _instantiatedDisplayer.GetComponent<ResourceDisplayer>().Init(_holder.Resource);
+        _image.color = Color.green;
+        RefreshAll();
     }
 
     private void RefreshAll()

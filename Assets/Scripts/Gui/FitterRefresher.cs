@@ -11,17 +11,18 @@ public class FitterRefresher : MonoBehaviour
 
     void Start()
     {
-        _rect = GetComponent<RectTransform>();
+        GetRect();
         if (_refreshOnStart) Refresh();
     }
 
     public void Refresh()
     {
-        IEnumerator Routine()
-        {
-            yield return null;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
-        }
-        StartCoroutine(Routine());
+        GetRect();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+    }
+
+    private void GetRect()
+    {
+        if (_rect == null) _rect = GetComponent<RectTransform>();
     }
 }

@@ -2006,8 +2006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -219.99982, y: 410.0001}
-  m_SizeDelta: {x: 420, y: 800}
+  m_AnchoredPosition: {x: -219.99982, y: 227.482}
+  m_SizeDelta: {x: 420, y: 434.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &903835614
 GameObject:
@@ -2220,7 +2220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1066662644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2235,10 +2235,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1184310275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 453.436, y: -110.742}
-  m_SizeDelta: {x: 906.872, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 471.5, y: 0}
+  m_SizeDelta: {x: 943, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1066662646
 MonoBehaviour:
@@ -2306,8 +2306,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _refreshers:
   - {fileID: 1184310278}
+  - {fileID: 7292630779623880128}
   _prefab: {fileID: 2315750526984823134, guid: e4ca23a671c17f345905f85367c6955a, type: 3}
   _resourceFolder: {fileID: 1688076829}
+  _resourcesToDisplayImmideately:
+  - {fileID: 360841995}
+  - {fileID: 1855759166}
+  - {fileID: 321213735}
+  - {fileID: 2094576510}
+  - {fileID: 1861912143}
   _displayerContainer: {fileID: 7292630779623880122}
 --- !u!114 &1066662650
 MonoBehaviour:
@@ -2447,9 +2454,9 @@ RectTransform:
   - {fileID: 1066662644}
   m_Father: {fileID: 962240734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -869.5682, y: 720}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 481.4318, y: -10}
   m_SizeDelta: {x: 943, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1184310276
@@ -2504,7 +2511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450bd2892ede9f6418775c833763e104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _refreshOnStart: 1
+  _refreshOnStart: 0
 --- !u!1 &1185586442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,6 +3106,7 @@ GameObject:
   - component: {fileID: 7292630779623880124}
   - component: {fileID: 7292630779623880126}
   - component: {fileID: 7292630779623880127}
+  - component: {fileID: 7292630779623880128}
   m_Layer: 5
   m_Name: DisplayGrid
   m_TagString: Untagged
@@ -4482,6 +4490,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!114 &7292630779623880128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468325481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450bd2892ede9f6418775c833763e104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _refreshOnStart: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

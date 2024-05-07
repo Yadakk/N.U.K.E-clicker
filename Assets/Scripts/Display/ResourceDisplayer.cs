@@ -26,7 +26,6 @@ public class ResourceDisplayer : MonoBehaviour
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange += AmountChangeHandler;
         _tooltipOnHover.SetText(_resourceToDisplay.Name);
-
         UpdateCounter(_resourceToDisplay.Amount);
     }
 
