@@ -9,7 +9,7 @@ public class DontCollideWhileInside : MonoBehaviour
 
     private void Start()
     {
-        _collider = GetComponent<PolygonCollider2D>();
+        _collider = GetComponent<CapsuleCollider2D>();
         _collider.isTrigger = true;
     }
 

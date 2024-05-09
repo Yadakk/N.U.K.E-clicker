@@ -14,6 +14,7 @@ public class Clicker : MonoBehaviour
     private void Start()
     {
         _thrower = GetComponent<PrefabThrower>();
+        _thrower.enabled = false;
     }
 
     public void OnClick()

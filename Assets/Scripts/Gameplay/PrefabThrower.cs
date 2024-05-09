@@ -16,6 +16,7 @@ public class PrefabThrower : MonoBehaviour
 
     public void Throw()
     {
+        if (!enabled) return;
         var initialRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
         var gameObject = Instantiate(_prefab, transform.position, initialRotation, _putObjectsInto) as GameObject;
         var forceX = Random.Range(_minForce.x, _maxForce.x);
@@ -36,11 +37,20 @@ public class PrefabThrower : MonoBehaviour
         return result;
     }
 
+    private void OnDisable()
+    {
+        for (int i = 0; i < _putObjectsInto.childCount; i++)
+        {
+            Destroy(_putObjectsInto.GetChild(i).gameObject);
+        }
+    }
+
     private IEnumerator RemoveWithFadeAfterSeconds(float seconds, Image image, GameObject gameObject)
     {
         yield return new WaitForSeconds(seconds);
         while (image.color.a > 0)
         {
+            if (!enabled) yield break;
             var newColor = image.color;
             newColor.a -= Time.deltaTime * _fadeSpeed;
             image.color = newColor;
