@@ -22,7 +22,6 @@ public class MusicPlayer : MonoBehaviour
     {
         while (true)
         {
-            _clips = ListUtilities.ShuffleWithoutRepetition(_clips);
             for (int i = 0; i < _clips.Count; i++)
             {
                 var clip = _clips[i];
@@ -30,6 +29,7 @@ public class MusicPlayer : MonoBehaviour
                 _source.Play();
                 yield return new WaitForSecondsRealtime(clip.length);
             }
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips);
         }
     }
 
@@ -45,6 +45,10 @@ public class MusicPlayer : MonoBehaviour
 
     public void Play()
     {
+        if (_source.clip != null)
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips, _source.clip);
+        else
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips);
         _musicRoutine = StartCoroutine(MusicRoutine());
     }
 }
