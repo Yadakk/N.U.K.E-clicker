@@ -17,16 +17,6 @@ public class EventInformer : MonoBehaviour
     {
         StringBuilder builder = new();
         builder.AppendLine(data.Desc);
-        builder.AppendLine(data.PositiveName);
-        foreach(var eff in data.PositiveEffects)
-        {
-            builder.AppendLine(eff.Resource.Name);
-        }
-        builder.AppendLine(data.NegativeName);
-        foreach (var eff in data.NegativeEffects)
-        {
-            builder.AppendLine(eff.Resource.Name);
-        }
         _tmpu.text = builder.ToString();
     }
 }
