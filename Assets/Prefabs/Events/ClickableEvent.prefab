@@ -146,6 +146,8 @@ GameObject:
   - component: {fileID: 7906619814190281607}
   - component: {fileID: 8435870181221346174}
   - component: {fileID: 8550253312217494734}
+  - component: {fileID: 1072569490317892552}
+  - component: {fileID: 7399794844716451321}
   m_Layer: 0
   m_Name: ClickableEvent
   m_TagString: Untagged
@@ -255,3 +257,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1072569490317892552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996277865251173006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11011026bff525c4fb7ade5dcd52f27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7399794844716451321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996277865251173006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05452d68f19949248a6c393172cad775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -663,10 +663,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 682642466}
-  - {fileID: 1874398955}
-  - {fileID: 799186527}
-  - {fileID: 1598001803}
-  - {fileID: 1552116158}
+  - {fileID: 1753903387}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &196620417
@@ -756,8 +753,9 @@ GameObject:
   - component: {fileID: 233862890}
   - component: {fileID: 233862892}
   - component: {fileID: 233862891}
+  - component: {fileID: 233862893}
   m_Layer: 0
-  m_Name: EventInfo
+  m_Name: EventInformer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -780,8 +778,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 275.04797, y: 326.11}
-  m_SizeDelta: {x: -1429.7, y: 632.21}
+  m_AnchoredPosition: {x: 275.04797, y: 445.18}
+  m_SizeDelta: {x: -1429.7, y: 870.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233862891
 MonoBehaviour:
@@ -821,6 +819,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233862889}
   m_CullTransparentMesh: 1
+--- !u!114 &233862893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233862889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9a44f75580ec6408296bfafbaac132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248550117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,8 +1146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 326.24527}
-  m_SizeDelta: {x: 0, y: 632.4886}
+  m_AnchoredPosition: {x: 10, y: 445.1731}
+  m_SizeDelta: {x: 0, y: 870.344}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &261932906
 MonoBehaviour:
@@ -2160,37 +2170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Attack of the Mutants
-  <Desc>k__BackingField: Mutants are attacking our bunker. Our people are asking
-    to set up defenses but doing so will cost you resources. What will you choose?
-  <PositiveName>k__BackingField: 'Good Decision: Set up defences'
-  <PositiveEffects>k__BackingField:
-  - Resource: {fileID: 360841995}
-    Change: -100
-    IsPercentChange: 0
-  - Resource: {fileID: 1855759166}
-    Change: -10
-    IsPercentChange: 0
-  - Resource: {fileID: 321213735}
-    Change: 50
-    IsPercentChange: 0
-  <NegativeName>k__BackingField: Don't set up defences
-  <NegativeEffects>k__BackingField:
-  - Resource: {fileID: 321213735}
-    Change: -100
-    IsPercentChange: 0
-  - Resource: {fileID: 1185586444}
-    Change: 1
-    IsPercentChange: 0
-  - Resource: {fileID: 2132763571}
-    Change: 1
-    IsPercentChange: 0
-  - Resource: {fileID: 1766853748}
-    Change: 1
-    IsPercentChange: 0
-  - Resource: {fileID: 184793924}
-    Change: 1
-    IsPercentChange: 0
+  <Data>k__BackingField:
+    <Name>k__BackingField: Sample text
+    <Desc>k__BackingField: a
+    <PositiveName>k__BackingField: b
+    <PositiveEffects>k__BackingField: []
+    <NegativeName>k__BackingField: c
+    <NegativeEffects>k__BackingField: []
 --- !u!1 &708434395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
@@ -2556,56 +2542,6 @@ MonoBehaviour:
   - Resource: {fileID: 360841995}
     Change: -20
     Multiplier: 2
---- !u!1 &799186526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 799186527}
-  - component: {fileID: 799186528}
-  m_Layer: 0
-  m_Name: Mutants (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &799186527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799186526}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 196620416}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &799186528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799186526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: 'Attack '
-  <Desc>k__BackingField: 
-  <PositiveName>k__BackingField: 
-  <PositiveEffects>k__BackingField: []
-  <NegativeName>k__BackingField: 
-  <NegativeEffects>k__BackingField: []
 --- !u!1 &819724812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3808,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 50
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1706791143}
@@ -4236,6 +4172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b484465320debdb41bb8fda689ddca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _informer: {fileID: 233862893}
   _eventFolder: {fileID: 1710599370}
   _eventMBFolder: {fileID: 196620416}
   _eventPrefab: {fileID: 2996277865251173006, guid: a7cfd8d1abdb852489da8e3d39b8c106, type: 3}
@@ -5099,56 +5036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a237466afabaa48a0f5f1e18308160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1552116157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1552116158}
-  - component: {fileID: 1552116159}
-  m_Layer: 0
-  m_Name: Mutants (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1552116158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552116157}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 196620416}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1552116159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552116157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: 'Attack '
-  <Desc>k__BackingField: 
-  <PositiveName>k__BackingField: 
-  <PositiveEffects>k__BackingField: []
-  <NegativeName>k__BackingField: 
-  <NegativeEffects>k__BackingField: []
 --- !u!1 &1552281942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,56 +5091,6 @@ MonoBehaviour:
   - Resource: {fileID: 360841995}
     Change: -20
     Multiplier: 2
---- !u!1 &1598001802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1598001803}
-  - component: {fileID: 1598001804}
-  m_Layer: 0
-  m_Name: Mutants (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1598001803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598001802}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 196620416}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1598001804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598001802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: 'Attack '
-  <Desc>k__BackingField: 
-  <PositiveName>k__BackingField: 
-  <PositiveEffects>k__BackingField: []
-  <NegativeName>k__BackingField: 
-  <NegativeEffects>k__BackingField: []
 --- !u!1 &1604499038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6464362052819106868, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
@@ -5482,7 +5319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 316.24432}
+  m_AnchoredPosition: {x: -0.05999756, y: 435.17188}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -5538,6 +5375,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!1 &1753903386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753903387}
+  - component: {fileID: 1753903388}
+  m_Layer: 0
+  m_Name: Party
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1753903387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753903386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 196620416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753903388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753903386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    <Name>k__BackingField: Sample text 2
+    <Desc>k__BackingField: d
+    <PositiveName>k__BackingField: e
+    <PositiveEffects>k__BackingField: []
+    <NegativeName>k__BackingField: f
+    <NegativeEffects>k__BackingField: []
 --- !u!1 &1766853746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,76 +5652,6 @@ MonoBehaviour:
   Name: Passive Income
   _amount: 0
   Icon: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}
---- !u!1 &1874398954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1874398955}
-  - component: {fileID: 1874398956}
-  m_Layer: 0
-  m_Name: Party
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1874398955
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874398954}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 196620416}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1874398956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874398954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: Monster Party
-  <Desc>k__BackingField: Your people want to celebrate the fact of their survival
-    with a big party. Doing so will cost you resources and might scare away potential
-    visitors due to monstrous sound but you will gain trust of your people
-  <PositiveName>k__BackingField: Party all night!
-  <PositiveEffects>k__BackingField:
-  - Resource: {fileID: 360841995}
-    Change: -500
-    IsPercentChange: 0
-  - Resource: {fileID: 1855759166}
-    Change: -25
-    IsPercentChange: 0
-  - Resource: {fileID: 184793924}
-    Change: -10
-    IsPercentChange: 0
-  - Resource: {fileID: 2030041676}
-    Change: 20
-    IsPercentChange: 0
-  - Resource: {fileID: 2132763571}
-    Change: 1
-    IsPercentChange: 0
-  <NegativeName>k__BackingField: Party pooper
-  <NegativeEffects>k__BackingField:
-  - Resource: {fileID: 0}
-    Change: 0
-    IsPercentChange: 0
 --- !u!1001 &1945382434
 PrefabInstance:
   m_ObjectHideFlags: 0

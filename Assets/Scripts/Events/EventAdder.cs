@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using Utilities;
 
 public class EventAdder : MonoBehaviour
 {
+    [SerializeField] private EventInformer _informer;
     [SerializeField] private Transform _eventFolder;
     [SerializeField] private Transform _eventMBFolder;
     [SerializeField] private Object _eventPrefab;
@@ -15,15 +15,17 @@ public class EventAdder : MonoBehaviour
 
     private IEnumerator Start()
     {
-        List<EventMB> eventMBs = _eventMBFolder.GetComponentsInChildren<EventMB>().ToList();
-        if (eventMBs.Count == 0) yield break;
+        List<EventData> events = _eventMBFolder.GetComponentsInChildren<EventMB>().Select(i => i.Data).ToList();
+        if (events.Count == 0) yield break;
         while (true)
         {
-            eventMBs = ListUtility.ShuffleWithoutRepetition(eventMBs);
-            for (int i = 0; i < eventMBs.Count; i++)
+            events = ListUtility.ShuffleWithoutRepetition(events);
+            for (int i = 0; i < events.Count; i++)
             {
                 yield return new WaitForSeconds(Random.Range(_minSeconds, _maxSeconds));
                 var eventGO = Instantiate(_eventPrefab, _eventFolder) as GameObject;
+                eventGO.GetComponent<EventHolder>().SetData(events[i]);
+                eventGO.GetComponent<EventController>().Informer = _informer;
             }
         }
     }
