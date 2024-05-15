@@ -9,7 +9,7 @@ using static Utilities.IntBoolParseUtility;
 public class RadioToggle : MonoBehaviour
 {
     public readonly static UnityEvent<bool> OnAnyToggleSwitched = new();
-    private readonly static string _prefsKey = "PlayRadio";
+    public readonly static string PrefsKey = "PlayRadio";
     private Toggle _toggle;
     private Image _image;
     bool _toggledByPress = true;
@@ -18,7 +18,7 @@ public class RadioToggle : MonoBehaviour
     {
         _toggle = GetComponent<Toggle>();
         _image = GetComponent<Image>();
-        SetRadioGraphics(IntToBool(PlayerPrefs.GetInt(_prefsKey)));
+        SetRadioGraphics(IntToBool(PlayerPrefs.GetInt(PrefsKey)));
         OnAnyToggleSwitched.AddListener(OnUpdateAllTogglesHandler);
         _toggle.onValueChanged.AddListener(OnToggleValueChangedHandler);
     }
@@ -27,7 +27,7 @@ public class RadioToggle : MonoBehaviour
     {
         if (_toggledByPress)
         {
-            PlayerPrefs.SetInt(_prefsKey, BoolToInt(playRadio));
+            PlayerPrefs.SetInt(PrefsKey, BoolToInt(playRadio));
             OnAnyToggleSwitched.Invoke(playRadio);
         }
     }
@@ -39,9 +39,14 @@ public class RadioToggle : MonoBehaviour
 
     private void SetRadioGraphics(bool playRadio)
     {
+        ToggleByCode(playRadio);
+        _image.color = playRadio ? Color.green : Color.white;
+    }
+
+    private void ToggleByCode(bool playRadio)
+    {
         _toggledByPress = false;
         _toggle.isOn = playRadio;
-        _image.color = playRadio ? Color.green : Color.white;
         _toggledByPress = true;
     }
 }

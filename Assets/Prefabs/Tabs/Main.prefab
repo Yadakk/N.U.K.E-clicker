@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4845323473126604086}
   - component: {fileID: 6139838575528013707}
   - component: {fileID: 7097014805240007345}
+  - component: {fileID: 8693662215945794182}
   m_Layer: 5
   m_Name: ClickerButton
   m_TagString: Untagged
@@ -221,6 +222,18 @@ MonoBehaviour:
   _maxTorque: 100
   _fadeAfterSeconds: 1
   _fadeSpeed: 1
+--- !u!114 &8693662215945794182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154462190764138177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79df9faf8e9efc14593d0e3d664faa3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3780209279420762631
 GameObject:
   m_ObjectHideFlags: 0

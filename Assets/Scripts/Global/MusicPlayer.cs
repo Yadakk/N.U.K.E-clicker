@@ -9,6 +9,7 @@ public class MusicPlayer : MonoBehaviour
     [SerializeField] private bool _playOnStart;
     [SerializeField] private List<AudioClip> _clips;
     private AudioSource _source;
+    public AudioSource Source { get => _source; }
     private Coroutine _musicRoutine;
 
     private void Start()
