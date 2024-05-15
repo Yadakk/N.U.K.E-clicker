@@ -11,17 +11,6 @@ public class ShopItem : MonoBehaviour
     public ItemShops Shop;
     public AffectedResource[] AffectedResources;
 
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void InitAllHandler()
-    {
-
-    }
-
     public void Buy()
     {
         foreach (var affectedResource in AffectedResources)

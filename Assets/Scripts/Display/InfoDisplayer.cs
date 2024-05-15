@@ -38,8 +38,6 @@ public class InfoDisplayer : MonoBehaviour
         stringBuilder.Append(PlusNotation(affRes.Change));
         stringBuilder.Append(" ");
         stringBuilder.Append(affRes.Resource.Name);
-        stringBuilder.Append(" | Next: ");
-        stringBuilder.Append(PlusNotation(affRes.Change * affRes.Multiplier));
         return stringBuilder.ToString();
     }
 

@@ -79,6 +79,16 @@
                 "a": 1.0
             },
             "folderImageType": 0
+        },
+        {
+            "name": "EventsMB",
+            "folderColor": {
+                "r": 0.772549033164978,
+                "g": 0.2588235139846802,
+                "b": 0.6245051622390747,
+                "a": 1.0
+            },
+            "folderImageType": 0
         }
     ]
 }
