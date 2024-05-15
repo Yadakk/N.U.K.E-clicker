@@ -4237,6 +4237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventFolder: {fileID: 1710599370}
+  _eventMBFolder: {fileID: 196620416}
   _eventPrefab: {fileID: 2996277865251173006, guid: a7cfd8d1abdb852489da8e3d39b8c106, type: 3}
   _minSeconds: 1
   _maxSeconds: 2
@@ -4486,10 +4487,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 233862890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0005188, y: 0.000015259}
-  m_SizeDelta: {x: 1386.6, y: 632.21}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.010925293, y: 0.000030517578}
+  m_SizeDelta: {x: 0.6999512, y: 0.21002197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331174184
 MonoBehaviour:
@@ -5402,7 +5403,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628121077}
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -9,6 +9,7 @@ namespace Utilities
     {
         public static List<T> ShuffleWithoutRepetition<T>(List<T> list)
         {
+            if (list.Count == 0) return list;
             T lastElem = list[^1];
             list = list.OrderBy(elem => Random.Range(0, list.Count)).ToList();
             int matchingLastCount = 0;
