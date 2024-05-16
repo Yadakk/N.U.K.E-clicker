@@ -840,8 +840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _descTmpu: {fileID: 1331174184}
-  _posTmpu: {fileID: 1425819044}
-  _negTmpu: {fileID: 398687577}
+  _posTmpu: {fileID: 398687577}
+  _negTmpu: {fileID: 1425819044}
 --- !u!1 &248550117
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,7 +5822,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628121077}
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5901,7 +5901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 435.17194}
+  m_AnchoredPosition: {x: -0.05999756, y: 435.172}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -6227,7 +6227,7 @@ GameObject:
   - component: {fileID: 1843292168}
   - component: {fileID: 1843292171}
   m_Layer: 0
-  m_Name: NegChoice
+  m_Name: PosChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6783,7 +6783,7 @@ GameObject:
   - component: {fileID: 2010376615}
   - component: {fileID: 2010376618}
   m_Layer: 0
-  m_Name: PosChoice
+  m_Name: NegChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
