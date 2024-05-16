@@ -8,6 +8,11 @@ public class Resource : MonoBehaviour
 
     [SerializeField] private float _amount;
 
+    [field: SerializeField]
+    public bool PercentFormatted { get; private set; }
+    [field: SerializeField]
+    public Positivity ResourcePositivity { get; private set; }
+
     public delegate void OnAmountChangeDelegate(float newVal);
     public event OnAmountChangeDelegate OnAmountChange;
     public float Amount
@@ -24,4 +29,11 @@ public class Resource : MonoBehaviour
     }
 
     public Sprite Icon;
+
+    public enum Positivity
+    {
+        Positive,
+        Neutral,
+        Negative,
+    }
 }

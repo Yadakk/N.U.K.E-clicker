@@ -6,17 +6,21 @@ using TMPro;
 
 public class EventInformer : MonoBehaviour
 {
-    private TextMeshProUGUI _tmpu;
+    public EventData Data { get; private set; }
+    [SerializeField] private TextMeshProUGUI _descTmpu;
+    [SerializeField] private TextMeshProUGUI _posTmpu;
+    [SerializeField] private TextMeshProUGUI _negTmpu;
 
     private void Start()
     {
-        _tmpu = GetComponentInChildren<TextMeshProUGUI>();
+        _descTmpu = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void DisplayInfo(EventData data)
     {
-        StringBuilder builder = new();
-        builder.AppendLine(data.Desc);
-        _tmpu.text = builder.ToString();
+        Data = data;
+        _descTmpu.text = Data.Desc;
+        _posTmpu.text = Data.PositiveName;
+        _negTmpu.text = Data.NegativeName;
     }
 }

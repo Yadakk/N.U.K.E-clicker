@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using Utilities;
 
 public class InfoDisplayer : MonoBehaviour
 {
@@ -12,11 +13,6 @@ public class InfoDisplayer : MonoBehaviour
     {
         _tmpu = GetComponentInChildren<TextMeshProUGUI>();
         Hide();
-    }
-
-    private string PlusNotation(int num)
-    {
-        return num > 0 ? "+" + num : num.ToString();
     }
 
     public void Show(ShopItem shopItem)
@@ -35,7 +31,7 @@ public class InfoDisplayer : MonoBehaviour
     private string GetAffectedResourceInfo(AffectedResource affRes)
     {
         StringBuilder stringBuilder = new();
-        stringBuilder.Append(PlusNotation(affRes.Change));
+        stringBuilder.Append(Formations.LeadingPlus(affRes.Change));
         stringBuilder.Append(" ");
         stringBuilder.Append(affRes.Resource.Name);
         return stringBuilder.ToString();

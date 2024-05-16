@@ -631,6 +631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: People Joining Chance
   _amount: 0
+  <PercentFormatted>k__BackingField: 1
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
 --- !u!1 &196620415
 GameObject:
@@ -832,6 +834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9a44f75580ec6408296bfafbaac132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _descTmpu: {fileID: 1331174184}
+  _posTmpu: {fileID: 1425819044}
+  _negTmpu: {fileID: 398687577}
 --- !u!1 &248550117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Breads max capacity
   _amount: 100
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
 --- !u!1 &321213733
 GameObject:
@@ -1303,6 +1310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: People
   _amount: 0
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
 --- !u!114 &321213736
 MonoBehaviour:
@@ -1500,6 +1509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Caps
   _amount: 0
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
 --- !u!1 &398687575
 GameObject:
@@ -2310,9 +2321,36 @@ MonoBehaviour:
     <Desc>k__BackingField: 'Mutants are attacking our bunker. Our people are asking
       to set up defenses but doing so will cost you resources. What will you choose? '
     <PositiveName>k__BackingField: Set up defences
-    <PositiveEffects>k__BackingField: []
+    <PositiveEffects>k__BackingField:
+    - Resource: {fileID: 360841995}
+      Change: -100
+      IsPercentChange: 0
+    - Resource: {fileID: 1855759166}
+      Change: -10
+      IsPercentChange: 0
+    - Resource: {fileID: 321213735}
+      Change: 50
+      IsPercentChange: 0
     <NegativeName>k__BackingField: Don't set up defences
-    <NegativeEffects>k__BackingField: []
+    <NegativeEffects>k__BackingField:
+    - Resource: {fileID: 321213735}
+      Change: -100
+      IsPercentChange: 0
+    - Resource: {fileID: 1185586444}
+      Change: 1
+      IsPercentChange: 0
+    - Resource: {fileID: 2132763571}
+      Change: 1
+      IsPercentChange: 0
+    - Resource: {fileID: 1766853748}
+      Change: 1
+      IsPercentChange: 0
+    - Resource: {fileID: 184793924}
+      Change: 1
+      IsPercentChange: 0
+    - Resource: {fileID: 2030041676}
+      Change: 1
+      IsPercentChange: 0
 --- !u!1 &708434395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
@@ -2818,6 +2856,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Stars
   _amount: 0
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
 --- !u!1 &881868793
 GameObject:
@@ -4127,6 +4167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Critical Breads
   _amount: 0
+  <PercentFormatted>k__BackingField: 1
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
 --- !u!1 &1197513228
 GameObject:
@@ -4562,7 +4604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.010925293, y: 81.795}
+  m_AnchoredPosition: {x: -0.010986328, y: 81.79501}
   m_SizeDelta: {x: 0.7, y: -163.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331174184
@@ -5511,7 +5553,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999987
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5589,7 +5631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 435.17184}
+  m_AnchoredPosition: {x: -0.05999756, y: 435.17154}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -5680,7 +5722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0004272461, y: -353.42783}
+  m_AnchoredPosition: {x: 0.00048828125, y: -353.42783}
   m_SizeDelta: {x: -0.00036621, y: -706.856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715488757
@@ -5758,9 +5800,30 @@ MonoBehaviour:
     <Desc>k__BackingField: Your people want to celebrate the fact of their survival
       with a big party. Doing so will cost you resources and might scare away potential
     <PositiveName>k__BackingField: Party all night!
-    <PositiveEffects>k__BackingField: []
+    <PositiveEffects>k__BackingField:
+    - Resource: {fileID: 360841995}
+      Change: -500
+      IsPercentChange: 0
+    - Resource: {fileID: 1855759166}
+      Change: -25
+      IsPercentChange: 0
+    - Resource: {fileID: 184793924}
+      Change: -10
+      IsPercentChange: 0
+    - Resource: {fileID: 2030041676}
+      Change: 20
+      IsPercentChange: 0
+    - Resource: {fileID: 2132763571}
+      Change: 1
+      IsPercentChange: 0
     <NegativeName>k__BackingField: Party pooper
-    <NegativeEffects>k__BackingField: []
+    <NegativeEffects>k__BackingField:
+    - Resource: {fileID: 1766853748}
+      Change: 1
+      IsPercentChange: 0
+    - Resource: {fileID: 321213735}
+      Change: -50
+      IsPercentChange: 0
 --- !u!1 &1766853746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5807,6 +5870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mysterious Stranger Chance
   _amount: 0
+  <PercentFormatted>k__BackingField: 1
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
 --- !u!224 &1832931870
 RectTransform:
@@ -5890,6 +5955,7 @@ GameObject:
   - component: {fileID: 1843292170}
   - component: {fileID: 1843292169}
   - component: {fileID: 1843292168}
+  - component: {fileID: 1843292171}
   m_Layer: 0
   m_Name: NegChoice
   m_TagString: Untagged
@@ -5999,6 +6065,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843292166}
   m_CullTransparentMesh: 1
+--- !u!114 &1843292171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843292166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86721b9b83035c64fb81e5c274e943b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _informer: {fileID: 233862893}
+  _isPositive: 1
 --- !u!1 &1855759164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,6 +6126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Breads
   _amount: 50
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}
 --- !u!114 &1855759167
 MonoBehaviour:
@@ -6107,6 +6189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Passive Income
   _amount: 0
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}
 --- !u!1001 &1945382434
 PrefabInstance:
@@ -6356,6 +6440,7 @@ GameObject:
   - component: {fileID: 2010376617}
   - component: {fileID: 2010376616}
   - component: {fileID: 2010376615}
+  - component: {fileID: 2010376618}
   m_Layer: 0
   m_Name: PosChoice
   m_TagString: Untagged
@@ -6465,6 +6550,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010376613}
   m_CullTransparentMesh: 1
+--- !u!114 &2010376618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010376613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86721b9b83035c64fb81e5c274e943b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _informer: {fileID: 233862893}
+  _isPositive: 0
 --- !u!1001 &2011721036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6759,6 +6858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Positive Choice Income
   _amount: 0
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: fe455a5effa1f2642aa2105859c08469, type: 3}
 --- !u!1 &2094576508
 GameObject:
@@ -6806,6 +6907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Click Power
   _amount: 1
+  <PercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 9b7fd6e03ef9ee144b98876a3941ee32, type: 3}
 --- !u!1 &2103144854
 GameObject:
@@ -6897,6 +7000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Critical Chance
   _amount: 0
+  <PercentFormatted>k__BackingField: 1
+  <ResourcePositivity>k__BackingField: 0
   Icon: {fileID: 21300000, guid: 15c1b6c846c2b5040b87c80c87d5f9ee, type: 3}
 --- !u!224 &73023932466538267 stripped
 RectTransform:
