@@ -1567,18 +1567,33 @@ MonoBehaviour:
       if you won't trade away your resources. You don't really have a choice here...
       or do you?
     <PositiveName>k__BackingField: Take it!
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -500
       IsPercentChange: 0
     - Resource: {fileID: 1855759166}
       Change: -20
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -500
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -20
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Take my people instead!
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 321213735}
       Change: -100
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -100
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &398687575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,15 +2214,27 @@ MonoBehaviour:
     <Desc>k__BackingField: You finally have some breating room! What are you going
       to do?
     <PositiveName>k__BackingField: Read
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 1855759166}
       Change: 1
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Smoke
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: 1
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &602845132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,7 +2473,7 @@ MonoBehaviour:
     <Desc>k__BackingField: 'Mutants are attacking our bunker. Our people are asking
       to set up defenses but doing so will cost you resources. What will you choose? '
     <PositiveName>k__BackingField: Set up defences
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -100
       IsPercentChange: 0
@@ -2456,8 +2483,24 @@ MonoBehaviour:
     - Resource: {fileID: 321213735}
       Change: 50
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -100
+      - <Resource>k__BackingField: {fileID: 0}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -10
+      - <Resource>k__BackingField: {fileID: 0}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 50
+      <ResourceRandomChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 0}
+        <IsPercentChange>k__BackingField: 0
+        <MinChange>k__BackingField: 0
+        <MaxChange>k__BackingField: 0
     <NegativeName>k__BackingField: Don't set up defences
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 321213735}
       Change: -100
       IsPercentChange: 0
@@ -2476,6 +2519,27 @@ MonoBehaviour:
     - Resource: {fileID: 2030041676}
       Change: 1
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -100
+      - <Resource>k__BackingField: {fileID: 1185586444}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1766853748}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 184793924}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 2030041676}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &708434395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
@@ -3221,7 +3285,7 @@ MonoBehaviour:
     <Desc>k__BackingField: A group of Lone Wanderers have stumbled upon your bunker.
       Are you going to let them in?
     <PositiveName>k__BackingField: Yes, come in!
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -200
       IsPercentChange: 0
@@ -3231,14 +3295,35 @@ MonoBehaviour:
     - Resource: {fileID: 321213735}
       Change: 20
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -200
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -5
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 20
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Sorry, we are closed
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 184793924}
       Change: -5
       IsPercentChange: 0
     - Resource: {fileID: 1766853748}
       Change: 1
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 184793924}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -5
+      - <Resource>k__BackingField: {fileID: 1766853748}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &942785069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,7 +5731,7 @@ MonoBehaviour:
       so will reduce productivity) or restrict games only to free time and breaks
       (which raises productivity)
     <PositiveName>k__BackingField: Play all you want
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 2094576510}
       Change: -5
       IsPercentChange: 0
@@ -5659,8 +5744,20 @@ MonoBehaviour:
     - Resource: {fileID: 2030041676}
       Change: 50
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 2094576510}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -5
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -2
+      - <Resource>k__BackingField: {fileID: 1185586444}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -2
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Get back to work!
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 2094576510}
       Change: 2
       IsPercentChange: 0
@@ -5673,6 +5770,21 @@ MonoBehaviour:
     - Resource: {fileID: 2030041676}
       Change: -25
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 2094576510}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 2
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1185586444}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 2030041676}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -25
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &1604499038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6464362052819106868, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
@@ -6070,7 +6182,7 @@ MonoBehaviour:
     <Desc>k__BackingField: Your people want to celebrate the fact of their survival
       with a big party. Doing so will cost you resources and might scare away potential
     <PositiveName>k__BackingField: Party all night!
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -500
       IsPercentChange: 0
@@ -6086,14 +6198,35 @@ MonoBehaviour:
     - Resource: {fileID: 2132763571}
       Change: 1
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -500
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -25
+      - <Resource>k__BackingField: {fileID: 184793924}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -10
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Party pooper
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 1766853748}
       Change: 1
       IsPercentChange: 0
     - Resource: {fileID: 321213735}
       Change: -50
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 1766853748}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -50
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &1766853746
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,7 +6747,7 @@ MonoBehaviour:
       reduce the amount of breads you produce but will also reduce the amount of
       caps you need to pay for labor
     <PositiveName>k__BackingField: Power to the people!
-    <PositiveEffects>k__BackingField:
+    <PositiveEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -50
       IsPercentChange: 0
@@ -6624,8 +6757,20 @@ MonoBehaviour:
     - Resource: {fileID: 2132763571}
       Change: 1
       IsPercentChange: 0
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -50
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 5
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
     <NegativeName>k__BackingField: Work, work, work!
-    <NegativeEffects>k__BackingField:
+    <NegativeEffectsDepr>k__BackingField:
     - Resource: {fileID: 360841995}
       Change: -250
       IsPercentChange: 0
@@ -6635,6 +6780,18 @@ MonoBehaviour:
     - Resource: {fileID: 1185586444}
       Change: 1
       IsPercentChange: 0
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: -250
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 25
+      - <Resource>k__BackingField: {fileID: 1185586444}
+        <IsPercentChange>k__BackingField: 0
+        <Change>k__BackingField: 1
+      <ResourceRandomChanges>k__BackingField: []
 --- !u!1 &1986516095
 GameObject:
   m_ObjectHideFlags: 0

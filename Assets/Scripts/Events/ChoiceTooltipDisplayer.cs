@@ -19,13 +19,13 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
         if (_informer.Data == null) return;
         StringBuilder builder = new();
         if (_isPositive)
-            _informer.Data.PositiveEffects.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
+            _informer.Data.PositiveEffectsDepr.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
         else
-            _informer.Data.NegativeEffects.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
+            _informer.Data.NegativeEffectsDepr.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
         Tooltip.ShowTooltipStatic(builder.ToString());
     }
 
-    private string FormatResourceChange(EventResource evRes)
+    private string FormatResourceChange(EventResourceDepr evRes)
     {
         StringBuilder builder = new();
         ColorScheme colorScheme = PositivityToColorScheme(evRes.Resource);
