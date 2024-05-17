@@ -14,10 +14,8 @@ public class EventData
     [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public string Desc { get; private set; }
     [field: SerializeField] public string PositiveName { get; private set; }
-    [field: FormerlySerializedAs("<PositiveEffects>k__BackingField")] [field: SerializeField] public EventResourceDepr[] PositiveEffectsDepr { get; private set; }
     [field: SerializeField] public EventBundle PositiveEffects { get; private set; }
     [field: SerializeField] public string NegativeName { get; private set; }
-    [field: FormerlySerializedAs("<NegativeEffects>k__BackingField")] [field: SerializeField] public EventResourceDepr[] NegativeEffectsDepr { get; private set; }
     [field: SerializeField] public EventBundle NegativeEffects { get; private set; }
 }
 
