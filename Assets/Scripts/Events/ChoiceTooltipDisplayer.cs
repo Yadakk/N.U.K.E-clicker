@@ -24,26 +24,35 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
     {
         if (_informer.Data == null) return;
         StringBuilder builder = new();
-        if (_isPositive)
-        {
-            if (_informer.Data.PositiveEffects.GetAllResources().Length == 0) builder.Append("Nothing happens...");
-            _informer.Data.PositiveEffects.GetAllResources().ToList().ForEach(evRes => builder.AppendLine(evRes.FormatResourceChange()));
-        }
-        else
-        {
-            if (_informer.Data.NegativeEffects.GetAllResources().Length == 0) builder.Append("Nothing happens...");
-            _informer.Data.NegativeEffects.GetAllResources().ToList().ForEach(evRes => builder.AppendLine(evRes.FormatResourceChange()));
-        }
-
+        if (_isPositive) AppendChanges(_informer.Data.PositiveEffects, ref builder);
+        else AppendChanges(_informer.Data.NegativeEffects, ref builder);
         Tooltip.ShowTooltipStatic(builder.ToString());
     }
 
     public void OnButtonClickHandler()
     {
-        if (_isPositive)
-            _informer.Data.PositiveEffects.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
-        else
-            _informer.Data.NegativeEffects.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
+        if (_informer.Data != null)
+        {
+            if (_isPositive) ApplyChanges(_informer.Data.PositiveEffects);
+            else ApplyChanges(_informer.Data.NegativeEffects);
+        }
+    }
+
+    private void ApplyChanges(EventBundle bundle)
+    {
+        bundle.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
+        _informer.ClearData();
+        Tooltip.HideTooltipStatic();
+    }
+
+    private void AppendChanges(EventBundle bundle, ref StringBuilder builder)
+    {
+        var allRes = bundle.GetAllResources();
+        if (allRes.Length == 0) builder.Append("Nothing happens...");
+        foreach (var evRes in allRes)
+        {
+            builder.AppendLine(evRes.FormatResourceChange());
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -40,6 +40,6 @@ public class EventController : MonoBehaviour
 
     public void OnButtonClickHandler()
     {
-        Informer.DisplayInfo(_eventData);
+        Informer.DisplayInfo(_eventData, this);
     }
 }

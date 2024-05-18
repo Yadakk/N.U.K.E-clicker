@@ -7,6 +7,7 @@ using TMPro;
 public class EventInformer : MonoBehaviour
 {
     public EventData Data { get; private set; }
+    public EventController Controller { get; private set; }
     [SerializeField] private TextMeshProUGUI _descTmpu;
     [SerializeField] private TextMeshProUGUI _posTmpu;
     [SerializeField] private TextMeshProUGUI _negTmpu;
@@ -16,11 +17,21 @@ public class EventInformer : MonoBehaviour
         _descTmpu = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void DisplayInfo(EventData data)
+    public void DisplayInfo(EventData data, EventController controller)
     {
+        Controller = controller;
         Data = data;
         _descTmpu.text = Data.Desc;
         _posTmpu.text = Data.PositiveName;
         _negTmpu.text = Data.NegativeName;
+    }
+
+    public void ClearData()
+    {
+        Data = null;
+        Destroy(Controller.gameObject);
+        _descTmpu.text = string.Empty;
+        _posTmpu.text = string.Empty;
+        _negTmpu.text = string.Empty;
     }
 }
