@@ -5,71 +5,49 @@ using UnityEngine.EventSystems;
 using System.Text;
 using System.Linq;
 using Utilities;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private EventInformer _informer;
     [SerializeField] private bool _isPositive;
-    private static readonly ColorScheme _positiveScheme = new("green", "white", "red");
-    private static readonly ColorScheme _neutralScheme = new("white", "white", "white");
-    private static readonly ColorScheme _negativeScheme = new("red", "white", "green");
+    private Button _button;
+
+    private void Start()
+    {
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(OnButtonClickHandler);
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (_informer.Data == null) return;
         StringBuilder builder = new();
         if (_isPositive)
-            _informer.Data.PositiveEffects.ResourceChanges.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
+        {
+            if (_informer.Data.PositiveEffects.GetAllResources().Length == 0) builder.Append("Nothing happens...");
+            _informer.Data.PositiveEffects.GetAllResources().ToList().ForEach(evRes => builder.AppendLine(evRes.FormatResourceChange()));
+        }
         else
-            _informer.Data.NegativeEffects.ResourceChanges.ToList().ForEach(evRes => builder.AppendLine(FormatResourceChange(evRes)));
+        {
+            if (_informer.Data.NegativeEffects.GetAllResources().Length == 0) builder.Append("Nothing happens...");
+            _informer.Data.NegativeEffects.GetAllResources().ToList().ForEach(evRes => builder.AppendLine(evRes.FormatResourceChange()));
+        }
+
         Tooltip.ShowTooltipStatic(builder.ToString());
     }
 
-    private string FormatResourceChange(EventResourceChange evRes)
+    public void OnButtonClickHandler()
     {
-        StringBuilder builder = new();
-        ColorScheme colorScheme = PositivityToColorScheme(evRes.Resource);
-        switch (evRes.Change)
-        {
-            case < 0: builder.Append($"<color={colorScheme.Negative}>"); break;
-            case > 0: builder.Append($"<color={colorScheme.Positive}>"); break;
-            default: builder.Append($"<color={colorScheme.Neutral}>"); break;
-        }
-        builder.Append(Formations.LeadingPlus(evRes.Change));
-        if (evRes.Resource.PercentFormatted || evRes.IsPercentChange)
-            builder.Append("%");
-        builder.Append(" ");
-        builder.Append(evRes.Resource.Name);
-        builder.Append("</color>");
-        return builder.ToString();
-    }
-
-    private ColorScheme PositivityToColorScheme(Resource res)
-    {
-        switch(res.ResourcePositivity)
-        {
-            case Resource.Positivity.Positive: return _positiveScheme;
-            case Resource.Positivity.Negative: return _negativeScheme;
-        }
-        return _neutralScheme;
+        if (_isPositive)
+            _informer.Data.PositiveEffects.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
+        else
+            _informer.Data.NegativeEffects.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Tooltip.HideTooltipStatic();
-    }
-
-    private struct ColorScheme
-    {
-        public string Positive;
-        public string Neutral;
-        public string Negative;
-
-        public ColorScheme(string positive, string neutral, string negative)
-        {
-            Positive = positive;
-            Neutral = neutral;
-            Negative = negative;
-        }
     }
 }
