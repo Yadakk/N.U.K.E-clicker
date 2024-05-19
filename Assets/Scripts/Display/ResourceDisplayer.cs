@@ -24,7 +24,7 @@ public class ResourceDisplayer : MonoBehaviour
         _text = _value.GetComponent<TextMeshProUGUI>();
         _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
         _image.sprite = _resourceToDisplay.Icon;
-        _resourceToDisplay.OnAmountChange += AmountChangeHandler;
+        _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
         _tooltipOnHover.SetText(_resourceToDisplay.Name);
         UpdateCounter(_resourceToDisplay.Amount);
     }

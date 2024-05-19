@@ -629,11 +629,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: People Joining Chance
+  <Name>k__BackingField: People Join Chance
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
+  <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &196620415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,11 +1276,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Breads max capacity
+  <Name>k__BackingField: Breads Max Capacity
   _amount: 100
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
 --- !u!1 &321213733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,11 +1338,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: People
+  <Name>k__BackingField: People
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 1
+    _limit: 1
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 1
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
 --- !u!114 &321213736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,11 +1549,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Caps
+  <Name>k__BackingField: Caps
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 1
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 1855759166}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
 --- !u!1 &377408901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,19 +1619,19 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -500
-      - <Resource>k__BackingField: {fileID: 1855759166}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 1855759166}
         <Change>k__BackingField: -20
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Take my people instead!
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 321213735}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -100
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &398687575
@@ -2209,16 +2257,16 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Smoke
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &602845132
@@ -2462,34 +2510,34 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -100
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -10
-      - <Resource>k__BackingField: {fileID: 321213735}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 321213735}
         <Change>k__BackingField: 50
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Don't set up defences
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 321213735}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -100
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1185586444}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 2132763571}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1766853748}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 184793924}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &708434395 stripped
@@ -2913,21 +2961,21 @@ MonoBehaviour:
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 321213735}
-        <IsPercentChange>k__BackingField: 1
         <Change>k__BackingField: -20
+        <IsPercentChange>k__BackingField: 1
         <EventResourceRandomChanges>k__BackingField:
         - <Resource>k__BackingField: {fileID: 360841995}
-          <IsPercentChange>k__BackingField: 0
           <MinChange>k__BackingField: 1
           <MaxChange>k__BackingField: 15
-        - <Resource>k__BackingField: {fileID: 1855759166}
           <IsPercentChange>k__BackingField: 0
+        - <Resource>k__BackingField: {fileID: 1855759166}
           <MinChange>k__BackingField: 1
           <MaxChange>k__BackingField: 100
-        - <Resource>k__BackingField: {fileID: 2094576510}
           <IsPercentChange>k__BackingField: 0
+        - <Resource>k__BackingField: {fileID: 2094576510}
           <MinChange>k__BackingField: 1
           <MaxChange>k__BackingField: 3
+          <IsPercentChange>k__BackingField: 0
     <NegativeName>k__BackingField: Yawn...
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField: []
@@ -3071,11 +3119,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Stars
+  <Name>k__BackingField: Stars
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
+  <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &881868793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,25 +3376,25 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -200
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -5
-      - <Resource>k__BackingField: {fileID: 321213735}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 321213735}
         <Change>k__BackingField: 20
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Sorry, we are closed
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 184793924}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -5
-      - <Resource>k__BackingField: {fileID: 1766853748}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 1766853748}
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &942785069
@@ -4422,7 +4482,7 @@ GameObject:
   - component: {fileID: 1185586443}
   - component: {fileID: 1185586444}
   m_Layer: 0
-  m_Name: CritBreads
+  m_Name: CritBreadsChance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4455,11 +4515,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Critical Breads
+  <Name>k__BackingField: Critical Breads Chance
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
 --- !u!1 &1197513228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5747,31 +5819,31 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 2094576510}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -5
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 2132763571}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -2
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1185586444}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -2
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Get back to work!
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 2094576510}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 2
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 2132763571}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1185586444}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
-      - <Resource>k__BackingField: {fileID: 2030041676}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2030041676}
         <Change>k__BackingField: -25
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &1604499038 stripped
@@ -5924,7 +5996,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.99999756
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6002,7 +6074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 435.17197}
+  m_AnchoredPosition: {x: -0.05999756, y: 435.17157}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -6175,25 +6247,25 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -500
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -25
-      - <Resource>k__BackingField: {fileID: 184793924}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 184793924}
         <Change>k__BackingField: -10
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Party pooper
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 1766853748}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 1
-      - <Resource>k__BackingField: {fileID: 321213735}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 321213735}
         <Change>k__BackingField: -50
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &1766853746
@@ -6240,11 +6312,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Mysterious Stranger Chance
+  <Name>k__BackingField: Mysterious Stranger Chance
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
 --- !u!224 &1832931870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6496,11 +6580,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Breads
+  <Name>k__BackingField: Breads
   _amount: 50
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 1
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 321213735}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 1
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 285538533}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 360841995}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}
 --- !u!114 &1855759167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6559,11 +6655,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Passive Income
+  <Name>k__BackingField: Passive Income
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}
 --- !u!1001 &1945382434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6719,28 +6827,28 @@ MonoBehaviour:
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -50
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 5
-      - <Resource>k__BackingField: {fileID: 2132763571}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2132763571}
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
     <NegativeName>k__BackingField: Work, work, work!
     <NegativeEffects>k__BackingField:
       <ResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 360841995}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: -250
+        <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 1855759166}
-        <IsPercentChange>k__BackingField: 0
         <Change>k__BackingField: 25
-      - <Resource>k__BackingField: {fileID: 1185586444}
         <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 1185586444}
         <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &1986516095
@@ -7305,11 +7413,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Positive Choice Income
+  <Name>k__BackingField: Positive Choice Income
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: fe455a5effa1f2642aa2105859c08469, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: fe455a5effa1f2642aa2105859c08469, type: 3}
 --- !u!1 &2094576508
 GameObject:
   m_ObjectHideFlags: 0
@@ -7354,11 +7474,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Click Power
+  <Name>k__BackingField: Click Power
   _amount: 1
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 9b7fd6e03ef9ee144b98876a3941ee32, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 9b7fd6e03ef9ee144b98876a3941ee32, type: 3}
 --- !u!1 &2103144854
 GameObject:
   m_ObjectHideFlags: 0
@@ -7414,7 +7546,7 @@ GameObject:
   - component: {fileID: 2132763570}
   - component: {fileID: 2132763571}
   m_Layer: 0
-  m_Name: CriticalChance
+  m_Name: CriticalCapsChance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7447,11 +7579,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Critical Chance
+  <Name>k__BackingField: Critical Caps Chance
   _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
   <PercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
-  Icon: {fileID: 21300000, guid: 15c1b6c846c2b5040b87c80c87d5f9ee, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 15c1b6c846c2b5040b87c80c87d5f9ee, type: 3}
 --- !u!224 &73023932466538267 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2152081536377671826, guid: f017fc221ec5ac44baad208587077e99, type: 3}

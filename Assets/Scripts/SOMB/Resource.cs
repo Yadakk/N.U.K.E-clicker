@@ -1,20 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using System;
 
 public class Resource : MonoBehaviour
 {
-    public string Name;
-
+    [field: SerializeField] public string Name { get; set; }
     [SerializeField] private float _amount;
-
-    [field: SerializeField]
-    public bool PercentFormatted { get; private set; }
-    [field: SerializeField]
-    public Positivity ResourcePositivity { get; private set; }
-
-    public delegate void OnAmountChangeDelegate(float newVal);
-    public event OnAmountChangeDelegate OnAmountChange;
     public float Amount
     {
         get { return _amount; }
@@ -22,18 +16,64 @@ public class Resource : MonoBehaviour
         {
             if (_amount == value) return;
             _amount = value;
-
-            if (OnAmountChange != null)
-                OnAmountChange(_amount);
+            if (!LimitHandler(MinLimit, false))
+                LimitHandler(MaxLimit, true);
+            OnAmountChange.Invoke(_amount);
         }
     }
 
-    public Sprite Icon;
+    private bool LimitHandler(ResourceLimit limit, bool isUpper)
+    {
+        bool IsLimitReached() => isUpper ? Amount > limit.Limit : Amount < limit.Limit;
+        float GetLimitOverflow() => Amount - limit.Limit;
+        if (limit.HasLimit && IsLimitReached())
+        {
+            if (limit.ExchangedResource != null)
+            {
+                limit.ExchangedResource.Amount += GetLimitOverflow();
+                Amount -= GetLimitOverflow();
+            }
+            else if (limit.TriggersGameOverOnLimit && IsLimitReached())
+            {
+                SceneManager.LoadScene("GameOver");
+                Amount = limit.Limit;
+            }
+            else Amount = limit.Limit;
+            return true;
+        }
+        return false;
+    }
+
+    [field: SerializeField] public ResourceLimit MinLimit { get; set; }
+    [field: SerializeField] public ResourceLimit MaxLimit { get; set; }
+    [field: SerializeField] public bool PercentFormatted { get; set; }
+    [field: SerializeField] public Positivity ResourcePositivity { get; set; }
+    [field: SerializeField] public Sprite Icon { get; set; }
+    public readonly UnityEvent<float> OnAmountChange = new();
 
     public enum Positivity
     {
         Positive,
         Neutral,
         Negative,
+    }
+
+    [Serializable] public class ResourceLimit
+    {
+        [field: SerializeField] public bool HasLimit { get; set; }
+        [SerializeField] private float _limit;
+        public float Limit 
+        { 
+            get
+            {
+                if (LimitControlledByResourceAmount != null) return LimitControlledByResourceAmount.Amount;
+                return _limit; 
+            } 
+            set => _limit = value; 
+        }
+
+        [field: SerializeField] public Resource LimitControlledByResourceAmount { get; set; }
+        [field: SerializeField] public bool TriggersGameOverOnLimit { get; set; }
+        [field: SerializeField] public Resource ExchangedResource { get; set; }
     }
 }
