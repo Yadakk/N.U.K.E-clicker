@@ -12,9 +12,10 @@ public class Tooltip : MonoBehaviour
     private Canvas _canvas;
     private TextMeshProUGUI _tmpu;
     private RectTransform _canvasRect;
-    private RectTransform _backgroundRectTransform;
+    private RectTransform _rectTransform;
     private static Tooltip _instance;
     private static bool _isActive;
+    [field: SerializeField] public Vector2 Offset { get; set; }
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Tooltip : MonoBehaviour
         _canvas = ActiveCanvas.Canvas;
         _canvasRect = _canvas.GetComponent<RectTransform>();
         _tmpu = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        _backgroundRectTransform = GetComponent<RectTransform>();
+        _rectTransform = GetComponent<RectTransform>();
         HideTooltipStatic();
     }
 
@@ -37,19 +38,19 @@ public class Tooltip : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvasRect, Input.mousePosition, _camera, out Vector2 localPoint);
         transform.localPosition = localPoint;
 
-        Vector2 anchoredPosition = _backgroundRectTransform.anchoredPosition;
+        Vector2 anchoredPosition = _rectTransform.anchoredPosition + Offset;
 
-        if (anchoredPosition.x + _backgroundRectTransform.rect.width > _canvasRect.rect.width)
+        if (anchoredPosition.x + _rectTransform.rect.width > _canvasRect.rect.width)
         {
-            anchoredPosition.x = _canvasRect.rect.width - _backgroundRectTransform.rect.width;
+            anchoredPosition.x = _canvasRect.rect.width - _rectTransform.rect.width;
         }
 
-        if (anchoredPosition.y + _backgroundRectTransform.rect.height > _canvasRect.rect.height)
+        if (anchoredPosition.y + _rectTransform.rect.height > _canvasRect.rect.height)
         {
-            anchoredPosition.y = _canvasRect.rect.height - _backgroundRectTransform.rect.height;
+            anchoredPosition.y = _canvasRect.rect.height - _rectTransform.rect.height;
     }
 
-        _backgroundRectTransform.anchoredPosition = anchoredPosition;
+        _rectTransform.anchoredPosition = anchoredPosition;
     }
 
     private void ShowTooltip(string tooltipString)
@@ -60,7 +61,7 @@ public class Tooltip : MonoBehaviour
         _tmpu.text = tooltipString;
         Vector2 backgroundSize = new(_tmpu.preferredWidth,
                                      _tmpu.preferredHeight);
-        _backgroundRectTransform.sizeDelta = backgroundSize;
+        _rectTransform.sizeDelta = backgroundSize;
 
         _isActive = true;
 
@@ -68,7 +69,7 @@ public class Tooltip : MonoBehaviour
     }
 
     private void HideTooltip()
-        {
+    {
         gameObject.SetActive(false);
 
         _isActive = false;
@@ -76,25 +77,25 @@ public class Tooltip : MonoBehaviour
 
     private void ToggleTooltip(string tooltipString)
     {
-        if(_isActive)
+        if (_isActive)
         {
             HideTooltip();
         }
         else
-            {
+        {
             ShowTooltip(tooltipString);
         }
-            }
+    }
 
     public static void ShowTooltipStatic(string tooltipString)
-            {
+    {
         _instance.ShowTooltip(tooltipString);
-            }
+    }
 
     public static void HideTooltipStatic()
     {
         _instance.HideTooltip();
-        }
+    }
 
     public static void ToggleTooltipStatic(string tooltipString)
     {
