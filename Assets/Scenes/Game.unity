@@ -643,7 +643,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 1
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &196620415
@@ -1290,7 +1290,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
 --- !u!1 &321213733
@@ -1352,7 +1352,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
 --- !u!114 &321213736
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 207e6f11b72718944bb034b781dc1d1a, type: 3}
 --- !u!1 &377408901
@@ -3133,7 +3133,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &881868793
@@ -4529,7 +4529,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 1
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
 --- !u!1 &1197513228
@@ -5996,7 +5996,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99995995
+  m_Size: 0.9997509
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6074,7 +6074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 435.17087}
+  m_AnchoredPosition: {x: -0.05999756, y: 435.1713}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -6326,7 +6326,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 1
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
 --- !u!224 &1832931870
@@ -6595,7 +6595,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 285538533}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 360841995}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: dd0ce6cf89dcc294287b318c7ad8371b, type: 3}
 --- !u!114 &1855759167
@@ -6670,7 +6670,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: cde5365908be1b94883a6ef7b736dfbd, type: 3}
 --- !u!1001 &1945382434
@@ -7428,7 +7428,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: fe455a5effa1f2642aa2105859c08469, type: 3}
 --- !u!1 &2094576508
@@ -7489,7 +7489,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 0
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 9b7fd6e03ef9ee144b98876a3941ee32, type: 3}
 --- !u!1 &2103144854
@@ -7594,7 +7594,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <PercentFormatted>k__BackingField: 1
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 15c1b6c846c2b5040b87c80c87d5f9ee, type: 3}
 --- !u!224 &73023932466538267 stripped

@@ -14,11 +14,12 @@ public class Resource : MonoBehaviour
         get { return _amount; }
         set
         {
+            float oldAmount = _amount;
             if (_amount == value) return;
             _amount = value;
             if (!LimitHandler(MinLimit, false))
                 LimitHandler(MaxLimit, true);
-            OnAmountChange.Invoke(_amount);
+            OnAmountChange.Invoke(_amount, oldAmount);
         }
     }
 
@@ -46,10 +47,10 @@ public class Resource : MonoBehaviour
 
     [field: SerializeField] public ResourceLimit MinLimit { get; set; }
     [field: SerializeField] public ResourceLimit MaxLimit { get; set; }
-    [field: SerializeField] public bool PercentFormatted { get; set; }
+    [field: SerializeField] public bool IsPercentFormatted { get; set; }
     [field: SerializeField] public Positivity ResourcePositivity { get; set; }
     [field: SerializeField] public Sprite Icon { get; set; }
-    public readonly UnityEvent<float> OnAmountChange = new();
+    public readonly UnityEvent<float, float> OnAmountChange = new();
 
     public enum Positivity
     {

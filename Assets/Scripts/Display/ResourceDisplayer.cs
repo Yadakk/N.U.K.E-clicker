@@ -9,8 +9,10 @@ using static Resource;
 public class ResourceDisplayer : MonoBehaviour
 {
     private Resource _resourceToDisplay;
+    private PositivityColorScheme _scheme;
     private Transform _icon;
     private Transform _value;
+    private TmpuColorFlash _colorFlash;
     private Image _image;
     private TextMeshProUGUI _text;
     private TooltipOnHover _tooltipOnHover;
@@ -18,10 +20,12 @@ public class ResourceDisplayer : MonoBehaviour
     public void Init(Resource resourceToDisplay)
     {
         _resourceToDisplay = resourceToDisplay;
+        _scheme = PositivityColorSchemes.PositivityToColorScheme(_resourceToDisplay);
 
         _icon = transform.GetChild(0);
         _value = transform.GetChild(1);
 
+        _colorFlash = _value.GetComponent<TmpuColorFlash>();
         _image = _icon.GetComponent<Image>();
         _text = _value.GetComponent<TextMeshProUGUI>();
         _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
@@ -64,13 +68,33 @@ public class ResourceDisplayer : MonoBehaviour
         }
     }
 
-    private void AmountChangeHandler(float newVal)
+    private void AmountChangeHandler(float newVal, float oldVal)
     {
         UpdateCounter(newVal);
+        if (newVal > oldVal)
+        {
+            switch (_scheme.Positive)
+            {
+                case "green": _colorFlash.FlashColor(Color.green); break;
+                case "white": _colorFlash.FlashColor(Color.white); break;
+                case "red": _colorFlash.FlashColor(Color.red); break;
+            }
+        }
+        else if (newVal < oldVal)
+        {
+            switch (_scheme.Negative)
+            {
+                case "green": _colorFlash.FlashColor(Color.green); break;
+                case "white": _colorFlash.FlashColor(Color.white); break;
+                case "red": _colorFlash.FlashColor(Color.red); break;
+            }
+        }
     }
 
     private void UpdateCounter<T>(T newVal)
     {
+        StringBuilder builder = new();
+        if (_resourceToDisplay.IsPercentFormatted) builder.Append("%");
         _text.text = newVal.ToString();
     }
 }

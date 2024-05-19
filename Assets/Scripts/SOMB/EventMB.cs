@@ -8,7 +8,7 @@ using System.Linq;
 using System;
 using System.Xml.Linq;
 using Unity.VisualScripting;
-using static EventResource.ColorSchemes;
+using static PositivityColorSchemes;
 
 public class EventMB : MonoBehaviour
 {
@@ -58,51 +58,6 @@ public abstract class EventResource
     [field: SerializeField] public Resource Resource { get; private set; }
     public abstract void ApplyChanges();
     public abstract string FormatResourceChange();
-
-    public static class ColorSchemes
-    {
-        private static readonly ColorScheme _positiveScheme = new("green", "white", "red");
-        private static readonly ColorScheme _neutralScheme = new("white", "white", "white");
-        private static readonly ColorScheme _negativeScheme = new("red", "white", "green");
-
-        public static ColorScheme PositivityToColorScheme(Resource res)
-        {
-            switch (res.ResourcePositivity)
-            {
-                case Resource.Positivity.Positive: return _positiveScheme;
-                case Resource.Positivity.Negative: return _negativeScheme;
-            }
-            return _neutralScheme;
-        }
-
-        public static void FormatNumber(ref StringBuilder builder, ColorScheme colorScheme, float num, bool forcePercentFormat)
-        {
-            switch (num)
-            {
-                case < 0: builder.Append($"<color={colorScheme.Negative}>"); break;
-                case > 0: builder.Append($"<color={colorScheme.Positive}>"); break;
-                default: builder.Append($"<color={colorScheme.Neutral}>"); break;
-            }
-            builder.Append(Formations.LeadingPlus(num));
-            if (forcePercentFormat)
-                builder.Append("%");
-            builder.Append("</color>");
-        }
-
-        public struct ColorScheme
-        {
-            public string Positive;
-            public string Neutral;
-            public string Negative;
-
-            public ColorScheme(string positive, string neutral, string negative)
-            {
-                Positive = positive;
-                Neutral = neutral;
-                Negative = negative;
-            }
-        }
-    }
 }
 
 [Serializable]
@@ -119,8 +74,8 @@ public class EventResourceChange : EventResource, IConvertible
     public override string FormatResourceChange()
     {
         StringBuilder builder = new();
-        ColorScheme colorScheme = PositivityToColorScheme(Resource);
-        FormatNumber(ref builder, colorScheme, Change, IsPercentChange || Resource.PercentFormatted);
+        PositivityColorScheme colorScheme = PositivityToColorScheme(Resource);
+        FormatNumber(ref builder, colorScheme, Change, IsPercentChange || Resource.IsPercentFormatted);
         builder.Append(" ");
         builder.Append(Resource.Name);
         builder.Append("</color>");
@@ -236,11 +191,11 @@ public class EventResourceRandomChange : EventResource, IConvertible
     public override string FormatResourceChange()
     {
         StringBuilder builder = new();
-        ColorScheme colorScheme = PositivityToColorScheme(Resource);
+        PositivityColorScheme colorScheme = PositivityToColorScheme(Resource);
         builder.Append("From ");
-        FormatNumber(ref builder, colorScheme, MinChange, IsPercentChange || Resource.PercentFormatted);
+        FormatNumber(ref builder, colorScheme, MinChange, IsPercentChange || Resource.IsPercentFormatted);
         builder.Append(" To ");
-        FormatNumber(ref builder, colorScheme, MaxChange, IsPercentChange || Resource.PercentFormatted);
+        FormatNumber(ref builder, colorScheme, MaxChange, IsPercentChange || Resource.IsPercentFormatted);
         builder.Append(" ");
         builder.Append(Resource.Name);
         return builder.ToString();
@@ -360,8 +315,8 @@ public class EventResourceRandomChangePerResourceChanges : EventResourceChange, 
     public override string FormatResourceChange()
     {
         StringBuilder mainBuilder = new();
-        ColorScheme mainColorScheme = PositivityToColorScheme(Resource);
-        FormatNumber(ref mainBuilder, mainColorScheme, Change, IsPercentChange || Resource.PercentFormatted);
+        PositivityColorScheme mainColorScheme = PositivityToColorScheme(Resource);
+        FormatNumber(ref mainBuilder, mainColorScheme, Change, IsPercentChange || Resource.IsPercentFormatted);
         mainBuilder.Append(" ");
         mainBuilder.Append(Resource.Name);
         mainBuilder.AppendLine("</color>");
@@ -372,11 +327,11 @@ public class EventResourceRandomChangePerResourceChanges : EventResourceChange, 
         foreach (var change in EventResourceRandomChanges)
         {
             StringBuilder builder = new();
-            ColorScheme colorScheme = PositivityToColorScheme(Resource);
+            PositivityColorScheme colorScheme = PositivityToColorScheme(Resource);
             builder.Append("From ");
-            FormatNumber(ref builder, colorScheme, change.MinChange, change.IsPercentChange || change.Resource.PercentFormatted);
+            FormatNumber(ref builder, colorScheme, change.MinChange, change.IsPercentChange || change.Resource.IsPercentFormatted);
             builder.Append(" To ");
-            FormatNumber(ref builder, colorScheme, change.MaxChange, change.IsPercentChange || change.Resource.PercentFormatted);
+            FormatNumber(ref builder, colorScheme, change.MaxChange, change.IsPercentChange || change.Resource.IsPercentFormatted);
             builder.Append(" ");
             builder.Append(change.Resource.Name);
             mainBuilder.AppendLine(builder.ToString());
