@@ -16,8 +16,7 @@ public static class PositivityColorSchemes
             default: builder.Append($"<color={colorScheme.Neutral}>"); break;
         }
         builder.Append(Formations.LeadingPlus(num));
-        if (forcePercentFormat)
-            builder.Append("%");
+        if (forcePercentFormat) builder.Append("%");
         builder.Append("</color>");
     }
 

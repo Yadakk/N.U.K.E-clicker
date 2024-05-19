@@ -31,7 +31,8 @@ public class InfoDisplayer : MonoBehaviour
     private string GetAffectedResourceInfo(AffectedResource affRes)
     {
         StringBuilder stringBuilder = new();
-        stringBuilder.Append(Formations.LeadingPlus(affRes.Change));
+        PositivityColorScheme scheme = PositivityColorSchemes.PositivityToColorScheme(affRes.Resource);
+        PositivityColorSchemes.FormatNumber(ref stringBuilder, scheme, affRes.Change, affRes.Resource.IsPercentFormatted);
         stringBuilder.Append(" ");
         stringBuilder.Append(affRes.Resource.Name);
         return stringBuilder.ToString();

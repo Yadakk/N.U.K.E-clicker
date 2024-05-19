@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5794057122785983353}
   - component: {fileID: 7267853311990087081}
   - component: {fileID: 2364743580529320631}
+  - component: {fileID: 4372186312864983553}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -133,3 +134,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af1ca68190caaa48a0656c1b46601a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopItem: {fileID: 0}
+  InfoDisplayer: {fileID: 0}
+--- !u!114 &4372186312864983553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729942791505758403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0399ae294caa9845b041e6bd0dd4093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _clips:
+  - {fileID: 8300000, guid: 413896773c9c93a4ea05fa8fbf7be43d, type: 3}

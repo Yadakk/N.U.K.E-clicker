@@ -61,16 +61,6 @@
             "folderImageType": 0
         },
         {
-            "name": "GlobalScripts",
-            "folderColor": {
-                "r": 0.2287735790014267,
-                "g": 0.9150943160057068,
-                "b": 0.7624025940895081,
-                "a": 1.0
-            },
-            "folderImageType": 0
-        },
-        {
             "name": "Events",
             "folderColor": {
                 "r": 0.7236829996109009,
@@ -86,6 +76,16 @@
                 "r": 0.772549033164978,
                 "g": 0.2588235139846802,
                 "b": 0.6245051622390747,
+                "a": 1.0
+            },
+            "folderImageType": 0
+        },
+        {
+            "name": "GlobalComponents",
+            "folderColor": {
+                "r": 0.22745099663734437,
+                "g": 0.9137255549430847,
+                "b": 0.760784387588501,
                 "a": 1.0
             },
             "folderImageType": 0
