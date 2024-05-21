@@ -8479,7 +8479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896865960680916687, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7097014805240007345, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: _maxForce.x

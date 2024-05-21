@@ -9,9 +9,11 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public ShopItem ShopItem;
     public InfoDisplayer InfoDisplayer;
     private Button _button;
+    private SoundPlayer _soundPlayer;
 
     private void Start()
     {
+        _soundPlayer = GetComponent<SoundPlayer>();
         _button = GetComponent<Button>();
         _button.onClick.AddListener(TryBuy);
     }
@@ -30,8 +32,9 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         foreach (var affRes in ShopItem.AffectedResources)
         {
-            if (!(affRes.Resource.Amount + affRes.Change >= 0))
+            if (!(affRes.Resource.Amount + affRes.Change >= affRes.Resource.MinLimit.Limit))
             {
+                if (_soundPlayer != null) _soundPlayer.PlaySound(1);
                 return;
             }
         }
@@ -43,5 +46,6 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
 
         InfoDisplayer.Show(ShopItem);
+        if (_soundPlayer != null) _soundPlayer.PlaySound(0);
     }
 }
