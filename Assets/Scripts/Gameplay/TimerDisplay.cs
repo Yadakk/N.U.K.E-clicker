@@ -20,10 +20,10 @@ public class TimerDisplay : MonoBehaviour
 
     private IEnumerator UpdateTimer()
     {
-        yield return new WaitWhile(() => Timer.Instance == null);
+        yield return new WaitWhile(() => GameTimer.Instance == null);
         while (true)
         {
-            _image.fillAmount = Timer.Instance.Remaining / Timer.Instance.Seconds;
+            _image.fillAmount = GameTimer.Instance.Remaining / GameTimer.Instance.Seconds;
             yield return null;
         }
     }

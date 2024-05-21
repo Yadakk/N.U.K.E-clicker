@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.Events;
 
-public class Timer : MonoBehaviour
+public class GameTimer : MonoBehaviour
 {
     public float Seconds;
-    [NonSerialized] public static Timer Instance;
+    [NonSerialized] public static GameTimer Instance;
     [NonSerialized] public float Remaining;
     public readonly UnityEvent OnTimerStarted = new();
 
