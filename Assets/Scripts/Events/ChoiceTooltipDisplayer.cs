@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Text;
 using System.Linq;
-using Utilities;
+using static Utilities.IntBoolParseUtility;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
@@ -33,11 +33,13 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnButtonClickHandler()
     {
-        if (_informer.Data != null)
+        bool hasData = _informer.Data != null;
+        if (hasData)
         {
             if (_isPositive) ApplyChanges(_informer.Data.PositiveEffects);
             else ApplyChanges(_informer.Data.NegativeEffects);
         }
+        if (_soundPlayer != null) _soundPlayer.PlaySound(BoolToInt(!hasData));
     }
 
     private void ApplyChanges(EventBundle bundle)
@@ -45,7 +47,6 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
         bundle.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
         _informer.ClearData();
         Tooltip.HideTooltipStatic();
-        if (_soundPlayer != null) _soundPlayer.PlaySound();
     }
 
     private void AppendChanges(EventBundle bundle, ref StringBuilder builder)
