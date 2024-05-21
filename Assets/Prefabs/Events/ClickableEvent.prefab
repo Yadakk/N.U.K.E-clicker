@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8550253312217494734}
   - component: {fileID: 1072569490317892552}
   - component: {fileID: 7399794844716451321}
+  - component: {fileID: 6494604663071842585}
   m_Layer: 0
   m_Name: ClickableEvent
   m_TagString: Untagged
@@ -281,3 +282,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05452d68f19949248a6c393172cad775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6494604663071842585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2996277865251173006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0399ae294caa9845b041e6bd0dd4093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 413896773c9c93a4ea05fa8fbf7be43d, type: 3}

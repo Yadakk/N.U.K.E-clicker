@@ -10,15 +10,18 @@ public class ToggleSetting : MonoBehaviour, IInitOnSceneLoad
     public bool Default { get => _default;}
     private Toggle _toggle;
     public Toggle Toggle => _toggle;
+    private SoundPlayer _soundPlayer;
 
     private void Start()
     {
+        _soundPlayer = GetComponent<SoundPlayer>();
         _toggle.isOn = IntToBool(PlayerPrefs.GetInt(name, BoolToInt(_default)));
         _toggle.onValueChanged.AddListener(OnToggleValueChangedHandler);
     }
 
     private void OnToggleValueChangedHandler(bool val)
     {
+        if (_soundPlayer != null) _soundPlayer.PlaySound(BoolToInt(!val));
         PlayerPrefs.SetInt(name, BoolToInt(val));
     }
 

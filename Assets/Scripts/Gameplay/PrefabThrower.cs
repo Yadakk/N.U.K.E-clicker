@@ -13,6 +13,13 @@ public class PrefabThrower : MonoBehaviour
     [SerializeField] private float _maxTorque;
     [SerializeField] private float _fadeAfterSeconds;
     [SerializeField] private float _fadeSpeed = 1f;
+    private Canvas _canvas;
+    private CanvasScaler _canvasScaler;
+
+    private void Start()
+    {
+        _canvas = ActiveCanvas.Canvas;
+    }
 
     public void Throw()
     {
@@ -22,9 +29,16 @@ public class PrefabThrower : MonoBehaviour
         var forceX = Random.Range(_minForce.x, _maxForce.x);
         var forceY = Random.Range(_minForce.y, _maxForce.y);
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+        float canvasScale = GetCanvasScale(_canvas);
+        rb.gravityScale *= canvasScale;
+        rb.AddForce(new Vector2(forceX, forceY) * canvasScale, ForceMode2D.Impulse);
         rb.AddTorque(RandomWithInversion(_minTorque, _maxTorque));
         StartCoroutine(RemoveWithFadeAfterSeconds(_fadeAfterSeconds, gameObject.GetComponent<Image>(), gameObject));
+    }
+
+    private float GetCanvasScale(Canvas canvas)
+    {
+        return Screen.width / canvas.GetComponent<CanvasScaler>().referenceResolution.x;
     }
 
     private float RandomWithInversion(float min, float max)
