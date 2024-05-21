@@ -89,6 +89,16 @@
                 "a": 1.0
             },
             "folderImageType": 0
+        },
+        {
+            "name": "EventTimers",
+            "folderColor": {
+                "r": 0.3442504405975342,
+                "g": 0.12722675502300263,
+                "b": 0.40377360582351687,
+                "a": 1.0
+            },
+            "folderImageType": 0
         }
     ]
 }

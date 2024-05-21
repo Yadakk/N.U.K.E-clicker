@@ -16,13 +16,6 @@ public class EventFillSetter : MonoBehaviour
 
     public void SetFillLerp(float t)
     {
-        Rect rect = _rectTransform.rect;
-        rect.x = Mathf.Lerp(-GetOffset(), GetOffset(), t);
-
-    }
-
-    private float GetOffset()
-    {
-        return _parentRectTransform.rect.position.x + _parentRectTransform.rect.x;
+        _rectTransform.sizeDelta = new(Mathf.Lerp(0f, _parentRectTransform.sizeDelta.x, t), 0f);
     }
 }

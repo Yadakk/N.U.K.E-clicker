@@ -19,7 +19,6 @@ public class EventController : MonoBehaviour
     private void Start()
     {
         _button = GetComponent<Button>();
-        _timer = GetComponent<Timer>();
         _eventHolder = GetComponent<EventHolder>();
         _fillSetter = GetComponentInChildren<EventFillSetter>();
         _button.onClick.AddListener(OnButtonClickHandler);
@@ -32,6 +31,21 @@ public class EventController : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        var timerObject = new GameObject("EventTimer");
+        timerObject.transform.parent = GlobalTimerContainer.Instance.transform;
+        _timer = timerObject.AddComponent<Timer>();
+        _timer.StartTimer(LifeSpanSeconds);
+        _timer.OnTimerFinished.AddListener(CleanEvent);
+    }
+
+    private void CleanEvent()
+    {
+        Destroy(_timer.gameObject);
+        Destroy(gameObject);
+    }
+
     private void OnDataSetHandler(EventData data)
     {
         _eventData = data;
@@ -41,8 +55,6 @@ public class EventController : MonoBehaviour
     private void SetUp()
     {
         GetComponentInChildren<TextMeshProUGUI>().text = _eventData.Name;
-        _timer.StartTimer(LifeSpanSeconds);
-        _timer.OnTimerFinished.AddListener(() => Destroy(gameObject));
     }
 
     private void Update()

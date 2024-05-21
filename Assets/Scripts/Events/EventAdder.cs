@@ -25,7 +25,9 @@ public class EventAdder : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(_minSeconds, _maxSeconds));
                 var eventGO = Instantiate(_eventPrefab, _eventFolder) as GameObject;
                 eventGO.GetComponent<EventHolder>().SetData(events[i]);
-                eventGO.GetComponent<EventController>().Informer = _informer;
+                var controller = eventGO.GetComponent<EventController>();
+                controller.Informer = _informer;
+                controller.Init();
             }
         }
     }
