@@ -50,6 +50,7 @@ public class Resource : MonoBehaviour
     [field: SerializeField] public bool IsPercentFormatted { get; set; }
     [field: SerializeField] public Positivity ResourcePositivity { get; set; }
     [field: SerializeField] public Sprite Icon { get; set; }
+    public bool DisableFlash { get; set; } = false;
     public readonly UnityEvent<float, float> OnAmountChange = new();
 
     public enum Positivity

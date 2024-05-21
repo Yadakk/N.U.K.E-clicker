@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using static Resource;
+using static Utilities.NumberFormatter;
 
 public class ResourceDisplayer : MonoBehaviour
 {
@@ -71,6 +72,12 @@ public class ResourceDisplayer : MonoBehaviour
     private void AmountChangeHandler(float newVal, float oldVal)
     {
         UpdateCounter(newVal);
+        FlashColor(newVal, oldVal);
+    }
+
+    private void FlashColor(float newVal, float oldVal)
+    {
+        if (_resourceToDisplay.DisableFlash) return;
         if (newVal > oldVal)
         {
             switch (_scheme.Positive)
@@ -91,10 +98,10 @@ public class ResourceDisplayer : MonoBehaviour
         }
     }
 
-    private void UpdateCounter<T>(T newVal)
+    private void UpdateCounter(float newVal)
     {
         StringBuilder builder = new();
         if (_resourceToDisplay.IsPercentFormatted) builder.Append("%");
-        _text.text = newVal.ToString();
+        _text.text = ToKMB(newVal);
     }
 }
