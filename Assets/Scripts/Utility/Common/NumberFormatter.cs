@@ -30,5 +30,12 @@ namespace Utilities
             else
                 return num.ToString(CultureInfo.InvariantCulture);
         }
+
+        public static string LeadingPlusToKMB(float num)
+        {
+            string plus = num > 0 ? "+" : string.Empty;
+            string kmbNum = ToKMB(num);
+            return plus + kmbNum;
+        }
     }
 }
