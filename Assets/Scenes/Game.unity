@@ -175,10 +175,10 @@ MonoBehaviour:
   AffectedResources:
   - Resource: {fileID: 1766853748}
     Change: 1
-    Multiplier: 2
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
-    Multiplier: 2
+    Change: -750
+    Multiplier: 2.5
 --- !u!1 &92875426
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +904,61 @@ MonoBehaviour:
   _descTmpu: {fileID: 1331174184}
   _posTmpu: {fileID: 398687577}
   _negTmpu: {fileID: 1425819044}
+--- !u!1 &247784710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247784711}
+  - component: {fileID: 247784712}
+  m_Layer: 0
+  m_Name: DieForMe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247784711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247784710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435800127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247784712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247784710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Die For Me!
+  Desc: Sacrifice People for Caps
+  Icon: {fileID: 0}
+  Shop: 2
+  AffectedResources:
+  - Resource: {fileID: 321213735}
+    Change: -100
+    Multiplier: 1.5
+  - Resource: {fileID: 360841995}
+    Change: 100
+    Multiplier: 1.5
 --- !u!1 &248550117
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,11 +1009,11 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 2132763571}
-    Change: 1
-    Multiplier: 2
+    Change: 0.5
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
-    Multiplier: 2
+    Change: -500
+    Multiplier: 1.5
 --- !u!1 &251040006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1753,67 @@ MonoBehaviour:
         <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
+--- !u!1 &382561053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382561054}
+  - component: {fileID: 382561055}
+  m_Layer: 0
+  m_Name: NegativeChoiceIncome
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382561054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382561053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688076829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382561055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382561053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Negative Choice Income
+  _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <IsPercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 0}
 --- !u!1 &398687575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,10 +2319,10 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 2030041676}
-    Change: 1
-    Multiplier: 2
+    Change: 10
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
+    Change: -250
     Multiplier: 2
 --- !u!1 &515549669
 GameObject:
@@ -3237,11 +3353,11 @@ MonoBehaviour:
   Shop: 2
   AffectedResources:
   - Resource: {fileID: 184793924}
-    Change: 1
-    Multiplier: 2
+    Change: 5
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
-    Multiplier: 2
+    Change: -1000
+    Multiplier: 2.5
 --- !u!1 &809422761
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,9 +3640,9 @@ MonoBehaviour:
   AffectedResources:
   - Resource: {fileID: 1861912143}
     Change: 1
-    Multiplier: 2
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
+    Change: -300
     Multiplier: 2
 --- !u!224 &886081699
 RectTransform:
@@ -3724,6 +3840,61 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 812122835608561983, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
   m_PrefabInstance: {fileID: 6079126447734067339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &911773557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911773558}
+  - component: {fileID: 911773559}
+  m_Layer: 0
+  m_Name: MayIOfferSomeBread
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &911773558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911773557}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435800127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911773559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911773557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: May I Offer You Some Bread?
+  Desc: For every bad decision you get Breads
+  Icon: {fileID: 0}
+  Shop: 1
+  AffectedResources:
+  - Resource: {fileID: 382561055}
+    Change: 1
+    Multiplier: 1
+  - Resource: {fileID: 360841995}
+    Change: 500
+    Multiplier: 1.5
 --- !u!1 &937270597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2154462190764138177, guid: f017fc221ec5ac44baad208587077e99, type: 3}
@@ -3894,10 +4065,10 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 285538533}
-    Change: 1
-    Multiplier: 2
+    Change: 5
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
+    Change: -300
     Multiplier: 2
 --- !u!224 &1058799988 stripped
 RectTransform:
@@ -4530,9 +4701,9 @@ MonoBehaviour:
   AffectedResources:
   - Resource: {fileID: 2094576510}
     Change: 1
-    Multiplier: 2
+    Multiplier: 1
   - Resource: {fileID: 360841995}
-    Change: -20
+    Change: -100
     Multiplier: 2
 --- !u!1 &1152296976
 GameObject:
@@ -4779,7 +4950,7 @@ GameObject:
   - component: {fileID: 1185586443}
   - component: {fileID: 1185586444}
   m_Layer: 0
-  m_Name: CritBreadsChance
+  m_Name: CritBreads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4812,7 +4983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Critical Breads Chance
+  <Name>k__BackingField: Critical Breads
   _amount: 0
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 0
@@ -4826,7 +4997,7 @@ MonoBehaviour:
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
-  <IsPercentFormatted>k__BackingField: 1
+  <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
 --- !u!1 &1197513228
@@ -5714,6 +5885,8 @@ Transform:
   - {fileID: 41723214}
   - {fileID: 1147180513}
   - {fileID: 785880063}
+  - {fileID: 911773558}
+  - {fileID: 247784711}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454055561
@@ -6323,6 +6496,7 @@ Transform:
   - {fileID: 184793923}
   - {fileID: 2030041675}
   - {fileID: 838437760}
+  - {fileID: 382561054}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706791141
