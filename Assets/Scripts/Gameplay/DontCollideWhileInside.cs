@@ -10,6 +10,7 @@ public class DontCollideWhileInside : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<CapsuleCollider2D>();
+        if (_collider == null) _collider = GetComponent<BoxCollider2D>();
         _collider.isTrigger = true;
     }
 
