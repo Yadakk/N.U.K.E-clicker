@@ -12,22 +12,19 @@ public class Clicker : MonoBehaviour
     [SerializeField] private PrefabThrower _capThrower;
     [SerializeField] private PrefabThrower _breadThrower;
 
-    private void Start()
-    {
-        //_capThrower.enabled = false;
-    }
-
     public void OnClick()
     {
-        _increaseResource.Amount += _increaseBy.Amount;
-
         float roll = Random.Range(0, 100);
         if (roll < _criticalChance.Amount)
         {
-            _increaseResource.Amount += _increaseBy.Amount;
+            _increaseResource.Amount += _increaseBy.Amount * 3;
             _breads.Amount += _criticalBreads.Amount;
             _breadThrower.Throw();
         }
-        else _capThrower.Throw();
+        else
+        {
+            _increaseResource.Amount += _increaseBy.Amount;
+        }
+        _capThrower.Throw();
     }
 }

@@ -101,7 +101,8 @@ public class ResourceDisplayer : MonoBehaviour
     private void UpdateCounter(float newVal)
     {
         StringBuilder builder = new();
+        builder.Append(ToKMB(newVal));
         if (_resourceToDisplay.IsPercentFormatted) builder.Append("%");
-        _text.text = ToKMB(newVal);
+        _text.text = builder.ToString();
     }
 }

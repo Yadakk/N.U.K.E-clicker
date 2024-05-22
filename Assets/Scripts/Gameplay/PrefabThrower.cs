@@ -14,11 +14,12 @@ public class PrefabThrower : MonoBehaviour
     [SerializeField] private float _fadeAfterSeconds;
     [SerializeField] private float _fadeSpeed = 1f;
     private Canvas _canvas;
-    private CanvasScaler _canvasScaler;
+    private SoundPlayer _soundPlayer;
 
     private void Start()
     {
         _canvas = ActiveCanvas.Canvas;
+        _soundPlayer = GetComponent<SoundPlayer>();
     }
 
     public void Throw()
@@ -34,6 +35,7 @@ public class PrefabThrower : MonoBehaviour
         rb.AddForce(new Vector2(forceX, forceY) * canvasScale, ForceMode2D.Impulse);
         rb.AddTorque(RandomWithInversion(_minTorque, _maxTorque));
         StartCoroutine(RemoveWithFadeAfterSeconds(_fadeAfterSeconds, gameObject.GetComponent<Image>(), gameObject));
+        if (_soundPlayer != null) _soundPlayer.PlaySound();
     }
 
     private float GetCanvasScale(Canvas canvas)

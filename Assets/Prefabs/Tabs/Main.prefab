@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 7805603747715300224}
   - component: {fileID: 5958601774573939025}
   - component: {fileID: 522485095371820350}
+  - component: {fileID: 798694082369623734}
   m_Layer: 5
   m_Name: BreadThrower
   m_TagString: Untagged
@@ -323,6 +324,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toggleSetting: {fileID: 0}
+--- !u!114 &798694082369623734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4069941191649341971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c3bd0940d168419d87254dae5960c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 72dbc1c3040b8cd48a71d83736f6fdab, type: 3}
 --- !u!1 &4896865960680916687
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2152081536377671826
 RectTransform:
   m_ObjectHideFlags: 0
@@ -412,6 +427,7 @@ GameObject:
   - component: {fileID: 7445410776075986195}
   - component: {fileID: 6469369639336185787}
   - component: {fileID: 6176340986918884799}
+  - component: {fileID: 5660134179444636706}
   m_Layer: 5
   m_Name: CapThrower
   m_TagString: Untagged
@@ -471,6 +487,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toggleSetting: {fileID: 0}
+--- !u!114 &5660134179444636706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7061450282279192268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c3bd0940d168419d87254dae5960c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 01022fae1a9c8114cb9b0973e16fa02c, type: 3}
+  - {fileID: 8300000, guid: f539d4e0f0b617f40a9134aef5086a09, type: 3}
+  - {fileID: 8300000, guid: f803739c8a949cf4aa281019448e1820, type: 3}
+  - {fileID: 8300000, guid: ca4ff4e174551724881ba23d18f73922, type: 3}
 --- !u!1001 &322032864161383426
 PrefabInstance:
   m_ObjectHideFlags: 0
