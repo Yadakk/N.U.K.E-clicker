@@ -25,6 +25,6 @@ public class ShopItem : MonoBehaviour
 public class AffectedResource
 {
     public Resource Resource;
-    public int Change;
-    public int Multiplier = 1;
+    public float Change;
+    public float Multiplier = 1;
 }
