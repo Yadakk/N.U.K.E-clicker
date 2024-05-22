@@ -13,6 +13,7 @@ public class GameTimer : MonoBehaviour
     public float RemainingSeconds { get; private set; }
     public int RemainingMonths { get; private set; }
     public readonly UnityEvent OnTimerStarted = new();
+    public readonly UnityEvent OnMonthsAmountChanged = new();
     private float _secondsToMonthsRatio;
     private void Start()
     {
@@ -29,10 +30,16 @@ public class GameTimer : MonoBehaviour
         while (RemainingSeconds > 0)
         {
             RemainingSeconds -= Time.deltaTime;
-            RemainingMonths = Mathf.CeilToInt(RemainingSeconds / _secondsToMonthsRatio);
+            bool monthsChanged = RemainingMonths != SecondsToIngameMonths(); 
+            RemainingMonths = SecondsToIngameMonths();
+            if (monthsChanged) OnMonthsAmountChanged.Invoke();
             yield return null;
         }
-
         SceneManager.LoadScene("GameOver");
+    }
+
+    private int SecondsToIngameMonths()
+    {
+        return Mathf.FloorToInt(RemainingSeconds / _secondsToMonthsRatio);
     }
 }

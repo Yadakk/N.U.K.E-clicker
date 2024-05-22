@@ -13,18 +13,19 @@ public class PrefabThrower : MonoBehaviour
     [SerializeField] private float _maxTorque;
     [SerializeField] private float _fadeAfterSeconds;
     [SerializeField] private float _fadeSpeed = 1f;
+    [SerializeField] private Resource _conditionResource;
+    [SerializeField] private float _conditionResourceMoreThan;
     private Canvas _canvas;
-    private SoundPlayer _soundPlayer;
 
     private void Start()
     {
         _canvas = ActiveCanvas.Canvas;
-        _soundPlayer = GetComponent<SoundPlayer>();
     }
 
     public void Throw()
     {
         if (!enabled) return;
+        if (_conditionResource != null && _conditionResource.Amount <= _conditionResourceMoreThan) return;
         var initialRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
         var gameObject = Instantiate(_prefab, transform.position, initialRotation, _putObjectsInto) as GameObject;
         var forceX = Random.Range(_minForce.x, _maxForce.x);
@@ -35,7 +36,6 @@ public class PrefabThrower : MonoBehaviour
         rb.AddForce(new Vector2(forceX, forceY) * canvasScale, ForceMode2D.Impulse);
         rb.AddTorque(RandomWithInversion(_minTorque, _maxTorque));
         StartCoroutine(RemoveWithFadeAfterSeconds(_fadeAfterSeconds, gameObject.GetComponent<Image>(), gameObject));
-        if (_soundPlayer != null) _soundPlayer.PlaySound();
     }
 
     private float GetCanvasScale(Canvas canvas)

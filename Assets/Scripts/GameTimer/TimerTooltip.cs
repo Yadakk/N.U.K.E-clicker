@@ -7,24 +7,37 @@ using System.Text;
 public class TimerTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int RemainingMonths { get => GameTimer.Instance.RemainingMonths; }
-    private int _remainingYears;
+    public int RemainingYears { get => Mathf.FloorToInt((float)RemainingMonths / 12); }
+    private bool _isPointerInside;
 
     private void Start()
     {
-        _remainingYears = Mathf.FloorToInt((float)RemainingMonths / 12);
+        GameTimer.Instance.OnMonthsAmountChanged.AddListener(OnMonthsAmountChangedHandler);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        StringBuilder stringBuilder = new();
-        stringBuilder.AppendLine("Time left:");
-        stringBuilder.AppendLine(_remainingYears + " Years");
-        stringBuilder.AppendLine(_remainingYears * 12 - RemainingMonths + " Months");
-        Tooltip.ShowTooltipStatic(stringBuilder.ToString());
+        _isPointerInside = true;
+        DisplayTooltip();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        _isPointerInside = false;
         Tooltip.HideTooltipStatic();
+    }
+
+    private void OnMonthsAmountChangedHandler()
+    {
+        if (_isPointerInside) DisplayTooltip();
+    }
+
+    private void DisplayTooltip()
+    {
+        StringBuilder stringBuilder = new();
+        stringBuilder.AppendLine("Time left:");
+        stringBuilder.AppendLine(RemainingYears + " Years");
+        if (RemainingMonths % 12 != 0) stringBuilder.AppendLine(RemainingMonths % 12 + " Months");
+        Tooltip.ShowTooltipStatic(stringBuilder.ToString());
     }
 }
