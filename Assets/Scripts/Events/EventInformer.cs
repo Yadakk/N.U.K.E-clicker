@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using TMPro;
+using UnityEngine.Events;
 
 public class EventInformer : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EventInformer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _descTmpu;
     [SerializeField] private TextMeshProUGUI _posTmpu;
     [SerializeField] private TextMeshProUGUI _negTmpu;
+    public readonly UnityEvent OnDataHidden = new();
 
     private void Start()
     {
@@ -26,12 +28,23 @@ public class EventInformer : MonoBehaviour
         _negTmpu.text = Data.NegativeName;
     }
 
-    public void ClearData()
+    public void ClearData(EventController controller)
+    {
+        HideData();
+        Destroy(controller.gameObject);
+    }
+
+    public void HideData()
     {
         Data = null;
-        Destroy(Controller.gameObject);
         _descTmpu.text = string.Empty;
         _posTmpu.text = string.Empty;
         _negTmpu.text = string.Empty;
+        OnDataHidden.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        HideData();
     }
 }

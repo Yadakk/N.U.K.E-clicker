@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
 
-[RequireComponent(typeof(Button))]
 public class SoundPlayer : MonoBehaviour
 {
     [field: SerializeField] public List<AudioClip> Clips { get; set; }

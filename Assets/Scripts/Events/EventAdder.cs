@@ -6,6 +6,7 @@ using Utilities;
 
 public class EventAdder : MonoBehaviour
 {
+    [SerializeField] private EventNotifier _eventNotifier;
     [SerializeField] private EventInformer _informer;
     [SerializeField] private Transform _eventFolder;
     [SerializeField] private Transform _eventMBFolder;
@@ -25,7 +26,10 @@ public class EventAdder : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(_minSeconds, _maxSeconds));
                 var eventGO = Instantiate(_eventPrefab, _eventFolder) as GameObject;
                 eventGO.GetComponent<EventHolder>().SetData(events[i]);
-                eventGO.GetComponent<EventController>().Informer = _informer;
+                var controller = eventGO.GetComponent<EventController>();
+                controller.Informer = _informer;
+                controller.Init();
+                if (!_eventFolder.gameObject.activeInHierarchy) _eventNotifier.Notify();
             }
         }
     }
