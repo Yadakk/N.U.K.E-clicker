@@ -12,6 +12,7 @@ public class EventController : MonoBehaviour
 {
     [field: SerializeField] public float MinLifeSpanSeconds { get; set; } = 1f;
     [field: SerializeField] public float MaxLifeSpanSeconds { get; set; } = 1f;
+    private SoundPlayer _soundPlayer;
     private EventHolder _eventHolder;
     private EventData _eventData;
     private Button _button;
@@ -21,6 +22,7 @@ public class EventController : MonoBehaviour
 
     private void Start()
     {
+        _soundPlayer = GetComponent<SoundPlayer>();
         _button = GetComponent<Button>();
         GetFillSetter();
         _button.onClick.AddListener(OnButtonClickHandler);
@@ -51,14 +53,15 @@ public class EventController : MonoBehaviour
         timerObject.transform.parent = GlobalTimerContainer.Instance.transform;
         _timer = timerObject.AddComponent<Timer>();
         _timer.StartTimer(UnityEngine.Random.Range(MinLifeSpanSeconds, MaxLifeSpanSeconds));
-        _timer.OnTimerFinished.AddListener(CleanEvent);
+        _timer.OnTimerFinished.AddListener(OnTimerFinishedHandler);
     }
 
-    private void CleanEvent()
+    private void OnTimerFinishedHandler()
     {
         Destroy(_timer.gameObject);
         _eventHolder.Data.NegativeEffects.GetAllResources().ToList().ForEach(change => change.ApplyChanges());
         Informer.ClearData(this);
+        _soundPlayer.PlaySound(1);
     }
 
     private void OnDataSetHandler(EventData data)
@@ -92,5 +95,6 @@ public class EventController : MonoBehaviour
     private void OnButtonClickHandler()
     {
         Informer.DisplayInfo(_eventData, this);
+        _soundPlayer.PlaySound(0);
     }
 }

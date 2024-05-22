@@ -25,21 +25,21 @@ public class Resource : MonoBehaviour
 
     private bool LimitHandler(ResourceLimit limit, bool isUpper)
     {
-        bool IsLimitReached() => isUpper ? Amount > limit.Limit : Amount < limit.Limit;
-        float GetLimitOverflow() => Amount - limit.Limit;
+        bool IsLimitReached() => isUpper ? _amount > limit.Limit : _amount < limit.Limit;
+        float GetLimitOverflow() => _amount - limit.Limit;
         if (limit.HasLimit && IsLimitReached())
         {
             if (limit.ExchangedResource != null)
             {
-                limit.ExchangedResource.Amount += GetLimitOverflow();
-                Amount -= GetLimitOverflow();
+                limit.ExchangedResource._amount += GetLimitOverflow();
+                _amount -= GetLimitOverflow();
             }
             else if (limit.TriggersGameOverOnLimit && IsLimitReached())
             {
                 SceneManager.LoadScene("GameOver");
-                Amount = limit.Limit;
+                _amount = limit.Limit;
             }
-            else Amount = limit.Limit;
+            else _amount = limit.Limit;
             return true;
         }
         return false;
