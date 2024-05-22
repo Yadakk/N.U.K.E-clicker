@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Text;
 using System.Linq;
-using static Utilities.IntBoolParseUtility;
 using UnityEngine.UI;
+using static Utilities.IntBoolParseUtility;
 
 [RequireComponent(typeof(Button))]
 public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -14,12 +14,14 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
     [SerializeField] private bool _isPositive;
     private Button _button;
     private SoundPlayer _soundPlayer;
+    public bool IsDisplayingTooltip { get; private set; }
 
     private void Start()
     {
         _button = GetComponent<Button>();
         _soundPlayer = GetComponent<SoundPlayer>();
         _button.onClick.AddListener(OnButtonClickHandler);
+        _informer.OnDataHidden.AddListener(HideTooltip);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -29,6 +31,7 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
         if (_isPositive) AppendChanges(_informer.Data.PositiveEffects, ref builder);
         else AppendChanges(_informer.Data.NegativeEffects, ref builder);
         Tooltip.ShowTooltipStatic(builder.ToString());
+        IsDisplayingTooltip = true;
     }
 
     public void OnButtonClickHandler()
@@ -45,8 +48,9 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
     private void ApplyChanges(EventBundle bundle)
     {
         bundle.GetAllResources().ToList().ForEach(evRes => evRes.ApplyChanges());
-        _informer.ClearData();
+        _informer.ClearData(_informer.Controller);
         Tooltip.HideTooltipStatic();
+        IsDisplayingTooltip = false;
     }
 
     private void AppendChanges(EventBundle bundle, ref StringBuilder builder)
@@ -61,6 +65,12 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        HideTooltip();
+    }
+
+    private void HideTooltip()
+    {
         Tooltip.HideTooltipStatic();
+        IsDisplayingTooltip = false;
     }
 }

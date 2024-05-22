@@ -344,6 +344,8 @@ GameObject:
   - component: {fileID: 137575647}
   - component: {fileID: 137575646}
   - component: {fileID: 137575650}
+  - component: {fileID: 137575652}
+  - component: {fileID: 137575651}
   m_Layer: 5
   m_Name: Events
   m_TagString: Untagged
@@ -481,6 +483,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Clips>k__BackingField:
   - {fileID: 8300000, guid: 413896773c9c93a4ea05fa8fbf7be43d, type: 3}
+--- !u!114 &137575651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137575644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c3bd0940d168419d87254dae5960c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 78499cb087f5df14aa78411c30254f87, type: 3}
+--- !u!114 &137575652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137575644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739dc296f86d3884281aea9956c58636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <NotificationColor>k__BackingField: {r: 1, g: 0.64708, b: 0, a: 1}
+  <NotificationText>k__BackingField: New events
 --- !u!1 &176274262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,8 +4178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780, y: 0}
-  m_SizeDelta: {x: 1560, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1066662646
 MonoBehaviour:
@@ -5083,6 +5113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b484465320debdb41bb8fda689ddca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventNotifier: {fileID: 137575652}
   _informer: {fileID: 233862893}
   _eventFolder: {fileID: 1710599370}
   _eventMBFolder: {fileID: 196620416}
@@ -6467,7 +6498,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99994993
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6545,7 +6576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 425.13574}
+  m_AnchoredPosition: {x: -0.05999756, y: 425.1719}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -8877,6 +8908,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 6716148873512461432, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
+      propertyPath: _default
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7318481505512428857, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 340
@@ -8937,8 +8972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780, y: 0}
-  m_SizeDelta: {x: 1560, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &7292630779623880124
 MonoBehaviour:
