@@ -23,7 +23,7 @@ public class TimerDisplay : MonoBehaviour
         yield return new WaitWhile(() => GameTimer.Instance == null);
         while (true)
         {
-            _image.fillAmount = GameTimer.Instance.Remaining / GameTimer.Instance.Seconds;
+            _image.fillAmount = GameTimer.Instance.RemainingSeconds / GameTimer.Instance.Seconds;
             yield return null;
         }
     }

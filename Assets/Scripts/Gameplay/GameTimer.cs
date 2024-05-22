@@ -8,14 +8,17 @@ using UnityEngine.Events;
 public class GameTimer : MonoBehaviour
 {
     public float Seconds;
+    public int MonthsForConversion = 60;
     [NonSerialized] public static GameTimer Instance;
-    [NonSerialized] public float Remaining;
+    public float RemainingSeconds { get; private set; }
+    public int RemainingMonths { get; private set; }
     public readonly UnityEvent OnTimerStarted = new();
-
+    private float _secondsToMonthsRatio;
     private void Start()
     {
         Instance = this;
-        Remaining = Seconds;
+        _secondsToMonthsRatio = Seconds / MonthsForConversion;
+        RemainingSeconds = Seconds;
         StartCoroutine(TimerCoroutine());
     }
     
@@ -23,9 +26,10 @@ public class GameTimer : MonoBehaviour
     {
         OnTimerStarted.Invoke();
 
-        while (Remaining > 0)
+        while (RemainingSeconds > 0)
         {
-            Remaining -= Time.deltaTime;
+            RemainingSeconds -= Time.deltaTime;
+            RemainingMonths = Mathf.CeilToInt(RemainingSeconds / _secondsToMonthsRatio);
             yield return null;
         }
 
