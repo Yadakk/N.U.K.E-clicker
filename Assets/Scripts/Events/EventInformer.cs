@@ -28,10 +28,26 @@ public class EventInformer : MonoBehaviour
 
     public void ClearData()
     {
-        Data = null;
+        HideData();
         Destroy(Controller.gameObject);
+    }
+
+    public void ClearData(EventController controller)
+    {
+        HideData();
+        Destroy(controller.gameObject);
+    }
+
+    public void HideData()
+    {
+        Data = null;
         _descTmpu.text = string.Empty;
         _posTmpu.text = string.Empty;
         _negTmpu.text = string.Empty;
+    }
+
+    private void OnDisable()
+    {
+        HideData();
     }
 }

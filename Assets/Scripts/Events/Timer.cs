@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     private bool _isRunning;
     public float Remaining { get; private set; } = 1f;
 
-    void Update()
+    private void Update()
     {
         Remaining -= Time.deltaTime / _seconds;
         if (_isRunning && Remaining < 0)

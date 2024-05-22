@@ -10,12 +10,18 @@ public class EventFillSetter : MonoBehaviour
 
     private void Start()
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _parentRectTransform = transform.parent.GetComponent<RectTransform>();
+        NullCheckGetComponents();
+    }
+
+    private void NullCheckGetComponents()
+    {
+        if (_rectTransform == null) _rectTransform = GetComponent<RectTransform>();
+        if (_parentRectTransform == null) _parentRectTransform = transform.parent.GetComponent<RectTransform>();
     }
 
     public void SetFillLerp(float t)
     {
+        NullCheckGetComponents();
         _rectTransform.sizeDelta = new(Mathf.Lerp(0f, _parentRectTransform.sizeDelta.x, t), 0f);
     }
 }
