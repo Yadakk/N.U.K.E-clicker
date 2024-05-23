@@ -5,4 +5,5 @@ using UnityEngine;
 public static class IntersceneVariables
 {
     public static bool IsBadEnding;
+    public static float FinalScore;
 }

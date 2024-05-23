@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 468545276}
   - component: {fileID: 468545277}
   m_Layer: 0
-  m_Name: CooldownRes
+  m_Name: PassiveIncome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2399,6 +2399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resourceToIncrease: {fileID: 360841995}
+  _finalScore: {fileID: 674472953}
   _increaseBy: {fileID: 1861912143}
 --- !u!1 &470464674
 GameObject:
@@ -2984,6 +2985,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628121075}
   m_CullTransparentMesh: 1
+--- !u!1 &674472951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674472952}
+  - component: {fileID: 674472953}
+  - component: {fileID: 674472954}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674472952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674472951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688076829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674472953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674472951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Score
+  _amount: 0
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <IsPercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &674472954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674472951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa0d099737bbd44889ac35a056590e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caps: {fileID: 360841995}
+  Breads: {fileID: 1855759166}
+  People: {fileID: 321213735}
 --- !u!1 &682642465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6628,6 +6706,7 @@ Transform:
   - {fileID: 382561054}
   - {fileID: 285538532}
   - {fileID: 184793923}
+  - {fileID: 674472952}
   - {fileID: 838437760}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6714,7 +6793,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999725
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6792,7 +6871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 425.172}
+  m_AnchoredPosition: {x: -0.05999756, y: 425.17203}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
