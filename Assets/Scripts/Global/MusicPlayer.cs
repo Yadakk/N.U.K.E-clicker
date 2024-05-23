@@ -14,7 +14,7 @@ public class MusicPlayer : MonoBehaviour
 
     private void Start()
     {
-        _source = GetComponent<AudioSource>();
+        if (_source == null) _source = GetComponent<AudioSource>();
         if (_playOnStart) Play();
     }
 
@@ -45,6 +45,7 @@ public class MusicPlayer : MonoBehaviour
 
     public void Play()
     {
+        if (_source == null) _source = GetComponent<AudioSource>();
         if (_source.clip != null)
             _clips = ListUtility.ShuffleWithoutRepetition(_clips, _source.clip);
         else

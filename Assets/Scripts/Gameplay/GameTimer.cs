@@ -10,7 +10,15 @@ public class GameTimer : MonoBehaviour
     public float Seconds;
     public int MonthsForConversion = 60;
     [NonSerialized] public static GameTimer Instance;
-    public float RemainingSeconds { get; private set; }
+    private float _remainingSeconds;
+    public float RemainingSeconds 
+    { 
+        get
+        {
+            if (_remainingSeconds < 0) return 0;
+            return _remainingSeconds;
+        }
+        private set => _remainingSeconds = value; }
     public int RemainingMonths { get; private set; }
     public readonly UnityEvent OnTimerStarted = new();
     public readonly UnityEvent OnMonthsAmountChanged = new();
@@ -30,11 +38,12 @@ public class GameTimer : MonoBehaviour
         while (RemainingSeconds > 0)
         {
             RemainingSeconds -= Time.deltaTime;
-            bool monthsChanged = RemainingMonths != SecondsToIngameMonths(); 
+            bool monthsChanged = RemainingMonths != SecondsToIngameMonths();
             RemainingMonths = SecondsToIngameMonths();
             if (monthsChanged) OnMonthsAmountChanged.Invoke();
             yield return null;
         }
+        IntersceneVariables.IsBadEnding = false;
         SceneManager.LoadScene("GameOver");
     }
 

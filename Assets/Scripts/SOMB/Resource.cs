@@ -36,8 +36,9 @@ public class Resource : MonoBehaviour
             }
             else if (limit.TriggersGameOverOnLimit && IsLimitReached())
             {
-                SceneManager.LoadScene("GameOver");
                 _amount = limit.Limit;
+                IntersceneVariables.IsBadEnding = true;
+                SceneManager.LoadScene("GameOver");
             }
             else _amount = limit.Limit;
             return true;

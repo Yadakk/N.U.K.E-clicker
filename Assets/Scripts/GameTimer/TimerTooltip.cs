@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Text;
+using System;
 
 public class TimerTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -36,8 +37,9 @@ public class TimerTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         StringBuilder stringBuilder = new();
         stringBuilder.AppendLine("Time left:");
-        stringBuilder.AppendLine(RemainingYears + " Years");
+        if (RemainingYears > 0) stringBuilder.AppendLine(RemainingYears + " Years");
         if (RemainingMonths % 12 != 0) stringBuilder.AppendLine(RemainingMonths % 12 + " Months");
+        if (!(RemainingYears > 0) && !(RemainingMonths % 12 != 0)) stringBuilder.AppendLine("Last month!");
         Tooltip.ShowTooltipStatic(stringBuilder.ToString());
     }
 }
