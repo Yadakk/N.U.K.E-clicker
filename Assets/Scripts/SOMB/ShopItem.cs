@@ -16,8 +16,13 @@ public class ShopItem : MonoBehaviour
         foreach (var affectedResource in AffectedResources)
         {
             affectedResource.Resource.Amount += affectedResource.Change;
-            affectedResource.Change = affectedResource.Change * affectedResource.Multiplier;
+            affectedResource.Change = affectedResource.RoundChangeToInt ? Mathf.RoundToInt(NewChange(affectedResource)) : NewChange(affectedResource);
         }
+    }
+
+    private static float NewChange(AffectedResource affectedResource)
+    {
+        return affectedResource.Change * affectedResource.Multiplier;
     }
 }
 
@@ -27,4 +32,5 @@ public class AffectedResource
     public Resource Resource;
     public float Change;
     public float Multiplier = 1;
+    public bool RoundChangeToInt;
 }
