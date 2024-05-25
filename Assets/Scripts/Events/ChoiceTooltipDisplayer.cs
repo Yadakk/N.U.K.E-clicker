@@ -39,8 +39,16 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
         bool hasData = _informer.Data != null;
         if (hasData)
         {
-            if (_isPositive) ApplyChanges(_informer.Data.PositiveEffects);
-            else ApplyChanges(_informer.Data.NegativeEffects);
+            if (_isPositive)
+            {
+                ApplyChanges(_informer.Data.PositiveEffects);
+                _informer.Caps.Amount += _informer.PositiveChoiceIncome.Amount;
+            }
+            else
+            {
+                ApplyChanges(_informer.Data.NegativeEffects);
+                _informer.Breads.Amount += _informer.NegativeChoiceIncome.Amount;
+            }
         }
         if (_soundPlayer != null) _soundPlayer.PlaySound(BoolToInt(!hasData));
     }

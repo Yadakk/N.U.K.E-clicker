@@ -969,6 +969,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9a44f75580ec6408296bfafbaac132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Caps: {fileID: 360841995}
+  Breads: {fileID: 1855759166}
+  PositiveChoiceIncome: {fileID: 2030041676}
+  NegativeChoiceIncome: {fileID: 382561055}
   _descTmpu: {fileID: 1331174184}
   _posTmpu: {fileID: 398687577}
   _negTmpu: {fileID: 1425819044}
@@ -1977,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Negative Choice Income
+  <Name>k__BackingField: Negative Choice Breads
   _amount: 0
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
@@ -4118,7 +4122,7 @@ MonoBehaviour:
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: 500
+    Change: -500
     Multiplier: 1.5
     RoundChangeToInt: 1
 --- !u!1 &944936760
@@ -8296,7 +8300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Positive Choice Income
+  <Name>k__BackingField: Positive Choice Caps
   _amount: 0
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1

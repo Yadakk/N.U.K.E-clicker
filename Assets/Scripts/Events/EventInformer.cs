@@ -7,6 +7,10 @@ using UnityEngine.Events;
 
 public class EventInformer : MonoBehaviour
 {
+    public Resource Caps;
+    public Resource Breads;
+    public Resource PositiveChoiceIncome;
+    public Resource NegativeChoiceIncome;
     public EventData Data { get; private set; }
     public EventController Controller { get; private set; }
     [SerializeField] private TextMeshProUGUI _descTmpu;
