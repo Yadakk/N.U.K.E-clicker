@@ -19,6 +19,7 @@ public class EventController : MonoBehaviour
     private Timer _timer;
     private EventFillSetter _fillSetter;
     [NonSerialized] public EventInformer Informer;
+    public static readonly UnityEvent OnAppliedChangesStatic = new();
 
     private void Start()
     {
@@ -60,6 +61,7 @@ public class EventController : MonoBehaviour
     {
         Destroy(_timer.gameObject);
         _eventHolder.Data.NegativeEffects.GetAllResources().ToList().ForEach(change => change.ApplyChanges());
+        OnAppliedChangesStatic.Invoke();
         Informer.ClearData(this);
         _soundPlayer.PlaySound(1);
     }

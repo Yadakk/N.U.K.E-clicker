@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using static Resource;
-using static Utilities.NumberFormatter;
+using static Utilities.NumberFormatterUtility;
 
 public class ResourceDisplayer : MonoBehaviour
 {

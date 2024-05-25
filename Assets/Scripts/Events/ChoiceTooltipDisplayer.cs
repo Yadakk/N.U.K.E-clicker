@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using System.Text;
 using System.Linq;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
     private Button _button;
     private SoundPlayer _soundPlayer;
     public bool IsDisplayingTooltip { get; private set; }
+    public static readonly UnityEvent OnAppliedChangesStatic = new();
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class ChoiceTooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPoin
                 ApplyChanges(_informer.Data.NegativeEffects);
                 _informer.Breads.Amount += _informer.NegativeChoiceIncome.Amount;
             }
+            OnAppliedChangesStatic.Invoke();
         }
         if (_soundPlayer != null) _soundPlayer.PlaySound(BoolToInt(!hasData));
     }

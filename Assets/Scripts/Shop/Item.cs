@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,6 +11,7 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public InfoDisplayer InfoDisplayer;
     private Button _button;
     private SoundPlayer _soundPlayer;
+    public static readonly UnityEvent OnBoughtItemStatic = new();
 
     private void Start()
     {
@@ -47,6 +49,7 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         InfoDisplayer.Show(ShopItem);
         if (_soundPlayer != null) _soundPlayer.PlaySound(0);
+        OnBoughtItemStatic.Invoke();
     }
 
     private static float NewChange(AffectedResource affectedResource)

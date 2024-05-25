@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Utilities
 {
-    public static class NumberFormatter
+    public static class NumberFormatterUtility
     {
         public static string LeadingPlus(int num)
         {

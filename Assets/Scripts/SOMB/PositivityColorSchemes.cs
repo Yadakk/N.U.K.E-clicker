@@ -15,7 +15,7 @@ public static class PositivityColorSchemes
             case > 0: builder.Append($"<color={colorScheme.Positive}>"); break;
             default: builder.Append($"<color={colorScheme.Neutral}>"); break;
         }
-        builder.Append(NumberFormatter.LeadingPlusToKMB(num));
+        builder.Append(NumberFormatterUtility.LeadingPlusToKMB(num));
         if (forcePercentFormat) builder.Append("%");
         builder.Append("</color>");
     }

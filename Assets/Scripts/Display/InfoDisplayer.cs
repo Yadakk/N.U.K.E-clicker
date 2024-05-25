@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
-using static Utilities.NumberFormatter;
+using static Utilities.NumberFormatterUtility;
 using System;
 
 public class InfoDisplayer : MonoBehaviour

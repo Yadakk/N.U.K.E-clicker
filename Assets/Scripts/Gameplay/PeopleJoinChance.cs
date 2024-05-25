@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Utilities.RandomRollUtility;
 
 public class PeopleJoinChance : MonoBehaviour
 {
@@ -22,8 +23,7 @@ public class PeopleJoinChance : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(RollChanceEverySeconds);
-            float roll = Random.Range(0f, 100f);
-            if (roll <= _peopleJoinChance.Amount) AddPeople();
+            if (Roll(_peopleJoinChance.Amount)) AddPeople();
         }
     }
 
