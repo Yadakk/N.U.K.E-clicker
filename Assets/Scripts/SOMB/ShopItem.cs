@@ -10,20 +10,6 @@ public class ShopItem : MonoBehaviour
     public Sprite Icon;
     public ItemShops Shop;
     public AffectedResource[] AffectedResources;
-
-    public void Buy()
-    {
-        foreach (var affectedResource in AffectedResources)
-        {
-            affectedResource.Resource.Amount += affectedResource.Change;
-            affectedResource.Change = affectedResource.RoundChangeToInt ? Mathf.RoundToInt(NewChange(affectedResource)) : NewChange(affectedResource);
-        }
-    }
-
-    private static float NewChange(AffectedResource affectedResource)
-    {
-        return affectedResource.Change * affectedResource.Multiplier;
-    }
 }
 
 [System.Serializable]

@@ -181,6 +181,55 @@ MonoBehaviour:
     Change: -750
     Multiplier: 2.5
     RoundChangeToInt: 1
+--- !u!1 &83872599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83872600}
+  - component: {fileID: 83872601}
+  m_Layer: 0
+  m_Name: PeopleJoinChance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &83872600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83872599}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 515549671}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83872601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83872599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a56ac666618f884ea768a3c41c36428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RollChanceEverySeconds: 1
+  PeopleIncrement: 1
+  _peopleJoinChance: {fileID: 184793924}
+  _people: {fileID: 321213735}
+  _finalScore: {fileID: 674472953}
 --- !u!1 &92875426
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +730,7 @@ MonoBehaviour:
   <Name>k__BackingField: People Join Chance
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -1529,7 +1578,7 @@ MonoBehaviour:
   <Name>k__BackingField: Breads Max Capacity
   _amount: 100
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -1931,7 +1980,7 @@ MonoBehaviour:
   <Name>k__BackingField: Negative Choice Income
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -2503,6 +2552,7 @@ Transform:
   m_Children:
   - {fileID: 254549746}
   - {fileID: 468545276}
+  - {fileID: 83872600}
   - {fileID: 944936761}
   - {fileID: 602845133}
   - {fileID: 2103144855}
@@ -3033,7 +3083,7 @@ MonoBehaviour:
   <Name>k__BackingField: Score
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -3747,7 +3797,7 @@ MonoBehaviour:
   <Name>k__BackingField: Stars
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -5140,7 +5190,7 @@ MonoBehaviour:
   <Name>k__BackingField: Critical Breads
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -6874,7 +6924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 425.1712}
+  m_AnchoredPosition: {x: -0.05999756, y: 425.17197}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371
@@ -7115,7 +7165,7 @@ MonoBehaviour:
   <Name>k__BackingField: Mysterious Stranger Chance
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -7475,7 +7525,7 @@ MonoBehaviour:
   <Name>k__BackingField: Passive Income
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -8249,7 +8299,7 @@ MonoBehaviour:
   <Name>k__BackingField: Positive Choice Income
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -8310,7 +8360,7 @@ MonoBehaviour:
   <Name>k__BackingField: Click Power
   _amount: 1
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
@@ -8415,7 +8465,7 @@ MonoBehaviour:
   <Name>k__BackingField: Critical Caps Chance
   _amount: 0
   <MinLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
+    <HasLimit>k__BackingField: 1
     _limit: 0
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0

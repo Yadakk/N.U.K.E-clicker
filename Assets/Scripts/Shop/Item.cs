@@ -42,10 +42,15 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         foreach (var affRes in ShopItem.AffectedResources)
         {
             affRes.Resource.Amount += affRes.Change;
-            affRes.Change *= affRes.Multiplier;
+            affRes.Change = affRes.RoundChangeToInt ? Mathf.RoundToInt(NewChange(affRes)) : NewChange(affRes);
         }
 
         InfoDisplayer.Show(ShopItem);
         if (_soundPlayer != null) _soundPlayer.PlaySound(0);
+    }
+
+    private static float NewChange(AffectedResource affectedResource)
+    {
+        return affectedResource.Change * affectedResource.Multiplier;
     }
 }
