@@ -206,7 +206,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1040563960}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999987
+  m_Size: 0.999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1517,8 +1517,8 @@ MonoBehaviour:
   GoodEndingText: The radiation has weakened enough for your people to leave the
     bunker and start building new civilization with a promise to keep peace in the
     world at all costs.
-  BadEndingText: Fighting for survival, your bunker lost it's last dweller. Who knows,
-    maybe some more developed civilisation will display the remains in a museum.
+  BadEndingText: Fighting for survival, your bunker lost it's last dweller. Let's
+    hope the remains will be useful for someone.
 --- !u!1 &1040563959
 GameObject:
   m_ObjectHideFlags: 0
