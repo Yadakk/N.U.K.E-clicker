@@ -8365,7 +8365,7 @@ MonoBehaviour:
   _amount: 1
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
-    _limit: 0
+    _limit: 1
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
