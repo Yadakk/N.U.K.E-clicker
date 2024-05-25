@@ -6,8 +6,11 @@ using UnityEngine;
 public class ScoreCalculator : MonoBehaviour
 {
     public Resource Caps;
+    public float ScorePerCap = 1f;
     public Resource Breads;
+    public float ScorePerBread = 50f;
     public Resource People;
+    public float ScorePerPerson = 100f;
     private Resource _score;
 
     private void Start()
@@ -20,7 +23,15 @@ public class ScoreCalculator : MonoBehaviour
 
     private void OnAnyResourceChangedHandler(float oldVal, float newVal)
     {
-        _score.Amount = Caps.Amount + Breads.Amount * 100 + People.Amount * 100;
+        _score.Amount = Caps.Amount * ScorePerCap + 
+                        Breads.Amount * ScorePerBread + 
+                        People.Amount * ScorePerPerson;
         IntersceneVariables.FinalScore = _score.Amount;
+        IntersceneVariables.FinalCaps = Caps.Amount;
+        IntersceneVariables.ScorePerCap = ScorePerCap;
+        IntersceneVariables.FinalBreads = Breads.Amount;
+        IntersceneVariables.ScorePerBread = ScorePerBread;
+        IntersceneVariables.FinalPeople = People.Amount;
+        IntersceneVariables.ScorePerPerson = ScorePerPerson;
     }
 }

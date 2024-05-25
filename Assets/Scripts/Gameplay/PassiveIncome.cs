@@ -22,7 +22,7 @@ public class PassiveIncome : MonoBehaviour
             _finalScore.DisableFlash = true;
             _resourceToIncrease.Amount += _increaseBy.Amount;
             _resourceToIncrease.DisableFlash = false;
-            _finalScore.DisableFlash = true;
+            _finalScore.DisableFlash = false;
             yield return new WaitForSeconds(1);
         }
     }

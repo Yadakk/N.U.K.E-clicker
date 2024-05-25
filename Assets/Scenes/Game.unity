@@ -3060,8 +3060,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caps: {fileID: 360841995}
+  ScorePerCap: 1
   Breads: {fileID: 1855759166}
+  ScorePerBread: 50
   People: {fileID: 321213735}
+  ScorePerPerson: 100
 --- !u!1 &682642465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6792,7 +6795,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628121077}
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6871,7 +6874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.05999756, y: 425.17203}
+  m_AnchoredPosition: {x: -0.05999756, y: 425.1712}
   m_SizeDelta: {x: -0.090026855, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1710599371

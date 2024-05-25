@@ -17,6 +17,7 @@ public class ResourceDisplayer : MonoBehaviour
     private Image _image;
     private TextMeshProUGUI _text;
     private TooltipOnHover _tooltipOnHover;
+    private ScoreCalculator _scoreCalculator;
 
     public void Init(Resource resourceToDisplay)
     {
@@ -30,6 +31,8 @@ public class ResourceDisplayer : MonoBehaviour
         _image = _icon.GetComponent<Image>();
         _text = _value.GetComponent<TextMeshProUGUI>();
         _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
+        _scoreCalculator = _resourceToDisplay.GetComponent<ScoreCalculator>();
+
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
         DisplayTooltip();
@@ -42,7 +45,23 @@ public class ResourceDisplayer : MonoBehaviour
         builder.AppendLine(_resourceToDisplay.Name);
         FormatLimit(ref builder, _resourceToDisplay.MinLimit, false);
         FormatLimit(ref builder, _resourceToDisplay.MaxLimit, true);
+        if (_scoreCalculator != null)
+        {
+            builder.AppendLine("-----");
+            builder.AppendLine("Formula for calculation:");
+            FormatResourceFormula(ref builder, _scoreCalculator.Caps, _scoreCalculator.ScorePerCap);
+            FormatResourceFormula(ref builder, _scoreCalculator.Breads, _scoreCalculator.ScorePerBread);
+            FormatResourceFormula(ref builder, _scoreCalculator.People, _scoreCalculator.ScorePerPerson);
+        }
         _tooltipOnHover.SetText(builder.ToString());
+    }
+
+    private void FormatResourceFormula(ref StringBuilder builder, Resource res, float scorePerUnit)
+    {
+        builder.Append(res.Name);
+        builder.Append(" * ");
+        builder.Append(scorePerUnit);
+        builder.AppendLine(" + ");
     }
 
     private void FormatLimit(ref StringBuilder builder, ResourceLimit limit, bool isUpper)
