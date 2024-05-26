@@ -12,4 +12,5 @@ public static class IntersceneVariables
     public static float ScorePerBread;
     public static float FinalPeople;
     public static float ScorePerPerson;
+    public static float FinalStars;
 }

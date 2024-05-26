@@ -38,6 +38,7 @@ public class Resource : MonoBehaviour
             {
                 _amount = limit.Limit;
                 IntersceneVariables.IsBadEnding = true;
+                StarsController.AddStars();
                 SceneManager.LoadScene("GameOver");
             }
             else _amount = limit.Limit;
@@ -46,6 +47,7 @@ public class Resource : MonoBehaviour
         return false;
     }
 
+    public StarsController StarsController;
     [field: SerializeField] public ResourceLimit MinLimit { get; set; }
     [field: SerializeField] public ResourceLimit MaxLimit { get; set; }
     [field: SerializeField] public bool IsPercentFormatted { get; set; }

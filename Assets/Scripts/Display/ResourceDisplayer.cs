@@ -19,6 +19,7 @@ public class ResourceDisplayer : MonoBehaviour
     private TooltipOnHover _tooltipOnHover;
     private ScoreCalculator _scoreCalculator;
     private BreadConsumption _breadConsumption;
+    private StarsController _starsController;
 
     public void Init(Resource resourceToDisplay)
     {
@@ -34,6 +35,7 @@ public class ResourceDisplayer : MonoBehaviour
         _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
         _scoreCalculator = _resourceToDisplay.GetComponent<ScoreCalculator>();
         _breadConsumption = _resourceToDisplay.GetComponent<BreadConsumption>();
+        _starsController = _resourceToDisplay.GetComponent<StarsController>();
 
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
@@ -69,6 +71,18 @@ public class ResourceDisplayer : MonoBehaviour
             builder.Append((_breadConsumption.PeoplePerBread * 2f).ToString());
             builder.AppendLine(" people");
             builder.AppendLine("consume 2 breads and so on...");
+        }
+        if (_starsController != null)
+        {
+            builder.AppendLine("-----");
+            builder.AppendLine("Stars increase click power and are saved between games");
+            builder.AppendLine("Score to get");
+            builder.Append("1 star: ");
+            builder.AppendLine(_starsController.ScoreFor1Star.ToString());
+            builder.Append("2 stars: ");
+            builder.AppendLine(_starsController.ScoreFor2Stars.ToString());
+            builder.Append("3 stars: ");
+            builder.AppendLine(_starsController.ScoreFor3Stars.ToString());
         }
         _tooltipOnHover.SetText(builder.ToString());
     }

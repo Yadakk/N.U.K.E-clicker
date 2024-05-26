@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class GameTimer : MonoBehaviour
 {
+    public StarsController StarsController;
     public float Seconds;
     public int MonthsForConversion = 60;
     [NonSerialized] public static GameTimer Instance;
@@ -44,6 +45,7 @@ public class GameTimer : MonoBehaviour
             yield return null;
         }
         IntersceneVariables.IsBadEnding = false;
+        StarsController.AddStars();
         SceneManager.LoadScene("GameOver");
     }
 

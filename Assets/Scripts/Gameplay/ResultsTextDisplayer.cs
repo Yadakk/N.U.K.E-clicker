@@ -21,7 +21,9 @@ public class ResultsTextDisplayer : MonoBehaviour
         FormatScore(ref stringBuilder, "Breads", IntersceneVariables.FinalBreads, IntersceneVariables.ScorePerBread);
         FormatScore(ref stringBuilder, "People", IntersceneVariables.FinalPeople, IntersceneVariables.ScorePerPerson);
         stringBuilder.Append("Final score: ");
-        stringBuilder.Append(IntersceneVariables.FinalScore);
+        stringBuilder.AppendLine(IntersceneVariables.FinalScore.ToString());
+        stringBuilder.Append("Gained stars: ");
+        stringBuilder.Append(IntersceneVariables.FinalStars);
         _tmpu.text = stringBuilder.ToString();
     }
 

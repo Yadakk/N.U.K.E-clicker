@@ -729,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: People Join Chance
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -1543,6 +1544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Breads Max Capacity
   _amount: 100
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -1739,6 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: People
   _amount: 0
+  StarsController: {fileID: 838437762}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 1
@@ -1950,6 +1953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Caps
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -2079,6 +2083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Negative Choice Breads
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -3183,6 +3188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Score
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -3861,6 +3867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838437760}
   - component: {fileID: 838437761}
+  - component: {fileID: 838437762}
   m_Layer: 0
   m_Name: Stars
   m_TagString: Untagged
@@ -3897,6 +3904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Stars
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -3912,6 +3920,23 @@ MonoBehaviour:
   <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &838437762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838437759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391187d62d17ac5489107902058031c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: {fileID: 674472953}
+  ClickPower: {fileID: 2094576510}
+  ScoreFor1Star: 25000
+  ScoreFor2Stars: 50000
+  ScoreFor3Stars: 100000
 --- !u!1 &881868793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +4287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d23e7d9c1c9c3749973195acba49e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StarsController: {fileID: 838437762}
   Seconds: 1200
   MonthsForConversion: 60
 --- !u!1 &962240733
@@ -5287,6 +5313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Critical Breads
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -7631,6 +7658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Mysterious Stranger Chance
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -7917,6 +7945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Breads
   _amount: 50
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -8009,6 +8038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Passive Income
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -8681,6 +8711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Positive Choice Caps
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
@@ -8742,6 +8773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Click Power
   _amount: 1
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 1
@@ -8847,6 +8879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Critical Caps Chance
   _amount: 0
+  StarsController: {fileID: 0}
   <MinLimit>k__BackingField:
     <HasLimit>k__BackingField: 1
     _limit: 0
