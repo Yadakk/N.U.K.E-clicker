@@ -5817,7 +5817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2eea3a042f4a974cac709dbf88d3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MysteriousStrangerChance: {fileID: 0}
+  MysteriousStrangerChance: {fileID: 1766853748}
 --- !u!1 &1331174182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,8 +6827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd902eb1826ab444a55f64fd1a5f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HiddenY: 0
-  DisplayedY: 0
+  HiddenY: 110
+  DisplayedY: -110
+  PopupSpeed: 5
+  DisplayTimeSeconds: 15
 --- !u!114 &1672092946
 MonoBehaviour:
   m_ObjectHideFlags: 0
