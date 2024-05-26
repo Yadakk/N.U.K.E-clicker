@@ -18,6 +18,7 @@ public class ResourceDisplayer : MonoBehaviour
     private TextMeshProUGUI _text;
     private TooltipOnHover _tooltipOnHover;
     private ScoreCalculator _scoreCalculator;
+    private BreadConsumption _breadConsumption;
 
     public void Init(Resource resourceToDisplay)
     {
@@ -32,6 +33,7 @@ public class ResourceDisplayer : MonoBehaviour
         _text = _value.GetComponent<TextMeshProUGUI>();
         _tooltipOnHover = _icon.GetComponent<TooltipOnHover>();
         _scoreCalculator = _resourceToDisplay.GetComponent<ScoreCalculator>();
+        _breadConsumption = _resourceToDisplay.GetComponent<BreadConsumption>();
 
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
@@ -52,6 +54,21 @@ public class ResourceDisplayer : MonoBehaviour
             FormatResourceFormula(ref builder, _scoreCalculator.Caps, _scoreCalculator.ScorePerCap);
             FormatResourceFormula(ref builder, _scoreCalculator.Breads, _scoreCalculator.ScorePerBread);
             FormatResourceFormula(ref builder, _scoreCalculator.People, _scoreCalculator.ScorePerPerson);
+        }
+        if (_breadConsumption != null)
+        {
+            builder.AppendLine("-----");
+            builder.Append("1 - ");
+            builder.Append(_breadConsumption.PeoplePerBread.ToString());
+            builder.AppendLine(" people");
+            builder.Append("consume 1 bread per ");
+            builder.Append(_breadConsumption.CooldownSeconds);
+            builder.AppendLine(" seconds");
+            builder.Append((_breadConsumption.PeoplePerBread + 1f).ToString());
+            builder.Append(" - ");
+            builder.Append((_breadConsumption.PeoplePerBread * 2f).ToString());
+            builder.AppendLine(" people");
+            builder.AppendLine("consume 2 breads and so on...");
         }
         _tooltipOnHover.SetText(builder.ToString());
     }
