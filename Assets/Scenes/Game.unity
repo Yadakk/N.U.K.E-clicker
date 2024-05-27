@@ -123,6 +123,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21220340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21220341}
+  - component: {fileID: 21220342}
+  m_Layer: 0
+  m_Name: Steelhood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &21220341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21220340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 196620416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &21220342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21220340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    <Name>k__BackingField: Steelhood
+    <Desc>k__BackingField: A group of Steelhood members have approached your bunker.
+      They want to get hands on your technology and are willing to pay for it but
+      if you don't comply, they will deploy an execution squad
+    <PositiveName>k__BackingField: Here's your scrap
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <Change>k__BackingField: -15
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2094576510}
+        <Change>k__BackingField: -2
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <Change>k__BackingField: 500
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
+    <NegativeName>k__BackingField: Not interested
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <Change>k__BackingField: -10
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1766853748}
+        <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &41723213
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +836,10 @@ Transform:
   - {fileID: 377408902}
   - {fileID: 573924890}
   - {fileID: 904373590}
+  - {fileID: 21220341}
+  - {fileID: 447489429}
+  - {fileID: 1416824884}
+  - {fileID: 826517808}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &196620417
@@ -2487,6 +2565,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440128854}
   m_CullTransparentMesh: 1
+--- !u!1 &447489428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447489429}
+  - component: {fileID: 447489430}
+  m_Layer: 0
+  m_Name: SPECIAL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447489429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447489428}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 196620416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447489430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447489428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    <Name>k__BackingField: S.P.E.C.I.A.L Test
+    <Desc>k__BackingField: Time for your once-in-a-lifetime S.P.E.C.I.A.L Test! What
+      kind of person are you?
+    <PositiveName>k__BackingField: An intelligent, perseptive and charismatic person
+      with a little bit of luck on the side
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <Change>k__BackingField: 5
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 1766853748}
+        <Change>k__BackingField: 5
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 184793924}
+        <Change>k__BackingField: 5
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
+    <NegativeName>k__BackingField: A ruthless, stoic person with an unshakeable will
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <Change>k__BackingField: 15
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <Change>k__BackingField: 20
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <Change>k__BackingField: 25
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &468545275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,9 +3352,9 @@ MonoBehaviour:
   Caps: {fileID: 360841995}
   ScorePerCap: 1
   Breads: {fileID: 1855759166}
-  ScorePerBread: 75
+  ScorePerBread: 10
   People: {fileID: 321213735}
-  ScorePerPerson: 250
+  ScorePerPerson: 25
 --- !u!1 &682642465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,23 +3870,23 @@ MonoBehaviour:
     <PositiveName>k__BackingField: Start the Operation
     <PositiveEffects>k__BackingField:
       <ResourceChanges>k__BackingField: []
-      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 2094576510}
+        <MinChange>k__BackingField: 1
+        <MaxChange>k__BackingField: 3
+        <IsPercentChange>k__BackingField: 0
       <ResourceRandomChangesPerResourceChanges>k__BackingField:
       - <Resource>k__BackingField: {fileID: 321213735}
         <Change>k__BackingField: -20
         <IsPercentChange>k__BackingField: 1
         <EventResourceRandomChanges>k__BackingField:
-        - <Resource>k__BackingField: {fileID: 360841995}
-          <MinChange>k__BackingField: 1
-          <MaxChange>k__BackingField: 15
-          <IsPercentChange>k__BackingField: 0
         - <Resource>k__BackingField: {fileID: 1855759166}
           <MinChange>k__BackingField: 1
           <MaxChange>k__BackingField: 100
           <IsPercentChange>k__BackingField: 0
-        - <Resource>k__BackingField: {fileID: 2094576510}
+        - <Resource>k__BackingField: {fileID: 360841995}
           <MinChange>k__BackingField: 1
-          <MaxChange>k__BackingField: 3
+          <MaxChange>k__BackingField: 5
           <IsPercentChange>k__BackingField: 0
     <NegativeName>k__BackingField: Yawn...
     <NegativeEffects>k__BackingField:
@@ -3835,6 +3990,81 @@ MonoBehaviour:
     Active: 0
   - GameObject: {fileID: 189378707}
     Active: 0
+--- !u!1 &826517807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826517808}
+  - component: {fileID: 826517809}
+  m_Layer: 0
+  m_Name: Delivery
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &826517808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826517807}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 196620416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &826517809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826517807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    <Name>k__BackingField: The Delivery
+    <Desc>k__BackingField: A courier company has ordered one of your citizens to
+      deliver a certian something to a certian someone. Failure to deliver will bring
+      heavy reprecussions but at the same time it's a dangerous journey and your
+      citizen might not return back
+    <PositiveName>k__BackingField: Consider it done
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <Change>k__BackingField: -1
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <Change>k__BackingField: 5000
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
+    <NegativeName>k__BackingField: Not interested
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <Change>k__BackingField: -20
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <Change>k__BackingField: 75
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2094576510}
+        <Change>k__BackingField: 1
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &838437759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,9 +4142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 674472953}
   ClickPower: {fileID: 2094576510}
-  ScoreFor1Star: 25000
-  ScoreFor2Stars: 50000
-  ScoreFor3Stars: 100000
+  ScoreFor1Star: 50000
+  ScoreFor2Stars: 100000
+  ScoreFor3Stars: 150000
 --- !u!1 &881868793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,6 +6922,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Clips>k__BackingField:
   - {fileID: 8300000, guid: 413896773c9c93a4ea05fa8fbf7be43d, type: 3}
+--- !u!1 &1416824883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416824884}
+  - component: {fileID: 1416824885}
+  m_Layer: 0
+  m_Name: House
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1416824884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416824883}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 196620416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416824885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416824883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22641d38c648284fbd224c220f8da55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField:
+    <Name>k__BackingField: The House Always Wins
+    <Desc>k__BackingField: An unknown benefactor from the Long Lost Vegas wants to
+      open a casino in your Bunker. Seems like a good idea!
+    <PositiveName>k__BackingField: Gamble Away!
+    <PositiveEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 360841995}
+        <Change>k__BackingField: -5
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1861912143}
+        <Change>k__BackingField: 5
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
+    <NegativeName>k__BackingField: Get Lost, Vegas
+    <NegativeEffects>k__BackingField:
+      <ResourceChanges>k__BackingField:
+      - <Resource>k__BackingField: {fileID: 321213735}
+        <Change>k__BackingField: -5
+        <IsPercentChange>k__BackingField: 1
+      - <Resource>k__BackingField: {fileID: 1855759166}
+        <Change>k__BackingField: 10
+        <IsPercentChange>k__BackingField: 0
+      <ResourceRandomChanges>k__BackingField: []
+      <ResourceRandomChangesPerResourceChanges>k__BackingField: []
 --- !u!1 &1425819042
 GameObject:
   m_ObjectHideFlags: 0
@@ -7871,6 +8171,12 @@ MonoBehaviour:
         <IsPercentChange>k__BackingField: 0
       - <Resource>k__BackingField: {fileID: 184793924}
         <Change>k__BackingField: -10
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2030041676}
+        <Change>k__BackingField: 20
+        <IsPercentChange>k__BackingField: 0
+      - <Resource>k__BackingField: {fileID: 2132763571}
+        <Change>k__BackingField: 1
         <IsPercentChange>k__BackingField: 0
       <ResourceRandomChanges>k__BackingField: []
       <ResourceRandomChangesPerResourceChanges>k__BackingField: []
@@ -9331,7 +9637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 426.52734
+      value: 467.0233
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
