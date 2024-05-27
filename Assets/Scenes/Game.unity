@@ -6570,8 +6570,8 @@ MonoBehaviour:
   _eventFolder: {fileID: 1710599370}
   _eventMBFolder: {fileID: 196620416}
   _eventPrefab: {fileID: 2996277865251173006, guid: a7cfd8d1abdb852489da8e3d39b8c106, type: 3}
-  _minSeconds: 7
-  _maxSeconds: 15
+  _minSeconds: 30
+  _maxSeconds: 60
 --- !u!1 &1271812882
 GameObject:
   m_ObjectHideFlags: 0
@@ -10160,7 +10160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 466.74203
+      value: 466.74228
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
