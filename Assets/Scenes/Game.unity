@@ -1751,6 +1751,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298278711}
   m_CullTransparentMesh: 1
+--- !u!224 &303831718 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7989571660289205702, guid: 642a9006b13e8b94cb9ff6f336c19cc9, type: 3}
+  m_PrefabInstance: {fileID: 9145355284455256162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321213733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,7 +4542,7 @@ RectTransform:
   - {fileID: 886081699}
   - {fileID: 1184310275}
   - {fileID: 1672092944}
-  - {fileID: 1832931870}
+  - {fileID: 303831718}
   m_Father: {fileID: 323783030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7685,6 +7690,7 @@ GameObject:
   - component: {fileID: 1672092947}
   - component: {fileID: 1672092946}
   - component: {fileID: 1672092945}
+  - component: {fileID: 1672092948}
   m_Layer: 0
   m_Name: MysteriousStrangerPopup
   m_TagString: Untagged
@@ -7776,6 +7782,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672092943}
   m_CullTransparentMesh: 1
+--- !u!114 &1672092948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672092943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3c3bd0940d168419d87254dae5960c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: aa5cf46e5621da043b26401dea35945a, type: 3}
 --- !u!1 &1688076827
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,7 +9676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 467.02347
+      value: 467.02307
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
