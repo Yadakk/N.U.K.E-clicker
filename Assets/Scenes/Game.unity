@@ -1596,19 +1596,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 284202647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+  m_Script: {fileID: 11500000, guid: d37c165023bed784ba890ab458174fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Goodwill Bundle
-  Desc: increases 3 random upgrades by 1 BUT you can only buy the bundle 3 times
+  Desc: Increases 3 random upgrades by 1 BUT you can only buy the bundle 3 times
     before it disappears forever!
-  Icon: {fileID: 0}
+  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Shop: 2
   AffectedResources:
   - Resource: {fileID: 360841995}
     Change: -300
     Multiplier: 2
     RoundChangeToInt: 0
+  ShopItemFolder: {fileID: 1435800125}
+  AmountOfItemsToUpgradeRandomly: 3
 --- !u!1 &285538531
 GameObject:
   m_ObjectHideFlags: 0
@@ -9685,7 +9687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 466.7425
+      value: 426.52722
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y

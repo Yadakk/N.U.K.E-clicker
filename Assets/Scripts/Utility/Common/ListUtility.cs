@@ -46,5 +46,19 @@ namespace Utilities
             }
             return list;
         }
+
+        public static IEnumerable<T> TakeRandom<T>(this IEnumerable<T> elements, int countToTake)
+        {
+            var internalList = elements.ToList();
+
+            var selected = new List<T>();
+            for (var i = 0; i < countToTake; ++i)
+            {
+                var next = Random.Range(0, internalList.Count - selected.Count);
+                selected.Add(internalList[next]);
+                internalList[next] = internalList[^selected.Count];
+            }
+            return selected;
+        }
     }
 }

@@ -17,7 +17,22 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         _soundPlayer = GetComponent<SoundPlayer>();
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(TryBuy);
+        _button.onClick.AddListener(OnClickHandler);
+    }
+
+    private void OnClickHandler()
+    {
+        bool boughtItem = ShopItem.TryBuy();
+        if (boughtItem)
+        {
+            InfoDisplayer.Show(ShopItem);
+            _soundPlayer.PlaySound(0);
+            OnBoughtItemStatic.Invoke();
+        }
+        else
+        {
+            _soundPlayer.PlaySound(1);
+        }
     }
 
     public void OnPointerEnter(PointerEventData pointerEventData)
@@ -28,32 +43,5 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData pointerEventData)
     {
         InfoDisplayer.Hide();
-    }
-
-    public void TryBuy()
-    {
-        foreach (var affRes in ShopItem.AffectedResources)
-        {
-            if (!(affRes.Resource.Amount + affRes.Change >= affRes.Resource.MinLimit.Limit))
-            {
-                if (_soundPlayer != null) _soundPlayer.PlaySound(1);
-                return;
-            }
-        }
-
-        foreach (var affRes in ShopItem.AffectedResources)
-        {
-            affRes.Resource.Amount += affRes.Change;
-            affRes.Change = affRes.RoundChangeToInt ? Mathf.Round(NewChange(affRes)) : NewChange(affRes);
-        }
-
-        InfoDisplayer.Show(ShopItem);
-        if (_soundPlayer != null) _soundPlayer.PlaySound(0);
-        OnBoughtItemStatic.Invoke();
-    }
-
-    private static float NewChange(AffectedResource affectedResource)
-    {
-        return affectedResource.Change * affectedResource.Multiplier;
     }
 }
