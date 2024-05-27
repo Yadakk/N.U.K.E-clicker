@@ -4939,8 +4939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780, y: 0}
-  m_SizeDelta: {x: 1560, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1066662646
 MonoBehaviour:
@@ -6196,8 +6196,8 @@ MonoBehaviour:
   _eventFolder: {fileID: 1710599370}
   _eventMBFolder: {fileID: 196620416}
   _eventPrefab: {fileID: 2996277865251173006, guid: a7cfd8d1abdb852489da8e3d39b8c106, type: 3}
-  _minSeconds: 10
-  _maxSeconds: 30
+  _minSeconds: 5
+  _maxSeconds: 20
 --- !u!1 &1271812882
 GameObject:
   m_ObjectHideFlags: 0
@@ -9676,7 +9676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 467.0232
+      value: 467.02325
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10513,8 +10513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 780, y: 0}
-  m_SizeDelta: {x: 1560, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &7292630779623880124
 MonoBehaviour:
