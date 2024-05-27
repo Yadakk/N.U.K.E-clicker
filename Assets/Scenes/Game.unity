@@ -181,55 +181,6 @@ MonoBehaviour:
     Change: -750
     Multiplier: 2.5
     RoundChangeToInt: 1
---- !u!1 &83872599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 83872600}
-  - component: {fileID: 83872601}
-  m_Layer: 0
-  m_Name: PeopleJoinChance
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &83872600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83872599}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 515549671}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &83872601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83872599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a56ac666618f884ea768a3c41c36428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RollChanceEverySeconds: 1
-  PeopleIncrement: 1
-  _peopleJoinChance: {fileID: 184793924}
-  _people: {fileID: 321213735}
-  _finalScore: {fileID: 674472953}
 --- !u!1 &92875426
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184793923}
   - component: {fileID: 184793924}
+  - component: {fileID: 184793925}
   m_Layer: 0
   m_Name: PeopleJoinChance
   m_TagString: Untagged
@@ -745,6 +697,23 @@ MonoBehaviour:
   <IsPercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &184793925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184793922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a56ac666618f884ea768a3c41c36428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RollChanceEverySeconds: 1
+  PeopleIncrement: 1
+  _peopleJoinChance: {fileID: 184793924}
+  _people: {fileID: 321213735}
+  _finalScore: {fileID: 674472953}
 --- !u!1 &189378707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2224048396733266296, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
@@ -2667,7 +2636,6 @@ Transform:
   m_Children:
   - {fileID: 254549746}
   - {fileID: 468545276}
-  - {fileID: 83872600}
   - {fileID: 1326396414}
   - {fileID: 944936761}
   - {fileID: 602845133}
@@ -9357,7 +9325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 426.52612
+      value: 426.52734
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y

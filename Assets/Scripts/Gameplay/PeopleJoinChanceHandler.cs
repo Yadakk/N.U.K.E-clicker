@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Utilities.RandomRollUtility;
 
-public class PeopleJoinChance : MonoBehaviour
+public class PeopleJoinChanceHandler : MonoBehaviour
 {
     public float RollChanceEverySeconds;
     public float PeopleIncrement;
