@@ -20,6 +20,7 @@ public class ResourceDisplayer : MonoBehaviour
     private ScoreCalculator _scoreCalculator;
     private BreadConsumption _breadConsumption;
     private StarsController _starsController;
+    private PeopleJoinChanceHandler _peopleJoinChanceHandler;
 
     public void Init(Resource resourceToDisplay)
     {
@@ -36,6 +37,7 @@ public class ResourceDisplayer : MonoBehaviour
         _scoreCalculator = _resourceToDisplay.GetComponent<ScoreCalculator>();
         _breadConsumption = _resourceToDisplay.GetComponent<BreadConsumption>();
         _starsController = _resourceToDisplay.GetComponent<StarsController>();
+        _peopleJoinChanceHandler = _resourceToDisplay.GetComponent<PeopleJoinChanceHandler>();
 
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
@@ -83,6 +85,13 @@ public class ResourceDisplayer : MonoBehaviour
             builder.AppendLine(_starsController.ScoreFor2Stars.ToString());
             builder.Append("3 stars: ");
             builder.AppendLine(_starsController.ScoreFor3Stars.ToString());
+        }
+        if (_peopleJoinChanceHandler != null)
+        {
+            builder.AppendLine("-----");
+            builder.Append("Has a chance to give a person every ");
+            builder.Append(_peopleJoinChanceHandler.RollChanceEverySeconds);
+            builder.AppendLine(" seconds");
         }
         _tooltipOnHover.SetText(builder.ToString());
     }
