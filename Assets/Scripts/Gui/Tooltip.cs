@@ -15,7 +15,7 @@ public class Tooltip : MonoBehaviour
     private RectTransform _rectTransform;
     private static Tooltip _instance;
     private static bool _isActive;
-    [field: SerializeField] public Vector2 Offset { get; set; }
+    public static Vector2 Offset { get; set; }
 
     private void Start()
     {
