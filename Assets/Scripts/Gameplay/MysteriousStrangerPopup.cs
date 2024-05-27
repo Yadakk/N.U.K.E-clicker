@@ -14,10 +14,12 @@ public class MysteriousStrangerPopup : MonoBehaviour
     public float DisplayTimeSeconds = 5f;
     private RectTransform _rect;
     private TextMeshProUGUI _tmpu;
+    private SoundPlayer _soundPlayer;
     private float _timeRemainingSeconds;
 
     private void Start()
     {
+        _soundPlayer = GetComponent<SoundPlayer>();
         _tmpu = GetComponentInChildren<TextMeshProUGUI>();
         _rect = GetComponent<RectTransform>();
         SetPositionY(HiddenY);
@@ -52,6 +54,7 @@ public class MysteriousStrangerPopup : MonoBehaviour
 
     private void DisplayPopup()
     {
+        _soundPlayer.PlaySound();
         SetPositionY(HiddenY);
         _tmpu.text = RandomizableResources[Random.Range(0, RandomizableResources.Length - 1)].AddRandomToResource();
         _timeRemainingSeconds = DisplayTimeSeconds;
