@@ -74,7 +74,7 @@ public class RandomizableResource
         Resource.DisableFlash = false;
         StringBuilder stringBuilder = new();
         stringBuilder.Append("You have received ");
-        stringBuilder.Append(change);
+        stringBuilder.Append(RoundResultToInt ? Mathf.Round(change) : change);
         stringBuilder.Append(" ");
         stringBuilder.Append(Resource.Name);
         stringBuilder.Append(" from the mysterious stranger");
