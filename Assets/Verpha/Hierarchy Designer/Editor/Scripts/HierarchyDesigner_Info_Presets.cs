@@ -359,7 +359,7 @@ namespace Verpha.HierarchyDesigner
             return new HierarchyDesigner_Info_Presets(
                 "Sunflower",
                 HierarchyDesigner_Shared_ColorUtility.HexToColor("#F8B701"),
-                HierarchyDesigner_Info_Folder.FolderImageType.Classic,
+                HierarchyDesigner_Info_Folder.FolderImageType.ModernI,
                 HierarchyDesigner_Shared_ColorUtility.HexToColor("#FFC80A"),
                 HierarchyDesigner_Shared_ColorUtility.HexToColor("#2A8FF3"),
                 FontStyle.Bold,

@@ -19,7 +19,7 @@ namespace Verpha.HierarchyDesigner
         static HierarchyDesigner_Visual_Folder()
         {
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyItemCB;
-            HierarchyFolderWindow.LoadFolders();
+            UpdateFolderVisuals();
         }
 
         private static void HierarchyItemCB(int instanceID, Rect selectionRect)
@@ -96,15 +96,15 @@ namespace Verpha.HierarchyDesigner
 
         public static void UpdateFolderVisuals()
         {
-            folderInfoCache.Clear();
-            foreach (var kvp in HierarchyFolderWindow.folders)
+            if (HierarchyDesigner_Data_Folder.folders.Count > 0)
             {
-                string folderName = kvp.Key;
-                HierarchyDesigner_Info_Folder folder = kvp.Value;
-                folderInfoCache[folderName] = (folder.FolderColor, folder.ImageType);
+                folderInfoCache.Clear();
+                foreach (var folder in HierarchyDesigner_Data_Folder.folders)
+                {
+                    folderInfoCache[folder.Key] = (folder.Value.FolderColor, folder.Value.ImageType);
+                }
+                EditorApplication.RepaintHierarchyWindow();
             }
-            folderCache.Clear();
-            EditorApplication.RepaintHierarchyWindow();
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using static Utilities.NumberFormatterUtility;
+using System;
 
 public class InfoDisplayer : MonoBehaviour
 {
@@ -12,11 +14,6 @@ public class InfoDisplayer : MonoBehaviour
     {
         _tmpu = GetComponentInChildren<TextMeshProUGUI>();
         Hide();
-    }
-
-    private string PlusNotation(int num)
-    {
-        return num > 0 ? "+" + num : num.ToString();
     }
 
     public void Show(ShopItem shopItem)
@@ -35,11 +32,10 @@ public class InfoDisplayer : MonoBehaviour
     private string GetAffectedResourceInfo(AffectedResource affRes)
     {
         StringBuilder stringBuilder = new();
-        stringBuilder.Append(PlusNotation(affRes.Change));
+        PositivityColorScheme scheme = PositivityColorSchemes.PositivityToColorScheme(affRes.Resource);
+        PositivityColorSchemes.FormatNumber(ref stringBuilder, scheme, affRes.Change, affRes.Resource.IsPercentFormatted);
         stringBuilder.Append(" ");
         stringBuilder.Append(affRes.Resource.Name);
-        stringBuilder.Append(" | Next: ");
-        stringBuilder.Append(PlusNotation(affRes.Change * affRes.Multiplier));
         return stringBuilder.ToString();
     }
 

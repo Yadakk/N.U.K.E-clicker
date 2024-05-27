@@ -35,7 +35,10 @@ public class FillWithIconPrefabs : MonoBehaviour
         var icon = _instantiatedIcons.Find(icon => icon.GetComponent<ResourceHolder>().Resource == resource);
         if (icon != null)
         {
-            icon.GetComponent<DisplayerCreator>().CreateDisplayer();
+            var creator = icon.GetComponent<DisplayerCreator>();
+            creator.IsMute = true;
+            creator.CreateDisplayer();
+            creator.IsMute = false;
         }
     }
 

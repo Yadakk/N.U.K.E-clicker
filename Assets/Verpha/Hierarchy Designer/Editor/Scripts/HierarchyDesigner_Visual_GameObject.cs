@@ -40,6 +40,12 @@ namespace Verpha.HierarchyDesigner
         private static Type TMPDropdownType => _tmpDropdownType;
         private static Type TMPInputFieldType => _tmpInputFieldType;
         #endregion
+        #region Other Properties
+        private const float componentIconsOffset = 20f;
+        private const float tagLayerOffset = 3f;
+        private const float buttonsOffset = 15f;
+        private const float buttonsLockedOffset = 53f;
+        #endregion
         #region Cached Component Types
         private static readonly Type ButtonType = typeof(Button);
         private static readonly Type ScrollbarType = typeof(Scrollbar);
@@ -152,13 +158,147 @@ namespace Verpha.HierarchyDesigner
             if (Event.current.type != EventType.Repaint)
             {
                 HandleShortcuts(gameObject, selectionRect);
+                if (HierarchyDesigner_Manager_Settings.ShowHierarchyButtons) { ProcessButtonInteractions(gameObject, selectionRect); }
                 return;
             }
 
             DrawMainGameObjectIcon(gameObject, selectionRect, instanceID);
             if (HierarchyDesigner_Manager_Settings.ShowHierarchyTree && gameObject.transform.parent != null) { DrawHierarchyTree(gameObject, selectionRect); }
             if (!isGameObjectLocked) { DrawComponentIcons(gameObject, selectionRect); }
+            if (HierarchyDesigner_Manager_Settings.ShowHierarchyButtons) { DrawInteractableIcons(gameObject, selectionRect); }
         }
+
+        #region Buttons
+        private static void ProcessButtonInteractions(GameObject gameObject, Rect selectionRect)
+        {
+            Rect lockIconRect, activeToggleRect;
+            GetButtonRects(gameObject, selectionRect, out lockIconRect, out activeToggleRect);
+
+            bool isMouseDown = Event.current.type == EventType.MouseDown;
+            if (isMouseDown && lockIconRect.Contains(Event.current.mousePosition))
+            {
+                ToggleLockState(gameObject, !HierarchyDesigner_Utility_Tools.IsGameObjectLocked(gameObject));
+                Event.current.Use();
+            }
+            else if (isMouseDown && activeToggleRect.Contains(Event.current.mousePosition))
+            {
+                ToggleActiveState(gameObject, !gameObject.activeSelf);
+                Event.current.Use();
+            }
+        }
+
+        private static void GetButtonRects(GameObject gameObject, Rect selectionRect, out Rect lockIconRect, out Rect activeToggleRect)
+        {
+            HierarchyDesigner_Info_Buttons.ButtonsPositionType buttonsPosition = HierarchyDesigner_Manager_Settings.ButtonsPosition;
+
+            float iconStartX = selectionRect.xMax;
+            if (buttonsPosition == HierarchyDesigner_Info_Buttons.ButtonsPositionType.Docked) { iconStartX -= 35f; }
+            else { iconStartX = CalculateEndOfPropertiesX(gameObject, selectionRect) + selectionRect.x + buttonsOffset; }
+
+            lockIconRect = new Rect(iconStartX, selectionRect.y, 20, selectionRect.height);
+            activeToggleRect = new Rect(iconStartX + 20, selectionRect.y, 30, selectionRect.height);
+        }
+
+        private static void DrawInteractableIcons(GameObject gameObject, Rect selectionRect)
+        {
+            HierarchyDesigner_Info_Buttons.ButtonsPositionType buttonsPosition = HierarchyDesigner_Manager_Settings.ButtonsPosition;
+
+            float iconStartX = selectionRect.xMax;
+            if (buttonsPosition == HierarchyDesigner_Info_Buttons.ButtonsPositionType.Docked) { iconStartX -= 35f; }
+            else { iconStartX = CalculateEndOfPropertiesX(gameObject, selectionRect) + selectionRect.x + buttonsOffset; }
+
+            Rect lockIconRect = new Rect(iconStartX, selectionRect.y, 20, selectionRect.height);
+            Rect activeToggleRect = new Rect(iconStartX + 20, selectionRect.y, 30, selectionRect.height);
+
+            DrawLockButton(gameObject, lockIconRect);
+            DrawActiveToggleButton(gameObject, activeToggleRect);
+        }
+
+        private static float CalculateEndOfPropertiesX(GameObject gameObject, Rect selectionRect)
+        {
+            if ((gameObject.hideFlags & HideFlags.NotEditable) == HideFlags.NotEditable) 
+            { 
+                return GetInitialIconOffset(gameObject) + buttonsLockedOffset; 
+            }
+            float offsetX = GetInitialIconOffset(gameObject);
+
+            if (HierarchyDesigner_Manager_Settings.ShowComponentIcons)
+            {
+                offsetX += CalculateComponentIconsWidth(gameObject);
+            }
+            if (HierarchyDesigner_Manager_Settings.ShowTag && !IsTagExcluded(gameObject.tag))
+            {
+                offsetX += GetCachedGUIContentSize(new GUIContent(gameObject.tag), tagStyle).x + 5;
+            }
+            if (HierarchyDesigner_Manager_Settings.ShowLayer && !IsLayerExcluded(LayerMask.LayerToName(gameObject.layer)))
+            {
+                offsetX += GetCachedGUIContentSize(new GUIContent(LayerMask.LayerToName(gameObject.layer)), layerStyle).x + 5;
+            }
+            return offsetX;
+        }
+
+        private static float GetInitialIconOffset(GameObject gameObject)
+        {
+            GUIStyle style = GUI.skin.label;
+            Vector2 contentSize = style.CalcSize(new GUIContent(gameObject.name));
+            return contentSize.x + 5;
+        }
+
+        private static float CalculateComponentIconsWidth(GameObject gameObject)
+        {
+            Component[] components = GetComponentsFromCacheOrObject(gameObject);
+            float totalWidth = 0f;
+            float componentOffset = 16f;
+
+            foreach (Component component in components)
+            {
+                if (ShouldComponentBeVisible(component, gameObject))
+                {
+                    totalWidth += componentOffset;
+                }
+            }
+            return totalWidth;
+        }
+
+        private static bool ShouldComponentBeVisible(Component component, GameObject gameObject)
+        {
+            Type componentType = component.GetType();
+            if ((componentType == typeof(Transform) || componentType == typeof(RectTransform)) && !HierarchyDesigner_Manager_Settings.ShowTransformComponent) return false;
+            if (HierarchyDesigner_Visual_Folder.IsFolder(gameObject) && !HierarchyDesigner_Manager_Settings.ShowComponentIconsForFolders) return false;
+            return true;
+        }
+
+        private static void DrawLockButton(GameObject gameObject, Rect rect)
+        {
+            bool isLocked = HierarchyDesigner_Utility_Tools.IsGameObjectLocked(gameObject);
+            Texture2D lockIcon = HierarchyDesigner_Manager_Buttons.LockIcon;
+            if (GUI.Button(rect, lockIcon))
+            {
+                ToggleLockState(gameObject, !isLocked);
+            }
+        }
+
+        private static void DrawActiveToggleButton(GameObject gameObject, Rect rect)
+        {
+            bool isActive = gameObject.activeSelf;
+            if (GUI.Button(rect, new GUIContent(isActive ? "On" : "Off")))
+            {
+                ToggleActiveState(gameObject, !isActive);
+            }
+        }
+
+        private static void ToggleLockState(GameObject gameObject, bool newState)
+        {
+            HierarchyDesigner_Utility_Tools.SetGameObjectLockState(gameObject, newState);
+        }
+
+        private static void ToggleActiveState(GameObject gameObject, bool newState)
+        {
+            Undo.RecordObject(gameObject, "Toggle Active State");
+            gameObject.SetActive(newState);
+            EditorUtility.SetDirty(gameObject);
+        }
+        #endregion
 
         private static void HandleShortcuts(GameObject gameObject, Rect selectionRect)
         {
@@ -366,9 +506,19 @@ namespace Verpha.HierarchyDesigner
                 Texture2D componentIcon = GetComponentIcon(component);
                 if (componentIcon != null)
                 {
-                    DrawIcon(selectionRect, iconSize, ref iconOffset, componentIcon);
+                    string componentName = component.GetType().Name;
+                    GUIContent iconContent = new GUIContent(componentIcon, componentName);
+                    DrawIconWithTooltip(selectionRect, iconSize, ref iconOffset, iconContent);
                 }
             }
+        }
+
+        private static void DrawIconWithTooltip(Rect selectionRect, float iconSize, ref float iconOffset, GUIContent content)
+        {
+            float iconYPosition = selectionRect.y + (selectionRect.height - iconSize) / 2;
+            Rect iconRect = new Rect(selectionRect.x + iconOffset, iconYPosition, iconSize, iconSize);
+            GUI.Box(iconRect, content, GUIStyle.none);
+            iconOffset += iconSize + 2;
         }
 
         private static List<Component> FilterComponents(Component[] components, bool showTransformComponent)
@@ -479,7 +629,7 @@ namespace Verpha.HierarchyDesigner
             GUIStyle style = GUI.skin.label;
             GUIContent content = new GUIContent(components[0].gameObject.name);
             float textWidth = style.CalcSize(content).x;
-            return textWidth + 20f;
+            return textWidth + componentIconsOffset;
         }
 
         private static void UpdateMainIconCacheIfNeeded(GameObject gameObject, int instanceID, Component[] components)
@@ -501,7 +651,7 @@ namespace Verpha.HierarchyDesigner
         {
             if (ShouldSkipDrawing(gameObject) || (!HierarchyDesigner_Manager_Settings.ShowTag && !HierarchyDesigner_Manager_Settings.ShowLayer)) return;
 
-            float iconOffset = GetAdjustedIconOffset(gameObject, selectionRect.height * 0.65f, selectionRect) + 3f;
+            float iconOffset = GetAdjustedIconOffset(gameObject, selectionRect.height * 0.65f, selectionRect) + tagLayerOffset;
             const float spaceBetween = 3f;
 
             if (HierarchyDesigner_Manager_Settings.ShowTag)
@@ -633,7 +783,7 @@ namespace Verpha.HierarchyDesigner
                 Component[] components = GetComponentsFromCacheOrObject(gameObject);
 
                 int visibleComponentsCount = 0;
-                foreach (var component in components)
+                foreach (Component component in components)
                 {
                     if (HierarchyDesigner_Manager_Settings.ShowTransformComponent || !(component is Transform))
                     {

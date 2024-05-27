@@ -10,32 +10,13 @@ public class ShopItem : MonoBehaviour
     public Sprite Icon;
     public ItemShops Shop;
     public AffectedResource[] AffectedResources;
-
-    public delegate void OnInitAllDelegate();
-    public static OnInitAllDelegate OnInitAll;
-    private void Awake()
-    {
-        OnInitAll += InitAllHandler;
-    }
-    private void InitAllHandler()
-    {
-
-    }
-
-    public void Buy()
-    {
-        foreach (var affectedResource in AffectedResources)
-        {
-            affectedResource.Resource.Amount += affectedResource.Change;
-            affectedResource.Change = affectedResource.Change * affectedResource.Multiplier;
-        }
-    }
 }
 
 [System.Serializable]
 public class AffectedResource
 {
     public Resource Resource;
-    public int Change;
-    public int Multiplier = 1;
+    public float Change;
+    public float Multiplier = 1;
+    public bool RoundChangeToInt;
 }

@@ -5,7 +5,9 @@ namespace Verpha.HierarchyDesigner
 {
     public static class HierarchyDesigner_Shared_EditorState
     {
+        #region Properties
         public static bool IsPlaying { get; private set; }
+        #endregion
 
         static HierarchyDesigner_Shared_EditorState()
         {

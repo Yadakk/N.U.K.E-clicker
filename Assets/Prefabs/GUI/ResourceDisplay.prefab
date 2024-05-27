@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1182551905646943604
 CanvasRenderer:
@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311e87b95e0f64149b74a8ad2bea369c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resourceToDisplay: {fileID: 0}
 --- !u!1 &6122038498516961412
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +101,7 @@ GameObject:
   - component: {fileID: 3133095524045047240}
   - component: {fileID: 347070635235256401}
   - component: {fileID: 1856316437452476163}
+  - component: {fileID: 2700177965623609833}
   m_Layer: 5
   m_Name: Value
   m_TagString: Untagged
@@ -165,8 +165,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -225,6 +225,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2700177965623609833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122038498516961412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1919c8c44aaa27e4093afd9242508f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <FlashTime>k__BackingField: 2
+  <MainColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &8761864627324727862
 PrefabInstance:
   m_ObjectHideFlags: 0

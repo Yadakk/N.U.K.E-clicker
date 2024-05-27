@@ -1,46 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
-using Unity.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
+using Utilities;
 
+[RequireComponent(typeof(AudioSource))]
 public class MusicPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] _clips;
-    private AudioSource _src;
-    private AudioMixer _masterMixer;
+    [SerializeField] private bool _playOnStart;
+    [SerializeField] private List<AudioClip> _clips;
+    private AudioSource _source;
+    public AudioSource Source { get => _source; }
+    private Coroutine _musicRoutine;
 
-    private void Awake()
+    private void Start()
     {
-        _src = GetComponent<AudioSource>();
-        StartCoroutine(PlayMusicCoroutine());
-        _masterMixer = _src.outputAudioMixerGroup.audioMixer;
+        if (_source == null) _source = GetComponent<AudioSource>();
+        if (_playOnStart) Play();
     }
 
-    public void SetSound(float soundLevel)
-    {
-        _masterMixer.SetFloat("musicVol", Mathf.Lerp(-80, 0,soundLevel));
-    }
-
-    private IEnumerator PlayMusicCoroutine()
+    private IEnumerator MusicRoutine()
     {
         while (true)
         {
-            AudioClip clip = null;
-            List<AudioClip> clipsRemaining = _clips.ToList();
-            if (clip != null) clipsRemaining.Remove(clip);
-
-            while (clipsRemaining.Count > 0)
+            for (int i = 0; i < _clips.Count; i++)
             {
-                int clipIndex = Random.Range(0, clipsRemaining.Count);
-                clip = clipsRemaining[clipIndex];
-                clipsRemaining.Remove(clip);
-                _src.clip = clip;
-                _src.Play();
-                yield return new WaitForSeconds(clip.length);
+                var clip = _clips[i];
+                _source.clip = clip;
+                _source.Play();
+                yield return new WaitForSecondsRealtime(clip.length);
             }
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips);
         }
+    }
+
+    public void Stop()
+    {
+        if (_musicRoutine != null)
+        {
+            StopCoroutine(_musicRoutine);
+            _source.Stop();
+            _musicRoutine = null;
+        }
+    }
+
+    public void Play()
+    {
+        if (_source == null) _source = GetComponent<AudioSource>();
+        if (_source.clip != null)
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips, _source.clip);
+        else
+            _clips = ListUtility.ShuffleWithoutRepetition(_clips);
+        _musicRoutine = StartCoroutine(MusicRoutine());
     }
 }
