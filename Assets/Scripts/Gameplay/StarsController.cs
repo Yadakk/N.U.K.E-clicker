@@ -23,6 +23,7 @@ public class StarsController : MonoBehaviour
         if (Score.Amount >= ScoreFor1Star)
         {
             _stars.Amount += 1f;
+            IntersceneVariables.FinalStars = 1f;
             PlayerPrefs.SetFloat(name, _stars.Amount);
             return;
         }
@@ -30,6 +31,7 @@ public class StarsController : MonoBehaviour
         if (Score.Amount >= ScoreFor2Stars)
         {
             _stars.Amount += 2f;
+            IntersceneVariables.FinalStars = 2f;
             PlayerPrefs.SetFloat(name, _stars.Amount);
             return;
         }
@@ -37,10 +39,9 @@ public class StarsController : MonoBehaviour
         if (Score.Amount >= ScoreFor3Stars)
         {
             _stars.Amount += 3f;
+            IntersceneVariables.FinalStars = 3f;
             PlayerPrefs.SetFloat(name, _stars.Amount);
             return;
         }
-
-        IntersceneVariables.FinalStars = _stars.Amount;
     }
 }

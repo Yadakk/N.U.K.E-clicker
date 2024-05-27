@@ -44,7 +44,7 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         foreach (var affRes in ShopItem.AffectedResources)
         {
             affRes.Resource.Amount += affRes.Change;
-            affRes.Change = affRes.RoundChangeToInt ? Mathf.RoundToInt(NewChange(affRes)) : NewChange(affRes);
+            affRes.Change = affRes.RoundChangeToInt ? Mathf.Round(NewChange(affRes)) : NewChange(affRes);
         }
 
         InfoDisplayer.Show(ShopItem);
