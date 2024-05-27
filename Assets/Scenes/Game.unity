@@ -8200,6 +8200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Clips>k__BackingField:
   - {fileID: 8300000, guid: aa5cf46e5621da043b26401dea35945a, type: 3}
+  - {fileID: 8300000, guid: 40e86d703fce6374ab03f4453a705680, type: 3}
+  - {fileID: 8300000, guid: d2ca573551713d942b0489ff07885346, type: 3}
+  - {fileID: 8300000, guid: 5f8793d5562d0f84da7aa5cfed8cba8a, type: 3}
 --- !u!1 &1688076827
 GameObject:
   m_ObjectHideFlags: 0
@@ -10094,6 +10097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3208547813242476485, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0031738281
+      objectReference: {fileID: 0}
     - target: {fileID: 3277633136536125143, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -10160,7 +10167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 466.74203
+      value: 426.52737
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
