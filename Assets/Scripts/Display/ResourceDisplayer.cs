@@ -21,6 +21,7 @@ public class ResourceDisplayer : MonoBehaviour
     private BreadConsumption _breadConsumption;
     private StarsController _starsController;
     private PeopleJoinChanceHandler _peopleJoinChanceHandler;
+    private MysteriousStrangerChanceHandler _mysteriousStrangerChanceHandler;
 
     public void Init(Resource resourceToDisplay)
     {
@@ -38,6 +39,7 @@ public class ResourceDisplayer : MonoBehaviour
         _breadConsumption = _resourceToDisplay.GetComponent<BreadConsumption>();
         _starsController = _resourceToDisplay.GetComponent<StarsController>();
         _peopleJoinChanceHandler = _resourceToDisplay.GetComponent<PeopleJoinChanceHandler>();
+        _mysteriousStrangerChanceHandler = _resourceToDisplay.GetComponent<MysteriousStrangerChanceHandler>();
 
         _image.sprite = _resourceToDisplay.Icon;
         _resourceToDisplay.OnAmountChange.AddListener(AmountChangeHandler);
@@ -92,6 +94,11 @@ public class ResourceDisplayer : MonoBehaviour
             builder.Append("Has a chance to give a person every ");
             builder.Append(_peopleJoinChanceHandler.RollChanceEverySeconds);
             builder.AppendLine(" seconds");
+        }
+        if (_mysteriousStrangerChanceHandler != null)
+        {
+            builder.AppendLine("-----");
+            builder.AppendLine("Has a chance to give a random resource every purchace or event choice accept");
         }
         _tooltipOnHover.SetText(builder.ToString());
     }

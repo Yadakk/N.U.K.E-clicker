@@ -3880,6 +3880,10 @@ MonoBehaviour:
         <Change>k__BackingField: -20
         <IsPercentChange>k__BackingField: 1
         <EventResourceRandomChanges>k__BackingField:
+        - <Resource>k__BackingField: {fileID: 360841995}
+          <MinChange>k__BackingField: 1
+          <MaxChange>k__BackingField: 15
+          <IsPercentChange>k__BackingField: 0
         - <Resource>k__BackingField: {fileID: 1855759166}
           <MinChange>k__BackingField: 1
           <MaxChange>k__BackingField: 100
@@ -8201,6 +8205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766853747}
   - component: {fileID: 1766853748}
+  - component: {fileID: 1766853749}
   m_Layer: 0
   m_Name: MysteriousStrangerChance
   m_TagString: Untagged
@@ -8253,6 +8258,19 @@ MonoBehaviour:
   <IsPercentFormatted>k__BackingField: 1
   <ResourcePositivity>k__BackingField: 0
   <Icon>k__BackingField: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
+--- !u!114 &1766853749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766853746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2eea3a042f4a974cac709dbf88d3d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MysteriousStrangerChance: {fileID: 1766853748}
 --- !u!224 &1832931870
 RectTransform:
   m_ObjectHideFlags: 0

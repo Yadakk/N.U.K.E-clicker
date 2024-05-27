@@ -53,7 +53,7 @@ public class MysteriousStrangerPopup : MonoBehaviour
     private void DisplayPopup()
     {
         SetPositionY(HiddenY);
-        _tmpu.text = RandomizableResources[Random.Range(0, RandomizableResources.Length)].AddRandomToResource();
+        _tmpu.text = RandomizableResources[Random.Range(0, RandomizableResources.Length - 1)].AddRandomToResource();
         _timeRemainingSeconds = DisplayTimeSeconds;
     }
 }
@@ -69,12 +69,10 @@ public class RandomizableResource
     {
         var change = Random.Range(RandomRangeChange.x, RandomRangeChange.y);
         Resource.Amount += change;
-        Resource.DisableFlash = true;
         if (RoundResultToInt) Resource.Amount = Mathf.Round(Resource.Amount);
-        Resource.DisableFlash = false;
         StringBuilder stringBuilder = new();
         stringBuilder.Append("You have received ");
-        stringBuilder.Append(change);
+        stringBuilder.Append(RoundResultToInt ? Mathf.Round(change) : change);
         stringBuilder.Append(" ");
         stringBuilder.Append(Resource.Name);
         stringBuilder.Append(" from the mysterious stranger");
