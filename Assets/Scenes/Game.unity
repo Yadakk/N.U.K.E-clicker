@@ -1555,6 +1555,60 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &284202647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284202648}
+  - component: {fileID: 284202649}
+  m_Layer: 0
+  m_Name: GoodwillBundle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284202648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284202647}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435800127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284202649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284202647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Goodwill Bundle
+  Desc: increases 3 random upgrades by 1 BUT you can only buy the bundle 3 times
+    before it disappears forever!
+  Icon: {fileID: 0}
+  Shop: 2
+  AffectedResources:
+  - Resource: {fileID: 360841995}
+    Change: -300
+    Multiplier: 2
+    RoundChangeToInt: 0
 --- !u!1 &285538531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,9 +3410,9 @@ MonoBehaviour:
   Caps: {fileID: 360841995}
   ScorePerCap: 1
   Breads: {fileID: 1855759166}
-  ScorePerBread: 50
+  ScorePerBread: 100
   People: {fileID: 321213735}
-  ScorePerPerson: 100
+  ScorePerPerson: 75
 --- !u!1 &682642465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,9 +4204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 674472953}
   ClickPower: {fileID: 2094576510}
-  ScoreFor1Star: 15000
-  ScoreFor2Stars: 30000
-  ScoreFor3Stars: 60000
+  ScoreFor1Star: 25000
+  ScoreFor2Stars: 50000
+  ScoreFor3Stars: 100000
 --- !u!1 &881868793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4609,7 +4663,7 @@ MonoBehaviour:
   Name: Breads Storage
   Desc: Increases the Breads storage maximum capacity
   Icon: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
-  Shop: 0
+  Shop: 1
   AffectedResources:
   - Resource: {fileID: 285538533}
     Change: 5
@@ -7143,6 +7197,7 @@ Transform:
   - {fileID: 785880063}
   - {fileID: 911773558}
   - {fileID: 247784711}
+  - {fileID: 284202648}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454055561
@@ -7528,7 +7583,7 @@ MonoBehaviour:
   Name: Critical Breads
   Desc: Recieve Breads when you get a Critical Hit
   Icon: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
-  Shop: 0
+  Shop: 1
   AffectedResources:
   - Resource: {fileID: 1185586444}
     Change: 1
@@ -9630,7 +9685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 426.52725
+      value: 466.7425
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
