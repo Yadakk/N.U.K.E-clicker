@@ -6,7 +6,7 @@ using static Utilities.RandomRollUtility;
 public class PeopleJoinChanceHandler : MonoBehaviour
 {
     public float RollChanceEverySeconds;
-    public float PeopleIncrement;
+    public Vector2 PeopleIncrement;
 
     [SerializeField] private Resource _peopleJoinChance;
     [SerializeField] private Resource _people;
@@ -31,7 +31,7 @@ public class PeopleJoinChanceHandler : MonoBehaviour
     {
         _people.DisableFlash = true;
         _finalScore.DisableFlash = true;
-        _people.Amount += PeopleIncrement;
+        _people.Amount += Random.Range((int)PeopleIncrement.x, (int)PeopleIncrement.y + 1);
         _people.DisableFlash = false;
         _finalScore.DisableFlash = false;
     }
