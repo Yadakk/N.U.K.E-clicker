@@ -18,7 +18,7 @@ public class MysteriousStrangerPopup : MonoBehaviour
 
     private void Start()
     {
-        _tmpu = GetComponent<TextMeshProUGUI>();
+        _tmpu = GetComponentInChildren<TextMeshProUGUI>();
         _rect = GetComponent<RectTransform>();
         SetPositionY(HiddenY);
         MysteriousStrangerChanceHandler.OnMysteriousStrangerCalled.AddListener(OnMysteriousStrangerCalledHandler);
