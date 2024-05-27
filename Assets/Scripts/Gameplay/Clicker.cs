@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Utilities.RandomRollUtility;
 
 public class Clicker : MonoBehaviour
 {
@@ -22,8 +23,7 @@ public class Clicker : MonoBehaviour
 
     public void OnClick()
     {
-        float roll = Random.Range(0, 100);
-        if (roll < _criticalChance.Amount)
+        if (Roll(_criticalChance.Amount))
         {
             _increaseResource.Amount += _increaseBy.Amount * 3;
             _breads.Amount += _criticalBreads.Amount;
