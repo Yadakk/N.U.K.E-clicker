@@ -20,10 +20,10 @@ public class StarsController : MonoBehaviour
 
     public void AddStars()
     {
-        if (Score.Amount >= ScoreFor1Star)
+        if (Score.Amount >= ScoreFor3Stars)
         {
-            _stars.Amount += 1f;
-            IntersceneVariables.FinalStars = 1f;
+            _stars.Amount += 3f;
+            IntersceneVariables.FinalStars = 3f;
             PlayerPrefs.SetFloat(name, _stars.Amount);
             return;
         }
@@ -36,10 +36,10 @@ public class StarsController : MonoBehaviour
             return;
         }
 
-        if (Score.Amount >= ScoreFor3Stars)
+        if (Score.Amount >= ScoreFor1Star)
         {
-            _stars.Amount += 3f;
-            IntersceneVariables.FinalStars = 3f;
+            _stars.Amount += 1f;
+            IntersceneVariables.FinalStars = 1f;
             PlayerPrefs.SetFloat(name, _stars.Amount);
             return;
         }

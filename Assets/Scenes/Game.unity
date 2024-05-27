@@ -7578,7 +7578,7 @@ MonoBehaviour:
   AffectedResources:
   - Resource: {fileID: 1185586444}
     Change: 1
-    Multiplier: 2
+    Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
     Change: -50
@@ -9676,7 +9676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6920326970133463030, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 467.02307
+      value: 467.0232
       objectReference: {fileID: 0}
     - target: {fileID: 7116605639664142626, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_AnchorMax.y
