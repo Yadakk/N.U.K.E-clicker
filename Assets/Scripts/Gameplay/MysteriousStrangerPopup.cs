@@ -53,7 +53,7 @@ public class MysteriousStrangerPopup : MonoBehaviour
     private void DisplayPopup()
     {
         SetPositionY(HiddenY);
-        _tmpu.text = RandomizableResources[Random.Range(0, RandomizableResources.Length)].AddRandomToResource();
+        _tmpu.text = RandomizableResources[Random.Range(0, RandomizableResources.Length - 1)].AddRandomToResource();
         _timeRemainingSeconds = DisplayTimeSeconds;
     }
 }
