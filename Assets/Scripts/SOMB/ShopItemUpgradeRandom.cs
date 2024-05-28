@@ -19,11 +19,8 @@ public class ShopItemUpgradeRandom : ShopItem
     public override bool TryBuy()
     {
         if (!base.TryBuy()) return false;
-        else
-        {
-            List<ShopItem> pickedItems = ListUtility.TakeRandom(_shopItems, AmountOfItemsToUpgradeRandomly).ToList();
-            pickedItems.ForEach(item => item.LossLessUpgrade());
-        }
+        List<ShopItem> pickedItems = ListUtility.TakeRandom(_shopItems, AmountOfItemsToUpgradeRandomly).ToList();
+        pickedItems.ForEach(item => item.LossLessUpgrade());
         return true;
     }
 }

@@ -19,15 +19,16 @@ public class GameTimer : MonoBehaviour
             if (_remainingSeconds < 0) return 0;
             return _remainingSeconds;
         }
-        private set => _remainingSeconds = value; }
+        set => _remainingSeconds = value;
+    }
+
     public int RemainingMonths { get; private set; }
     public readonly UnityEvent OnTimerStarted = new();
     public readonly UnityEvent OnMonthsAmountChanged = new();
-    private float _secondsToMonthsRatio;
+    public float MonthDurationInSeconds { get => Seconds / MonthsForConversion; }
     private void Start()
     {
         Instance = this;
-        _secondsToMonthsRatio = Seconds / MonthsForConversion;
         RemainingSeconds = Seconds;
         StartCoroutine(TimerCoroutine());
     }
@@ -51,6 +52,6 @@ public class GameTimer : MonoBehaviour
 
     private int SecondsToIngameMonths()
     {
-        return Mathf.FloorToInt(RemainingSeconds / _secondsToMonthsRatio);
+        return Mathf.FloorToInt(RemainingSeconds / MonthDurationInSeconds);
     }
 }

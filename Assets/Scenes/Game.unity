@@ -248,11 +248,13 @@ MonoBehaviour:
   Shop: 1
   AffectedResources:
   - Resource: {fileID: 1766853748}
-    Change: 2
+    _change: 2
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
   - Resource: {fileID: 360841995}
-    Change: -100
+    _change: -100
+    IsPercentChange: 0
     Multiplier: 2.5
     RoundChangeToInt: 1
 --- !u!1 &92875426
@@ -1071,11 +1073,13 @@ MonoBehaviour:
   Shop: 2
   AffectedResources:
   - Resource: {fileID: 321213735}
-    Change: -100
+    _change: -100
+    IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: 2500
+    _change: 2500
+    IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
 --- !u!1 &248550117
@@ -1128,11 +1132,13 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 2132763571}
-    Change: 0.5
+    _change: 0.5
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
   - Resource: {fileID: 360841995}
-    Change: -50
+    _change: -50
+    IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
 --- !u!1 &251040006
@@ -1693,7 +1699,8 @@ MonoBehaviour:
   Shop: 2
   AffectedResources:
   - Resource: {fileID: 360841995}
-    Change: -300
+    _change: -300
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 0
   ShopItemFolder: {fileID: 1435800125}
@@ -2962,11 +2969,13 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 2030041676}
-    Change: 50
+    _change: 50
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -25
+    _change: -25
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
 --- !u!1 &515549669
@@ -3514,6 +3523,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628121075}
   m_CullTransparentMesh: 1
+--- !u!1 &641732998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641732999}
+  - component: {fileID: 641733000}
+  m_Layer: 0
+  m_Name: TimeMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641732999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641732998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435800127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641733000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641732998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3c948abe57b048a60dc3f8e7425ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: I Ain't Got Enough Time
+  Desc: Go back to last year BUT perform the ultimate sacrifice
+  Icon: {fileID: 21300000, guid: 0c0b4639861208f4e80be3ea777d101d, type: 3}
+  Shop: 2
+  AffectedResources:
+  - Resource: {fileID: 360841995}
+    _change: -90
+    IsPercentChange: 1
+    Multiplier: 1
+    RoundChangeToInt: 1
+  - Resource: {fileID: 1855759166}
+    _change: -90
+    IsPercentChange: 1
+    Multiplier: 1
+    RoundChangeToInt: 1
+  MonthsToRewind: 12
 --- !u!1 &674472951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,11 +4119,13 @@ MonoBehaviour:
   Shop: 2
   AffectedResources:
   - Resource: {fileID: 184793924}
-    Change: 5
+    _change: 5
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
   - Resource: {fileID: 360841995}
-    Change: -250
+    _change: -250
+    IsPercentChange: 0
     Multiplier: 2.5
     RoundChangeToInt: 1
 --- !u!1 &809422761
@@ -4435,11 +4506,13 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 1861912143}
-    Change: 1
+    _change: 1
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -25
+    _change: -25
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
 --- !u!224 &886081699
@@ -4757,11 +4830,13 @@ MonoBehaviour:
   Shop: 1
   AffectedResources:
   - Resource: {fileID: 382561055}
-    Change: 5
+    _change: 5
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -25
+    _change: -25
+    IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
 --- !u!1 &944936760
@@ -4988,11 +5063,13 @@ MonoBehaviour:
   Shop: 1
   AffectedResources:
   - Resource: {fileID: 285538533}
-    Change: 5
+    _change: 5
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -50
+    _change: -50
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
 --- !u!1 &1042936076
@@ -5754,11 +5831,13 @@ MonoBehaviour:
   Shop: 0
   AffectedResources:
   - Resource: {fileID: 2094576510}
-    Change: 1
+    _change: 1
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -5
+    _change: -5
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
 --- !u!1 &1152296976
@@ -7733,6 +7812,7 @@ Transform:
   - {fileID: 911773558}
   - {fileID: 247784711}
   - {fileID: 284202648}
+  - {fileID: 641732999}
   m_Father: {fileID: 208208331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1454055561
@@ -8195,11 +8275,13 @@ MonoBehaviour:
   Shop: 1
   AffectedResources:
   - Resource: {fileID: 1185586444}
-    Change: 1
+    _change: 1
+    IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
   - Resource: {fileID: 360841995}
-    Change: -50
+    _change: -50
+    IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
 --- !u!1 &1581350396
