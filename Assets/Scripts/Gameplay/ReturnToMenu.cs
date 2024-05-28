@@ -2,27 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
-public class ReturnToMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ReturnToMenu : MonoBehaviour
 {
     private Button _button;
     private SceneLoader _sceneLoader;
+    public string Message = "Warning: there's no saving system so progress will be lost!";
+    public ConfirmerController ConfirmerController;
 
     private void Start()
     {
         _sceneLoader = GetComponent<SceneLoader>();
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => _sceneLoader.Load());
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Tooltip.ShowTooltipStatic("<color=red>Warning: there's no saving system so progress will be lost!</color>");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Tooltip.HideTooltipStatic();
+        _button.onClick.AddListener(() => ConfirmerController.Display(() => _sceneLoader.Load(), Message));
     }
 }
