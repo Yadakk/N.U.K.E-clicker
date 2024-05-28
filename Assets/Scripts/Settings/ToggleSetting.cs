@@ -7,16 +7,28 @@ using static Utilities.IntBoolParseUtility;
 public class ToggleSetting : MonoBehaviour, IInitOnSceneLoad
 {
     [SerializeField] private bool _default;
-    public bool Default { get => _default;}
+    public bool Default { get => _default; }
     private Toggle _toggle;
-    public Toggle Toggle => _toggle;
+    public Toggle Toggle
+    {
+        get
+        {
+            if (_toggle == null) _toggle = GetComponentInChildren<Toggle>();
+            return _toggle;
+        }
+        set
+        {
+            _toggle = value;
+        }
+    }
+
     private SoundPlayer _soundPlayer;
 
     private void Start()
     {
         _soundPlayer = GetComponent<SoundPlayer>();
-        _toggle.isOn = IntToBool(PlayerPrefs.GetInt(name, BoolToInt(_default)));
-        _toggle.onValueChanged.AddListener(OnToggleValueChangedHandler);
+        Toggle.isOn = IntToBool(PlayerPrefs.GetInt(name, BoolToInt(_default)));
+        Toggle.onValueChanged.AddListener(OnToggleValueChangedHandler);
     }
 
     private void OnToggleValueChangedHandler(bool val)
@@ -27,6 +39,6 @@ public class ToggleSetting : MonoBehaviour, IInitOnSceneLoad
 
     public void OnSceneLoad()
     {
-        _toggle = GetComponentInChildren<Toggle>();
+        Toggle = GetComponentInChildren<Toggle>();
     }
 }

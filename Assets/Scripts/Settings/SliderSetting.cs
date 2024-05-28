@@ -8,11 +8,23 @@ public class SliderSetting : MonoBehaviour
     [SerializeField] private float _default = 0.75f;
     public float Default { get => _default; }
     private Slider _slider;
-    public Slider Slider { get => _slider; }
+    public Slider Slider
+    {
+        get
+        {
+            GetSlider();
+            return _slider;
+        }
+    }
+
+    private void GetSlider()
+    {
+        if (_slider == null) _slider = GetComponentInChildren<Slider>();
+    }
 
     private void Start()
     {
-        _slider = GetComponentInChildren<Slider>();
+        GetSlider();
         _slider.value = PlayerPrefs.GetFloat(name, _default);
         _slider.onValueChanged.AddListener(OnSliderValueChangedHandler);
     }
