@@ -246,17 +246,26 @@ MonoBehaviour:
     gives you random resources
   Icon: {fileID: 21300000, guid: ee9f68763a14ced478208cbdfcc69d4c, type: 3}
   Shop: 1
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 1766853748}
     _change: 2
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -100
     IsPercentChange: 0
     Multiplier: 2.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &92875426
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,8 +774,8 @@ MonoBehaviour:
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
   <MaxLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
-    _limit: 0
+    <HasLimit>k__BackingField: 1
+    _limit: 100
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
@@ -1071,17 +1080,26 @@ MonoBehaviour:
   Desc: Sacrifice People for Caps
   Icon: {fileID: 0}
   Shop: 2
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 321213735}
     _change: -100
     IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: 2500
     IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &248550117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,17 +1148,26 @@ MonoBehaviour:
   Desc: Increases the chance of getting a Critical Hit when you press the button
   Icon: {fileID: 21300000, guid: ccf5694f003a2f94e908bdbff4f3baa8, type: 3}
   Shop: 0
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 2132763571}
     _change: 0.5
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -50
     IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &251040006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,16 +1720,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Goodwill Bundle
-  Desc: Increases 3 random upgrades by 1 BUT you can only buy the bundle 3 times
-    before it disappears forever!
+  Desc: Increases 3 random upgrades from G.R.E.E.D and E.G.O shops by 1 level BUT
+    you can only buy the bundle 3 times before it disappears forever!
   Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Shop: 2
+  BuysLeft: 3
   AffectedResources:
   - Resource: {fileID: 360841995}
     _change: -300
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 0
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
+  ExcludedItems:
+  - {fileID: 284202649}
+  - {fileID: 641733000}
+  - {fileID: 247784712}
+  - {fileID: 785880064}
   ShopItemFolder: {fileID: 1435800125}
   AmountOfItemsToUpgradeRandomly: 3
 --- !u!1 &285538531
@@ -2385,7 +2422,7 @@ MonoBehaviour:
     <ExchangedResource>k__BackingField: {fileID: 0}
   <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: b8cb4c0dff83a944599516762ab72149, type: 3}
 --- !u!1 &398687575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,17 +3004,26 @@ MonoBehaviour:
   Desc: Recieve money for selecting positive choices during Events
   Icon: {fileID: 21300000, guid: aaf8546d5d53f8c47b8c2057998bdfcb, type: 3}
   Shop: 0
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 2030041676}
     _change: 50
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -25
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &515549669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,17 +3617,26 @@ MonoBehaviour:
   Desc: Go back to last year BUT perform the ultimate sacrifice
   Icon: {fileID: 21300000, guid: 0c0b4639861208f4e80be3ea777d101d, type: 3}
   Shop: 2
+  BuysLeft: 1
   AffectedResources:
   - Resource: {fileID: 360841995}
     _change: -90
     IsPercentChange: 1
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 1
+    MinimumResourceAmount: 1000
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 1855759166}
     _change: -90
     IsPercentChange: 1
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   MonthsToRewind: 12
 --- !u!1 &674472951
 GameObject:
@@ -4117,17 +4172,26 @@ MonoBehaviour:
   Desc: Increases the chance of people joining your bunker
   Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
   Shop: 2
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 184793924}
     _change: 5
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 0
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -250
     IsPercentChange: 0
     Multiplier: 2.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &809422761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4504,17 +4568,26 @@ MonoBehaviour:
   Desc: Bots that will automatically retrieve Resiurces for you
   Icon: {fileID: 21300000, guid: 947b503b2ec6a5042815dc18b720ed6c, type: 3}
   Shop: 0
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 1861912143}
     _change: 1
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -25
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!224 &886081699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4828,17 +4901,26 @@ MonoBehaviour:
   Desc: For every bad decision you get Breads
   Icon: {fileID: 0}
   Shop: 1
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 382561055}
     _change: 5
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -25
     IsPercentChange: 0
     Multiplier: 1.5
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &944936760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,17 +5143,88 @@ MonoBehaviour:
   Desc: Increases the Breads storage maximum capacity
   Icon: {fileID: 21300000, guid: c3a444b80a3c26a4d8032ed2302bc1e4, type: 3}
   Shop: 1
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 285538533}
     _change: 5
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -50
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
+--- !u!1 &1005972563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005972564}
+  - component: {fileID: 1005972565}
+  m_Layer: 0
+  m_Name: PeoplePerBread
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1005972564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005972563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688076829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005972565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005972563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717cc7fb0ce0b3442bf2376097535619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Amount of people one bread can feed
+  _amount: 25
+  StarsController: {fileID: 0}
+  <MinLimit>k__BackingField:
+    <HasLimit>k__BackingField: 1
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <MaxLimit>k__BackingField:
+    <HasLimit>k__BackingField: 0
+    _limit: 0
+    <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
+    <TriggersGameOverOnLimit>k__BackingField: 0
+    <ExchangedResource>k__BackingField: {fileID: 0}
+  <IsPercentFormatted>k__BackingField: 0
+  <ResourcePositivity>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 21300000, guid: afe4a0b2d5c85ca43abc54e38c1df224, type: 3}
 --- !u!1 &1042936076
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,17 +5982,26 @@ MonoBehaviour:
   Desc: Increases Click Power
   Icon: {fileID: 21300000, guid: a807fed1de2e57a41b18b29661e9c7bf, type: 3}
   Shop: 0
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 2094576510}
     _change: 1
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -5
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &1152296976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6924,6 +7086,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300611648}
   m_CullTransparentMesh: 1
+--- !u!1 &1313015029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313015030}
+  - component: {fileID: 1313015031}
+  m_Layer: 0
+  m_Name: FoodProcessors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1313015030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313015029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435800127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313015031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313015029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c77acbb6c9ae0043a47620eacab5394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: High Quality Food Processors
+  Desc: Increase the amount of people one bread can feed
+  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Shop: 1
+  BuysLeft: 0
+  AffectedResources:
+  - Resource: {fileID: 360841995}
+    _change: -250
+    IsPercentChange: 0
+    Multiplier: 5
+    RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
+  - Resource: {fileID: 1005972565}
+    _change: 25
+    IsPercentChange: 0
+    Multiplier: 2
+    RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &1331174182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,7 +7617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0020751953, y: 0.0048828125}
+  m_AnchoredPosition: {x: -0.001953125, y: 0.0048828125}
   m_SizeDelta: {x: -19.995, y: -20.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376771777
@@ -7804,6 +8034,7 @@ Transform:
   - {fileID: 881868794}
   - {fileID: 993292615}
   - {fileID: 1552281943}
+  - {fileID: 1313015030}
   - {fileID: 470464675}
   - {fileID: 248550118}
   - {fileID: 41723214}
@@ -8273,17 +8504,26 @@ MonoBehaviour:
   Desc: Recieve Breads when you get a Critical Hit
   Icon: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
   Shop: 1
+  BuysLeft: 0
   AffectedResources:
   - Resource: {fileID: 1185586444}
     _change: 1
     IsPercentChange: 0
     Multiplier: 1
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
   - Resource: {fileID: 360841995}
     _change: -50
     IsPercentChange: 0
     Multiplier: 2
     RoundChangeToInt: 1
+    HasMinimumResourceAmount: 0
+    MinimumResourceAmount: 0
+    HasMaximumResourceAmount: 0
+    MaximumResourceAmount: 0
 --- !u!1 &1581350396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,6 +8793,7 @@ Transform:
   - {fileID: 2030041675}
   - {fileID: 382561054}
   - {fileID: 285538532}
+  - {fileID: 1005972564}
   - {fileID: 184793923}
   - {fileID: 674472952}
   - {fileID: 838437760}
@@ -8974,8 +9215,8 @@ MonoBehaviour:
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
   <MaxLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
-    _limit: 0
+    <HasLimit>k__BackingField: 1
+    _limit: 100
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
@@ -9390,7 +9631,7 @@ MonoBehaviour:
   Breads: {fileID: 1855759166}
   People: {fileID: 321213735}
   Score: {fileID: 674472953}
-  PeoplePerBread: 50
+  PeoplePerBread: {fileID: 1005972565}
   CooldownSeconds: 60
 --- !u!1 &1861912141
 GameObject:
@@ -10287,8 +10528,8 @@ MonoBehaviour:
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
   <MaxLimit>k__BackingField:
-    <HasLimit>k__BackingField: 0
-    _limit: 0
+    <HasLimit>k__BackingField: 1
+    _limit: 100
     <LimitControlledByResourceAmount>k__BackingField: {fileID: 0}
     <TriggersGameOverOnLimit>k__BackingField: 0
     <ExchangedResource>k__BackingField: {fileID: 0}
@@ -10884,27 +11125,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 330.3455
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 515.51825
       objectReference: {fileID: 0}
     - target: {fileID: 840695865216529636, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 1180068002040784296, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11024,27 +11265,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 330.3455
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 175.17274
       objectReference: {fileID: 0}
     - target: {fileID: 2590662861733637504, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 2917286443379501834, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_AnchorMax.y

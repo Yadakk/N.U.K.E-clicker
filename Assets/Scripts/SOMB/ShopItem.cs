@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 using static ItemPlacer;
 
 public class ShopItem : MonoBehaviour
@@ -10,10 +11,20 @@ public class ShopItem : MonoBehaviour
     public string Desc;
     public Sprite Icon;
     public ItemShops Shop;
+    public int BuysLeft = 0;
     public AffectedResource[] AffectedResources;
+    public readonly UnityEvent OnLimitReached = new();
+    private bool _isLimitReached;
+
+    private void Start()
+    {
+        OnLimitReached.AddListener(() => _isLimitReached = true);
+    }
 
     public virtual bool TryBuy()
     {
+        if (_isLimitReached) return false;
+
         foreach (var affRes in AffectedResources)
         {
             if (!affRes.CanBuy()) return false;
@@ -24,17 +35,28 @@ public class ShopItem : MonoBehaviour
             affRes.Buy();
         }
 
+        DeductBuy();
+
         return true;
     }
 
     public void LossLessUpgrade()
     {
+        if (_isLimitReached) return;
+
         foreach (var affRes in AffectedResources)
         {
             affRes.IncrementChange();
             if (!affRes.IsChangePositive()) return;
             affRes.ChangeLessBuy();
         }
+
+        DeductBuy();
+    }
+
+    private void DeductBuy()
+    {
+        if (--BuysLeft == 0) OnLimitReached.Invoke();
     }
 }
 
@@ -46,6 +68,10 @@ public class AffectedResource
     public bool IsPercentChange;
     public float Multiplier = 1;
     public bool RoundChangeToInt;
+    public bool HasMinimumResourceAmount;
+    public float MinimumResourceAmount;
+    public bool HasMaximumResourceAmount;
+    public float MaximumResourceAmount;
 
     public float Change
     {
@@ -65,6 +91,9 @@ public class AffectedResource
 
     public bool CanBuy()
     {
+        if (HasMinimumResourceAmount && Resource.Amount < MinimumResourceAmount ||
+            HasMaximumResourceAmount && Resource.Amount > MaximumResourceAmount) return false;
+
         return Resource.Amount + Change >= Resource.MinLimit.Limit;
     }
 
@@ -97,10 +126,30 @@ public class AffectedResource
         PositivityColorSchemes.FormatNumber(ref stringBuilder, scheme, Change, Resource.IsPercentFormatted);
         stringBuilder.Append(" ");
         stringBuilder.Append(Resource.Name);
-        if (!IsPercentChange) return stringBuilder.ToString();
-        stringBuilder.Append(" (");
-        PositivityColorSchemes.FormatNumber(ref stringBuilder, scheme, _change, true);
-        stringBuilder.Append(")");
+
+        if (IsPercentChange)
+        {
+            stringBuilder.Append(" (");
+            PositivityColorSchemes.FormatNumber(ref stringBuilder, scheme, _change, true);
+            stringBuilder.Append(")");
+        }
+        if (HasMinimumResourceAmount)
+        {
+            stringBuilder.AppendLine();
+            stringBuilder.Append("Minimum required: ");
+            stringBuilder.Append(MinimumResourceAmount);
+            stringBuilder.Append(" ");
+            stringBuilder.Append(Resource.Name);
+        }
+        if (HasMaximumResourceAmount)
+        {
+            stringBuilder.AppendLine();
+            stringBuilder.Append("Maximum required: ");
+            stringBuilder.Append(HasMinimumResourceAmount);
+            stringBuilder.Append(" ");
+            stringBuilder.Append(Resource.Name);
+        }
+
         return stringBuilder.ToString();
     }
 }

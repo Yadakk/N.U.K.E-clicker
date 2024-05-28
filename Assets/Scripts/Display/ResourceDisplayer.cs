@@ -65,14 +65,14 @@ public class ResourceDisplayer : MonoBehaviour
         {
             builder.AppendLine("-----");
             builder.Append("1 - ");
-            builder.Append(_breadConsumption.PeoplePerBread.ToString());
+            builder.Append(_breadConsumption.PeoplePerBread.Amount.ToString());
             builder.AppendLine(" people");
             builder.Append("consume 1 bread per ");
             builder.Append(_breadConsumption.CooldownSeconds);
             builder.AppendLine(" seconds");
-            builder.Append((_breadConsumption.PeoplePerBread + 1f).ToString());
+            builder.Append((_breadConsumption.PeoplePerBread.Amount + 1f).ToString());
             builder.Append(" - ");
-            builder.Append((_breadConsumption.PeoplePerBread * 2f).ToString());
+            builder.Append((_breadConsumption.PeoplePerBread.Amount * 2f).ToString());
             builder.AppendLine(" people");
             builder.AppendLine("consume 2 breads and so on...");
         }

@@ -17,7 +17,19 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         _soundPlayer = GetComponent<SoundPlayer>();
         _button = GetComponent<Button>();
+
         _button.onClick.AddListener(OnClickHandler);
+        ShopItem.OnLimitReached.AddListener(RemoveItem);
+    }
+
+    private void RemoveItem()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        InfoDisplayer.Hide();
     }
 
     private void OnClickHandler()

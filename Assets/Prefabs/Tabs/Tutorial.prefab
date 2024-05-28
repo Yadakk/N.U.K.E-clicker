@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.060058594, y: 426.52722}
+  m_AnchoredPosition: {x: -0.060058594, y: 453.1682}
   m_SizeDelta: {x: -0.09, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2604593688571416711
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8145143127314423889}
   m_HandleRect: {fileID: 3409497596671998984}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.18250833
+  m_Value: 1.0000002
+  m_Size: 0.19053315
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -744,7 +744,8 @@ MonoBehaviour:
 
     Breads is
     the resource used to feed your people. The more people you have, the more bread
-    is consumed. Earn breads using critical breads upgrade and events. If you lose
+    is consumed. You can make higher quality bread using upgrades which will feed
+    more people. Earn breads using critical breads upgrade and events. If you lose
     all breads, you will start losing people, if you reach upper limit (which can
     be increased using upgrades) you will sell them for caps.
 

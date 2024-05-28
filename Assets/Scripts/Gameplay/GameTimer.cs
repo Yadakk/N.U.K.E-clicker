@@ -12,14 +12,18 @@ public class GameTimer : MonoBehaviour
     public int MonthsForConversion = 60;
     [NonSerialized] public static GameTimer Instance;
     private float _remainingSeconds;
-    public float RemainingSeconds 
-    { 
+    public float RemainingSeconds
+    {
         get
         {
             if (_remainingSeconds < 0) return 0;
             return _remainingSeconds;
         }
-        set => _remainingSeconds = value;
+        set
+        {
+            if (value > Seconds) _remainingSeconds = Seconds;
+            else _remainingSeconds = value;
+        }
     }
 
     public int RemainingMonths { get; private set; }

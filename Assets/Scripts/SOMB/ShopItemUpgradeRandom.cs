@@ -6,6 +6,7 @@ using Utilities;
 
 public class ShopItemUpgradeRandom : ShopItem
 {
+    public List<ShopItem> ExcludedItems;
     public GameObject ShopItemFolder;
     public int AmountOfItemsToUpgradeRandomly;
     private List<ShopItem> _shopItems = new();
@@ -13,7 +14,7 @@ public class ShopItemUpgradeRandom : ShopItem
     private void Start()
     {
         _shopItems = ShopItemFolder.GetComponentsInChildren<ShopItem>().ToList();
-        _shopItems.Remove(this);
+        ExcludedItems.ForEach(item => _shopItems.Remove(item));
     }
 
     public override bool TryBuy()
