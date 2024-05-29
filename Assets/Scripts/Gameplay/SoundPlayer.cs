@@ -18,7 +18,7 @@ public class SoundPlayer : MonoBehaviour
     {
         if (Clips.Count == 0) return;
         AudioClip clipToPlay;
-        if (Clips.Count > 1) clipToPlay = Clips[Random.Range(0, Clips.Count - 1)];
+        if (Clips.Count > 1) clipToPlay = Clips[Random.Range(0, Clips.Count)];
         else clipToPlay = Clips[0];
         _source.PlayOneShot(clipToPlay);
     }
