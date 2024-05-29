@@ -158,8 +158,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0d01700fc89add84994039698a048418, type: 2}
+  m_sharedMaterial: {fileID: -9106545650491731293, guid: 0d01700fc89add84994039698a048418, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.6
+  m_fontSize: 66.65
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <FlashTime>k__BackingField: 2
+  <HoldFlashFor>k__BackingField: 1
   <MainColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &8761864627324727862
 PrefabInstance:
