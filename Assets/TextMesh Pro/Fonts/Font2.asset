@@ -70,7 +70,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.3
+    - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.85714287
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Font2
   m_EditorClassIdentifier: 
-  hashCode: -826242053
+  hashCode: 86673953
   material: {fileID: -9106545650491731293}
-  materialHashCode: 706202235
+  materialHashCode: 629476705
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3bc5341d99aeaf74594867d69529e039
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 3bc5341d99aeaf74594867d69529e039, type: 3}

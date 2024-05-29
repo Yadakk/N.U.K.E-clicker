@@ -6,38 +6,20 @@ using TMPro;
 
 public class EventNotifier : MonoBehaviour
 {
-    [field: SerializeField] public Color NotificationColor { get; set; }
-    private Color _defaultColor;
-    private Image _image;
-    private Button _button;
-    private TextMeshProUGUI _tmpu;
+    public Transform EventFolder;
+    public GameObject ExclamationMark;
     [SerializeField] private SoundPlayer _soundPlayer;
-    private string _defaultText;
-    private int _notificationCount = 0;
-    [field: SerializeField] public string NotificationText { get; set; }
-
-    private void Start()
-    {
-        _image = GetComponent<Image>();
-        _button = GetComponent<Button>();
-        _tmpu = GetComponentInChildren<TextMeshProUGUI>();
-        _defaultColor = _image.color;
-        _defaultText = _tmpu.text;
-        _button.onClick.AddListener(ClearNotification);
-    }
+    private bool _hasEvents;
 
     public void Notify()
     {
-        _notificationCount++;
-        _image.color = NotificationColor;
-        _tmpu.text = NotificationText + $"({_notificationCount})";
         if (_soundPlayer != null) _soundPlayer.PlaySound();
     }
 
-    public void ClearNotification()
+    private void Update()
     {
-        _image.color = _defaultColor;
-        _tmpu.text = _defaultText;
-        _notificationCount = 0;
+        if (_hasEvents == EventFolder.childCount > 0) return;
+        _hasEvents = EventFolder.childCount > 0;
+        ExclamationMark.SetActive(_hasEvents);
     }
 }

@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private float _seconds;
     private bool _isRunning;
     public float Remaining { get; private set; } = 1f;
+    public float Seconds { get => _seconds; private set => _seconds = value; }
 
     private void Update()
     {

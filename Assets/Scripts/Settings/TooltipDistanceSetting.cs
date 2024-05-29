@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TooltipDistanceSetting : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class TooltipDistanceSetting : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IInitOnSceneLoad
 {
     private SliderSetting _sliderSetting;
     public Vector2 MinMaxDistance;
 
     private void Start()
     {
-        _sliderSetting = GetComponent<SliderSetting>();
-        SetTooltipDistance(PlayerPrefs.GetFloat(name, _sliderSetting.Default));
         _sliderSetting.Slider.onValueChanged.AddListener(OnSliderValueChangedHandler);
     }
 
@@ -35,5 +33,11 @@ public class TooltipDistanceSetting : MonoBehaviour, IPointerEnterHandler, IPoin
     public void OnPointerExit(PointerEventData eventData)
     {
         Tooltip.HideTooltipStatic();
+    }
+
+    public void OnSceneLoad()
+    {
+        _sliderSetting = GetComponent<SliderSetting>();
+        SetTooltipDistance(PlayerPrefs.GetFloat(name, _sliderSetting.Default));
     }
 }

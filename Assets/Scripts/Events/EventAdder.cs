@@ -29,7 +29,7 @@ public class EventAdder : MonoBehaviour
                 var controller = eventGO.GetComponent<EventController>();
                 controller.Informer = _informer;
                 controller.Init();
-                if (!_eventFolder.gameObject.activeInHierarchy) _eventNotifier.Notify();
+                _eventNotifier.Notify();
             }
         }
     }

@@ -12,6 +12,7 @@ public class EventController : MonoBehaviour
 {
     [field: SerializeField] public float MinLifeSpanSeconds { get; set; } = 1f;
     [field: SerializeField] public float MaxLifeSpanSeconds { get; set; } = 1f;
+    public Timer Timer { get => _timer; private set => _timer = value; }
     private SoundPlayer _soundPlayer;
     private EventHolder _eventHolder;
     private EventData _eventData;

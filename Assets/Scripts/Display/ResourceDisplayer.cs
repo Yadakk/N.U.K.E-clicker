@@ -68,8 +68,8 @@ public class ResourceDisplayer : MonoBehaviour
             builder.Append(_breadConsumption.PeoplePerBread.Amount.ToString());
             builder.AppendLine(" people");
             builder.Append("consume 1 bread per ");
-            builder.Append(_breadConsumption.CooldownSeconds);
-            builder.AppendLine(" seconds");
+            builder.Append(_breadConsumption.CooldownSeconds / GameTimer.Instance.MonthDurationInSeconds);
+            builder.AppendLine(" Months");
             builder.Append((_breadConsumption.PeoplePerBread.Amount + 1f).ToString());
             builder.Append(" - ");
             builder.Append((_breadConsumption.PeoplePerBread.Amount * 2f).ToString());
@@ -92,8 +92,8 @@ public class ResourceDisplayer : MonoBehaviour
         {
             builder.AppendLine("-----");
             builder.Append("Has a chance to give a person every ");
-            builder.Append(_peopleJoinChanceHandler.RollChanceEverySeconds);
-            builder.AppendLine(" seconds");
+            builder.Append(_peopleJoinChanceHandler.RollChanceEverySeconds / GameTimer.Instance.MonthDurationInSeconds);
+            builder.AppendLine(" Months");
         }
         if (_mysteriousStrangerChanceHandler != null)
         {

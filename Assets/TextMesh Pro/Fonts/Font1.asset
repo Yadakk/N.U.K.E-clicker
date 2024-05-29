@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Font1
   m_EditorClassIdentifier: 
-  hashCode: -1938185275
+  hashCode: 86673954
   material: {fileID: 2303883561309343393}
-  materialHashCode: -701875771
+  materialHashCode: -98975038
   m_Version: 1.1.0
   m_SourceFontFileGUID: ef545aee034ac1c45b942bb1ad8e6cbb
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: ef545aee034ac1c45b942bb1ad8e6cbb, type: 3}
