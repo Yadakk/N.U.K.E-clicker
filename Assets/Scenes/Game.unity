@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Die For Me!
   Desc: Sacrifice People for Caps
-  Icon: {fileID: 0}
+  Icon: {fileID: -1857847356, guid: b0be26628b38ef9468fbbbb6f364154b, type: 3}
   Shop: 2
   BuysLeft: 0
   AffectedResources:
@@ -4170,7 +4170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Welcoming Place
   Desc: Increases the chance of people joining your bunker
-  Icon: {fileID: 21300000, guid: 94c0b5e64296cae4ba6923bd7d4e1e9f, type: 3}
+  Icon: {fileID: -1944576696, guid: b0be26628b38ef9468fbbbb6f364154b, type: 3}
   Shop: 2
   BuysLeft: 0
   AffectedResources:
@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: May I Offer You Some Bread?
   Desc: For every bad decision you get Breads
-  Icon: {fileID: 0}
+  Icon: {fileID: 787932235, guid: b0be26628b38ef9468fbbbb6f364154b, type: 3}
   Shop: 1
   BuysLeft: 0
   AffectedResources:
@@ -6297,7 +6297,7 @@ MonoBehaviour:
     <ExchangedResource>k__BackingField: {fileID: 0}
   <IsPercentFormatted>k__BackingField: 0
   <ResourcePositivity>k__BackingField: 0
-  <Icon>k__BackingField: {fileID: 21300000, guid: 3e5aeb61ea4c64a44ac1076063a4abea, type: 3}
+  <Icon>k__BackingField: {fileID: -992387242, guid: b0be26628b38ef9468fbbbb6f364154b, type: 3}
 --- !u!1 &1186725940
 GameObject:
   m_ObjectHideFlags: 0
