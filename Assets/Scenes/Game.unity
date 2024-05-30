@@ -5733,6 +5733,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 15caa62859b13394fa5223b0a8e88c19, type: 3}
   - {fileID: 8300000, guid: 0f9e8ef6ea6246348a6f58f36a559326, type: 3}
   - {fileID: 8300000, guid: 45984a0e9f837824680bcbe6ab1f28ac, type: 3}
+  - {fileID: 8300000, guid: bf226bd775f7bcf4ead1cb1b5390e60c, type: 3}
+  - {fileID: 8300000, guid: 395ae397b4404b84697cd515f1263c5b, type: 3}
 --- !u!82 &1097836047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8943,7 +8945,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628121077}
   m_HandleRect: {fileID: 628121076}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
