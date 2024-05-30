@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TabSelector : MonoBehaviour
 {
+    public int DefaultTab;
     private int _currentTab;
+
+    public int CurrentTab { get => _currentTab; private set => _currentTab = value; }
 
     public void ChangeTab(int tab)
     {

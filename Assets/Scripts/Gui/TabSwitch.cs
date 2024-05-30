@@ -17,6 +17,9 @@ public class TabSwitch : MonoBehaviour
 
     public void ChangeTab()
     {
-        _selector.ChangeTab(_tabIndex);
+        if (_selector.CurrentTab != _tabIndex)
+            _selector.ChangeTab(_tabIndex);
+        else
+            _selector.ChangeTab(_selector.DefaultTab);
     }
 }
