@@ -32,10 +32,10 @@ public class EventNotifier : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Update()
     {
+        UpdateTooltip();
         if (_hasEvents == EventFolder.childCount > 0) return;
         _hasEvents = EventFolder.childCount > 0;
         ExclamationMark.SetActive(_hasEvents);
-        UpdateTooltip();
     }
 
     private void UpdateTooltip()
