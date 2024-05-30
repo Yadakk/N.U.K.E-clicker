@@ -71,8 +71,7 @@ public class RandomizableResource
     public string AddRandomToResource()
     {
         var change = Random.Range(RandomRangeChange.x, RandomRangeChange.y);
-        Resource.Amount += change;
-        if (RoundResultToInt) Resource.Amount = Mathf.Round(Resource.Amount);
+        Resource.Amount += RoundResultToInt ? Mathf.Round(change) : change;
         StringBuilder stringBuilder = new();
         stringBuilder.Append("You have received ");
         stringBuilder.Append(RoundResultToInt ? Mathf.Round(change) : change);
