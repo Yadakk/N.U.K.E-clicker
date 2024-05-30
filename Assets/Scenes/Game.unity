@@ -2076,6 +2076,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1777110645395473338, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.14013672
+      objectReference: {fileID: 0}
     - target: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
       propertyPath: m_Name
       value: EgoShop
@@ -10334,6 +10338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1777110645395473338, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.14013672
+      objectReference: {fileID: 0}
     - target: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
       propertyPath: m_Name
       value: ApathyShop
@@ -10904,7 +10912,7 @@ PrefabInstance:
     - target: {fileID: 6888534869688022524, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b5f20165434d0d4a9a1dd4d9bec7eb8, type: 3}
+      objectReference: {fileID: 21300000, guid: a4ed88f94b3456d46be5af2b3d1b1245, type: 3}
     - target: {fileID: 6888534869688022524, guid: 939f53b844f96f142b22c3b6a9f6fb70, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -10988,7 +10996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b5f20165434d0d4a9a1dd4d9bec7eb8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4ed88f94b3456d46be5af2b3d1b1245, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11149,6 +11157,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1777110645395473338, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.14013672
+      objectReference: {fileID: 0}
     - target: {fileID: 6205351237022122349, guid: d4c1e0ad5e83a8240989ca065cbe6749, type: 3}
       propertyPath: m_Name
       value: GreedShop
@@ -11280,19 +11292,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4863726
+      value: 0.40388235
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.53872806
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.4863726
+      value: 0.40388235
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.53872806
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11304,11 +11316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.40000153
+      value: -0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 3488334953452372592, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1.1990013
       objectReference: {fileID: 0}
     - target: {fileID: 4845323473126604086, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: _breads
@@ -11353,7 +11365,7 @@ PrefabInstance:
     - target: {fileID: 7082193504248245987, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b5f20165434d0d4a9a1dd4d9bec7eb8, type: 3}
+      objectReference: {fileID: 21300000, guid: a4ed88f94b3456d46be5af2b3d1b1245, type: 3}
     - target: {fileID: 7082193504248245987, guid: f017fc221ec5ac44baad208587077e99, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -11906,7 +11918,7 @@ PrefabInstance:
     - target: {fileID: 8041749066602491538, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b5f20165434d0d4a9a1dd4d9bec7eb8, type: 3}
+      objectReference: {fileID: 21300000, guid: a4ed88f94b3456d46be5af2b3d1b1245, type: 3}
     - target: {fileID: 8041749066602491538, guid: 8be2928b6b7f8d64f9e0b0539ccda94a, type: 3}
       propertyPath: m_Color.b
       value: 1
