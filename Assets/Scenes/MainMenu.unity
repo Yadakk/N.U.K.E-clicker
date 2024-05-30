@@ -4550,7 +4550,52 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coming soon...
+  m_text: 'Made by:
+
+    Artemy Klyachkin - Leading, gamedesign, art
+
+    Vinogradov
+    Ivan - Development, version control, small help with art, gamedesign
+
+    Filatov
+    Ilya - Art
+
+    Cheskidov Daniel - Art
+
+    
+
+    Music and sounds:
+
+    Fallout
+    1
+
+    Fallout 3
+
+    Fallout 4
+
+    Fallout: New Vegas
+
+    Smeshariki
+
+    
+
+    Backgrounds:
+
+    Fallout
+    1
+
+    Fallout 3
+
+    
+
+    Fonts:
+
+    FSEX300
+
+    JH_FALLOUT
+
+    monofoto
+    rg'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0d01700fc89add84994039698a048418, type: 2}
   m_sharedMaterial: {fileID: -9106545650491731293, guid: 0d01700fc89add84994039698a048418, type: 2}
