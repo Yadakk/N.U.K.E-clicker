@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.060058594, y: 453.16858}
+  m_AnchoredPosition: {x: -0.060058594, y: 173.1522}
   m_SizeDelta: {x: -0.09, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2604593688571416711
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3409497596671998984}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.16272916
+  m_Size: 0.059412926
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -760,28 +760,32 @@ MonoBehaviour:
     You can see time in years using tooltip.
 
 
-    Events occur randomly from time
-    to time. You''ll get a notification on the corresponding button. You have to
-    choises, the positive one and negative one. Both choises can be useful depending
-    on your game state. Every event has their own timer. When it runs out, the event
-    gets removed and negative choice gets auto-picked.
+    Time is measured in Months and
+    Years. One Mounth is equal to 20 realtime seconds.
 
 
-    People join chance rolls
-    a chance from time to time and gives you people. Can be obtained using events
-    or upgrades.
+    Events occur randomly
+    from time to time. You''ll get a notification on the corresponding button. You
+    have to choises, the positive one and negative one. Both choises can be useful
+    depending on your game state. Every event has their own timer. When it runs out,
+    the event gets removed and negative choice gets auto-picked.
 
 
-    Critical chance is the upgrade found in the shop. Each time
-    you press the Main screen button, the chance rolls and you might get critical
-    chance which gives you 3x caps and plays a sound. You can also buy critical breads
-    upgrade so critical hit gives you breads also.
+    People join
+    chance rolls a chance from time to time and gives you people. Can be obtained
+    using events or upgrades.
 
 
-    Mysterious stranger is the
-    upgrade you can buy in the shop. Each time you buy an upgrade or pick an event
-    choice, you can get a mysterious stranger with a chance, displayed in resources.
-    The mysterious stranger gives you random resources to help you develop.
+    Critical chance is the upgrade found in the shop.
+    Each time you press the Main screen button, the chance rolls and you might get
+    critical chance which gives you 3x caps and plays a sound. You can also buy critical
+    breads upgrade so critical hit gives you breads also.
+
+
+    Mysterious stranger
+    is the upgrade you can buy in the shop. Each time you buy an upgrade or pick
+    an event choice, you can get a mysterious stranger with a chance, displayed in
+    resources. The mysterious stranger gives you random resources to help you develop.
 
 
     Positive
